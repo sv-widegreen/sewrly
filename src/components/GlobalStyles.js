@@ -2,7 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
+  padding: 0;
+	margin: 0;
+	border: 0;
 }
 
 :root {
@@ -26,5 +29,5 @@ body {
   background: var(--copper-gradient);
   margin: 0;
   width: 100vw;
-  height: 100vh
+  height: 100%;
 }`

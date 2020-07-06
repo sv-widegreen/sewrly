@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Headline from './Headline'
+import AddNewProjectForm from './AddNewProjectForm'
 
 export default function AddNewProjectPage() {
   return (
@@ -9,6 +10,7 @@ export default function AddNewProjectPage() {
         headlineText={'Add a new project'}
         textColor={'var(--teal-medium)'}
       />
+      <AddNewProjectForm />
     </StyledPage>
   )
 }
@@ -16,7 +18,7 @@ export default function AddNewProjectPage() {
 const StyledPage = styled.main`
   margin-top: -18px;
   background: var(--copper-ultralight);
-  width: 100vw;
-  height: 100vh;
+  max-width: 667px;
+  min-height: 554px;
   border-radius: 20px 20px 0 0;
 `
