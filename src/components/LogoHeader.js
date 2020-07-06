@@ -10,6 +10,6 @@ export default function LogoHeader() {
   )
 }
 const StyledLogoHeader = styled.header`
-  padding-top: 10px;
+  padding-top: 30px;
   text-align: center;
 `

@@ -18,11 +18,13 @@ export default createGlobalStyle`
 --teal-light: #3C9181;
 --teal-ultralight: #84C0B7;
 
---text-font-franklin: 'Libre Franklin', sans-serif;
---text-font-oxygen: 'Oxygen', sans-serif;
+--font-franklin: 'Libre Franklin', sans-serif;
+--font-oxygen: 'Oxygen', sans-serif;
 }
 
 body {
   background: var(--copper-gradient);
+  margin: 0;
+  width: 100vw;
   height: 100vh
 }`
