@@ -18,5 +18,5 @@ const StyledPage = styled.main`
   background: var(--copper-ultralight);
   width: 100vw;
   height: 100vh;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
 `
