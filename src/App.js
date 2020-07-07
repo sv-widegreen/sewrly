@@ -1,12 +1,12 @@
 import React from 'react'
 import LogoHeader from './components/LogoHeader.js'
-import AddNewProjectPage from './components/AddNewProjectPage.js'
+import AddNewProjectTab from './components/AddNewProjectTab.js'
 
 function App() {
   return (
     <>
       <LogoHeader />
-      <AddNewProjectPage />
+      <AddNewProjectTab />
     </>
   )
 }

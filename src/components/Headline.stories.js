@@ -1,14 +1,5 @@
 import React from 'react'
 import Headline from './Headline'
-import GlobalStyles from './GlobalStyles'
-import { addDecorator } from '@storybook/react'
-
-addDecorator((s) => (
-  <>
-    <GlobalStyles />
-    {s()}
-  </>
-))
 
 export default {
   title: 'Headline',
@@ -20,11 +11,8 @@ export const headlineCopper = () => (
 )
 
 export const headlineTeal = () => (
-  <div style={{ background: 'var(--copper-ultralight)' }}>
-    {' '}
-    <Headline
-      textColor={'var(--teal-medium)'}
-      headlineText={'Add a new project'}
-    />
-  </div>
+  <Headline
+    textColor={'var(--teal-medium)'}
+    headlineText={'Add a new project'}
+  />
 )

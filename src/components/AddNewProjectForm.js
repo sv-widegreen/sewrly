@@ -1,88 +1,104 @@
-import React from 'react'
-import addButton from '../assets/addButton.svg'
-import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers'
-import * as yup from 'yup'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
+import * as yup from 'yup'
+import addButton from '../assets/addButton.svg'
+import Button from './Button'
+import ProjectTab from './ProjectTab'
 
 const projectSchema = yup.object().shape({
-  projectName: yup.string().max(25).required(),
-  pattern: yup.string().max(25),
+  name: yup.string().max(25).required(),
+  pattern: yup.string().max(35),
   size: yup.string().max(25),
   nextStep: yup.string().max(50).required(),
 })
 
 export default function AddNewProjectForm() {
+  const [projectData, setProjectData] = useState()
+
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(projectSchema),
   })
-  const onSubmit = (data) => console.log(data)
-  console.log(errors)
 
   return (
-    <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <label>
-        Project name
-        <input
-          type="text"
-          placeholder="type here"
-          name="projectName"
-          ref={register}
-        />
-        <div>
-          {errors.projectName &&
-            errors.projectName.type === 'max' &&
-            'Make it short and sweet!'}
-          {errors.projectName &&
-            errors.projectName.type === 'required' &&
-            'Surely you can think of a name for your project!'}
-        </div>
-      </label>
-      <label>
-        Where did you find the pattern?
-        <input
-          type="text"
-          placeholder="or did you draft it yourself?"
-          name="pattern"
-          ref={register}
-        />
-        <div>{errors.pattern && 'The text is too long unfortunately.'}</div>
-      </label>
-      <label>
-        If there's a size, which one?
-        <input type="text" placeholder="type here" name="size" ref={register} />
-        <div>{errors.size && 'Please cut the size of this text!'}</div>
-      </label>
-      <label>
-        What's the next step?
-        <input
-          type="text"
-          placeholder="e.g. buy materials, cut fabric, sew..."
-          name="nextStep"
-          ref={register}
-        />
-        <div>
-          {errors.nextStep &&
-            errors.nextStep.type === 'max' &&
-            'Please keep it short!'}
-          {errors.nextStep &&
-            errors.nextStep.type === 'required' &&
-            'This is the reason why you are using this app!'}
-        </div>
-      </label>
-
-      <label>
-        <button type="submit">
-          <img src={addButton} alt="" />
-        </button>
-      </label>
-    </StyledForm>
+    <>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <label>
+          Project name
+          <input
+            type="text"
+            placeholder="type here"
+            name="name"
+            ref={register}
+          />
+          <StyledErrors>
+            {errors.name &&
+              errors.name.type === 'max' &&
+              'Make it short and sweet!'}
+            {errors.name &&
+              errors.name.type === 'required' &&
+              'Surely you can think of a name for your project!'}
+          </StyledErrors>
+        </label>
+        <label>
+          Where did you find the pattern?
+          <input
+            type="text"
+            placeholder="or did you draft it yourself?"
+            name="pattern"
+            ref={register}
+          />
+          <StyledErrors>
+            {errors.pattern && 'The text is too long unfortunately.'}
+          </StyledErrors>
+        </label>
+        <label>
+          If there's a size, which one?
+          <input
+            type="text"
+            placeholder="type here"
+            name="size"
+            ref={register}
+          />
+          <StyledErrors>
+            {errors.size && 'Please cut the size of this text!'}
+          </StyledErrors>
+        </label>
+        <label>
+          What's the next step?
+          <input
+            type="text"
+            placeholder="e.g. buy materials, cut fabric, sew..."
+            name="nextStep"
+            ref={register}
+          />
+          <StyledErrors>
+            {errors.nextStep &&
+              errors.nextStep.type === 'max' &&
+              'Please keep it short!'}
+            {errors.nextStep &&
+              errors.nextStep.type === 'required' &&
+              'This is the reason why you are using this app!'}
+          </StyledErrors>
+        </label>
+        <Button type={'submit'} icon={addButton} />
+      </StyledForm>
+      <div>
+        {projectData ? <ProjectTab projectData={projectData} /> : <></>}
+      </div>
+    </>
   )
+
+  function onSubmit(data, event) {
+    event.target.reset()
+    console.log(data)
+    setProjectData(data)
+  }
 }
 
 const StyledForm = styled.form`
   margin-top: 24px;
-  font-family: var(--font-franklin);
   font-weight: 200;
 
   label {
@@ -104,11 +120,6 @@ const StyledForm = styled.form`
     font-size: 16px;
   }
 
-  div {
-    padding-top: 5px;
-    font-size: 10px;
-  }
-
   button {
     background: none;
     height: 50px;
@@ -117,4 +128,10 @@ const StyledForm = styled.form`
     left: 50%;
     margin-left: -25px;
   }
+`
+
+const StyledErrors = styled.div`
+  padding-top: 5px;
+  font-size: 10px;
+  color: var(--copper-dark);
 `

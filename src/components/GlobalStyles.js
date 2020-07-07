@@ -26,6 +26,8 @@ export default createGlobalStyle`
 }
 
 body {
+  font-family: var(--font-franklin);
+  max-width: 667px;
   background: var(--copper-gradient);
   margin: 0;
   width: 100vw;
