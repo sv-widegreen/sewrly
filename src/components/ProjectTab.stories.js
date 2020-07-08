@@ -9,7 +9,7 @@ export default {
   component: ProjectTab,
   decorators: [withKnobs],
 }
-const projectData = {
+const projectList = {
   name: 'Summer dress with sleeves',
   pattern: 'Pinterest',
   size: '36',
@@ -17,19 +17,19 @@ const projectData = {
 }
 
 export const projectTab = () => (
-  <ProjectTab projectData={object('projectDataKnob', { ...projectData })} />
+  <ProjectTab projectList={[object('mock up entry', projectList)]} />
 )
 
 export const projectTabAndHeader = () => (
   <>
     <LogoHeader />
-    <ProjectTab projectData={object('projectDataKnob', { ...projectData })} />
+    <ProjectTab projectList={[object('mock up entry', projectList)]} />
   </>
 )
 export const projectTabAndAddNewProjectTab = () => (
   <>
     <LogoHeader />
     <AddNewProjectTab />
-    <ProjectTab projectData={object('projectDataKnob', { ...projectData })} />
+    <ProjectTab projectList={[object('mock up entry', projectList)]} />
   </>
 )

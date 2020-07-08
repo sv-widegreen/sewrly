@@ -15,7 +15,7 @@ const projectSchema = yup.object().shape({
 })
 
 export default function AddNewProjectForm() {
-  const [projectData, setProjectData] = useState()
+  const [projectList, setProjectList] = useState([])
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(projectSchema),
@@ -84,16 +84,15 @@ export default function AddNewProjectForm() {
         </label>
         <Button type={'submit'} icon={addButton} />
       </StyledForm>
-      <div>
-        {projectData ? <ProjectTab projectData={projectData} /> : <></>}
-      </div>
+
+      {projectList.length > 0 ? <ProjectTab projectList={projectList} /> : ''}
     </>
   )
 
-  function onSubmit(data, event) {
+  function onSubmit(projectData, event) {
     event.target.reset()
-    console.log(data)
-    setProjectData(data)
+    console.log(projectData)
+    setProjectList([...projectList, projectData])
   }
 }
 
