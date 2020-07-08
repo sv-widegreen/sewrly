@@ -1,24 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
-import Headline from './Headline'
 import AddNewProjectForm from './AddNewProjectForm'
+import Headline from './Headline'
 
-export default function AddNewProjectTab() {
+export default function AddNewProjectTab({ onSubmit }) {
   return (
     <StyledTab>
       <Headline
         headlineText={'Add a new project'}
         textColor={'var(--teal-medium)'}
       />
-      <AddNewProjectForm />
+      <AddNewProjectForm updateProjectList={onSubmit} />
     </StyledTab>
   )
 }
 
 const StyledTab = styled.main`
-  margin-top: -18px;
+  position: fixed;
+  top: 112px;
   background: var(--copper-ultralight);
-  max-width: 667px;
+  width: 375px;
   min-height: 556px;
   border-radius: 20px 20px 0 0;
 `

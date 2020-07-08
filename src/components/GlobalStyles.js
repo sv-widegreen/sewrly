@@ -26,10 +26,10 @@ export default createGlobalStyle`
 }
 
 body {
+  position: relative;
   font-family: var(--font-franklin);
-  max-width: 667px;
+  width: 375px;
   background: var(--copper-gradient);
   margin: 0;
-  width: 100vw;
-  height: 100%;
+  height: 100vh;
 }`

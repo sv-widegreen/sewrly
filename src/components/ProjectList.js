@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Headline from './Headline'
 import ProjectListItem from './ProjectListItem'
 
-export default function ProjectTab({ projectList }) {
+export default function ProjectList({ projectList }) {
   return (
     <StyledTab>
       <Headline
@@ -18,8 +18,11 @@ export default function ProjectTab({ projectList }) {
 }
 
 const StyledTab = styled.main`
+  position: relative;
+  z-index: 10;
+  top: 600px;
   background: var(--copper-gradient);
-  max-width: 667px;
+  width: 375px;
   min-height: 556px;
   border-radius: 20px 20px 0 0;
 `
