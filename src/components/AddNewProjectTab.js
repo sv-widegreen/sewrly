@@ -20,6 +20,6 @@ const StyledTab = styled.main`
   top: 112px;
   background: var(--copper-ultralight);
   width: 375px;
-  min-height: 556px;
+  height: 556px;
   border-radius: 20px 20px 0 0;
 `

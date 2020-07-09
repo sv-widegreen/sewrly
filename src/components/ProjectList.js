@@ -19,8 +19,7 @@ export default function ProjectList({ projectList }) {
 
 const StyledTab = styled.main`
   position: relative;
-  z-index: 10;
-  top: 600px;
+  top: 610px;
   background: var(--copper-gradient);
   width: 375px;
   min-height: 556px;

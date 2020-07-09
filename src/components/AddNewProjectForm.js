@@ -32,6 +32,7 @@ export default function AddNewProjectForm({ updateProjectList }) {
             'Surely you can think of a name for your project!'}
         </StyledErrors>
       </label>
+
       <label>
         Where did you find the pattern?
         <input
@@ -44,6 +45,7 @@ export default function AddNewProjectForm({ updateProjectList }) {
           {errors.pattern && 'The text is too long unfortunately.'}
         </StyledErrors>
       </label>
+
       <label>
         If there's a size, which one?
         <input type="text" placeholder="type here" name="size" ref={register} />
@@ -51,6 +53,7 @@ export default function AddNewProjectForm({ updateProjectList }) {
           {errors.size && 'Please cut the size of this text!'}
         </StyledErrors>
       </label>
+
       <label>
         What's the next step?
         <input
@@ -68,7 +71,8 @@ export default function AddNewProjectForm({ updateProjectList }) {
             'This is the reason why you are using this app!'}
         </StyledErrors>
       </label>
-      <Button type={'submit'} icon={addButton} />
+
+      <Button icon={addButton} />
     </StyledForm>
   )
 }
@@ -89,7 +93,7 @@ const StyledForm = styled.form`
     width: 275px;
     height: 40px;
     border-radius: 4px;
-    background-color: #ffffff;
+    background: #ffffff;
     padding-left: 10px;
     color: var(--teal-ultralight);
     font-size: 16px;
