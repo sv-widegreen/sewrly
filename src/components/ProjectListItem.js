@@ -5,12 +5,12 @@ export default function ProjectListItem({ projectList }) {
   return (
     <>
       {projectList.map((projectData, index) => {
-        const { name, pattern, size, nextStep } = projectData
+        const { projectName, pattern, size, nextStep } = projectData
         return (
-          <StyledProject key={name + index}>
-            <p name="name">{name}</p>
-            {pattern ? <p name="optional">{pattern}</p> : ''}
-            {size ? <p name="optional">Size: {size}</p> : ''}
+          <StyledProject key={projectName + index}>
+            <p name="projectName">{projectName}</p>
+            {pattern ? <p name="pattern">{pattern}</p> : ''}
+            {size ? <p name="size">Size: {size}</p> : ''}
             <p name="nextStep">Next step: {nextStep}</p>
           </StyledProject>
         )
@@ -30,12 +30,17 @@ const StyledProject = styled.li`
   p {
     font-weight: 200;
   }
-  [name='name'] {
+  [name='projectName'] {
     padding: 12px 24px 10px 24px;
     color: var(--teal-dark);
     font-size: 20px;
   }
-  [name='optional'] {
+  [name='pattern'] {
+    padding: 0 24px;
+    color: var(--teal-light);
+    font-size: 16px;
+  }
+  [name='size'] {
     padding: 0 24px;
     color: var(--teal-light);
     font-size: 16px;

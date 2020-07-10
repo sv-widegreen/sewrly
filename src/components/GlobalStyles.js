@@ -26,10 +26,8 @@ export default createGlobalStyle`
 }
 
 body {
-  position: relative;
   font-family: var(--font-franklin);
   width: 375px;
   background: var(--copper-gradient);
-  margin: 0;
   height: 100vh;
 }`

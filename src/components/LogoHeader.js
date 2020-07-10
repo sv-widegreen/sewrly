@@ -10,8 +10,6 @@ export default function LogoHeader() {
   )
 }
 const StyledLogoHeader = styled.header`
-  position: fixed;
-  left: 34px;
   padding-top: 30px;
   text-align: center;
 `

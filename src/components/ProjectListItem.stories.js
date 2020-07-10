@@ -8,23 +8,23 @@ export default {
   decorators: [withKnobs],
 }
 const allEntries = {
-  name: 'Summer dress with sleeves',
+  projectName: 'Summer dress with sleeves',
   pattern: 'Pinterest',
   size: '36',
   nextStep: 'cut fabric and lining, buy button, zipper and tape',
 }
 const noPattern = {
-  name: 'New Jacket',
+  projectName: 'New Jacket',
   size: '36',
   nextStep: 'decide on lining color',
 }
 const noSize = {
-  name: 'Jeans',
+  projectName: 'Jeans',
   pattern: 'drafted myself',
   nextStep: 'redo everything',
 }
 const noPatternAndSize = {
-  name: 'Sports Bag',
+  projectName: 'Sports Bag',
   nextStep: 'find pattern',
 }
 

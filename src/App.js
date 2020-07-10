@@ -15,6 +15,7 @@ function App() {
 
   function updateProjectList(projectData, event) {
     event.target.reset()
+    console.log(projectData)
     setProjectList([...projectList, projectData])
   }
 }

@@ -10,6 +10,5 @@ const StyledHeadline = styled.header`
   font-weight: 300;
   font-size: 24px;
   color: ${(props) => props.color || 'var(--teal-dark)'};
-  text-align: center;
   padding-top: 18px;
 `

@@ -18,11 +18,13 @@ export default function ProjectList({ projectList }) {
 }
 
 const StyledTab = styled.main`
-  position: relative;
-  top: 610px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-top: -60px;
   background: var(--copper-gradient);
   width: 375px;
-  min-height: 556px;
+  height: 556px;
   border-radius: 20px 20px 0 0;
 `
 

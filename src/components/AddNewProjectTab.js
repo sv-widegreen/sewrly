@@ -16,8 +16,10 @@ export default function AddNewProjectTab({ onSubmit }) {
 }
 
 const StyledTab = styled.main`
-  position: fixed;
-  top: 112px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-top: -18px;
   background: var(--copper-ultralight);
   width: 375px;
   height: 556px;

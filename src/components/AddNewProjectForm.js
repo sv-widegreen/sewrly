@@ -1,107 +1,60 @@
-import { yupResolver } from '@hookform/resolvers'
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, FormProvider } from 'react-hook-form'
 import styled from 'styled-components'
-import * as yup from 'yup'
 import addButton from '../assets/addButton.svg'
 import Button from './Button'
-
-const projectSchema = yup.object().shape({
-  name: yup.string().max(25).required(),
-  pattern: yup.string().max(35),
-  size: yup.string().max(25),
-  nextStep: yup.string().max(50).required(),
-})
+import InputField from './InputField'
 
 export default function AddNewProjectForm({ updateProjectList }) {
-  const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(projectSchema),
-  })
+  const methods = useForm()
 
   return (
-    <StyledForm onSubmit={handleSubmit(updateProjectList)}>
-      <label>
-        Project name
-        <input type="text" placeholder="type here" name="name" ref={register} />
-        <StyledErrors>
-          {errors.name &&
-            errors.name.type === 'max' &&
-            'Make it short and sweet!'}
-          {errors.name &&
-            errors.name.type === 'required' &&
-            'Surely you can think of a name for your project!'}
-        </StyledErrors>
-      </label>
+    <FormProvider {...methods}>
+      <StyledForm onSubmit={methods.handleSubmit(updateProjectList)}>
+        <InputField
+          labelText="Project Name"
+          placeholderText="type here"
+          name="projectName"
+          errorType="max"
+          errorMessage="Make it short and sweet!"
+          errorType2="required"
+          errorMessage2="Surely you can think of a name for your project!"
+        />
 
-      <label>
-        Where did you find the pattern?
-        <input
-          type="text"
-          placeholder="or did you draft it yourself?"
+        <InputField
+          labelText="Where did you find the pattern?"
+          placeholderText="or did you draft it yourself?"
           name="pattern"
-          ref={register}
+          errorType="max"
+          errorMessage="The text is too long unfortunately."
         />
-        <StyledErrors>
-          {errors.pattern && 'The text is too long unfortunately.'}
-        </StyledErrors>
-      </label>
 
-      <label>
-        If there's a size, which one?
-        <input type="text" placeholder="type here" name="size" ref={register} />
-        <StyledErrors>
-          {errors.size && 'Please cut the size of this text!'}
-        </StyledErrors>
-      </label>
+        <InputField
+          labelText="If there's a size, which one?"
+          placeholderText="type here"
+          name="size"
+          errorType="max"
+          errorMessage="Please cut the size of this text!"
+        />
 
-      <label>
-        What's the next step?
-        <input
-          type="text"
-          placeholder="e.g. buy materials, cut fabric, sew..."
+        <InputField
+          labelText="What's the next step?"
+          placeholderText="e.g. buy materials, cut fabric, sew..."
           name="nextStep"
-          ref={register}
+          errorType="max"
+          errorMessage="Please keep it short!"
+          errorType2="required"
+          errorMessage2="This is the reason why you are using this app!"
         />
-        <StyledErrors>
-          {errors.nextStep &&
-            errors.nextStep.type === 'max' &&
-            'Please keep it short!'}
-          {errors.nextStep &&
-            errors.nextStep.type === 'required' &&
-            'This is the reason why you are using this app!'}
-        </StyledErrors>
-      </label>
-
-      <Button icon={addButton} />
-    </StyledForm>
+        <Button icon={addButton} />
+      </StyledForm>
+    </FormProvider>
   )
 }
 
 const StyledForm = styled.form`
-  margin-top: 24px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 24px auto;
   font-weight: 200;
-
-  label {
-    display: block;
-    padding: 0 50px 18px 50px;
-    color: var(--teal-medium);
-    font-size: 18px;
-  }
-
-  input {
-    display: block;
-    width: 275px;
-    height: 40px;
-    border-radius: 4px;
-    background: #ffffff;
-    padding-left: 10px;
-    color: var(--teal-ultralight);
-    font-size: 16px;
-  }
-`
-
-const StyledErrors = styled.div`
-  padding-top: 5px;
-  font-size: 10px;
-  color: var(--copper-dark);
 `
