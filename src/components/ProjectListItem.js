@@ -29,6 +29,7 @@ const StyledProject = styled.li`
 
   p {
     font-weight: 200;
+    overflow-wrap: break-word;
   }
   [name='projectName'] {
     padding: 12px 24px 10px 24px;
