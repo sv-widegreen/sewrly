@@ -8,9 +8,9 @@
       "type": "image/svg"
     },
     {
-      "src": "LogoS.svg",
-      "type": "image/svg",
-      "sizes": "192x192"
+      "src": "LogoS_120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
     },
     {
       "src": "LogoS.svg",
