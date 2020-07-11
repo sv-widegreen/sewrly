@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AddNewProjectTab from './components/AddNewProjectTab.js'
+import LogoHeader from './components/LogoHeader.js'
+import ProjectList from './components/ProjectList'
 
-function App() {
+export default function App() {
+  const [projectList, setProjectList] = useState([])
   return (
-    <div>
-      <header></header>
-    </div>
+    <>
+      <LogoHeader />
+      <AddNewProjectTab onSubmit={updateProjectList} />
+      {projectList.length > 0 ? <ProjectList projectList={projectList} /> : ''}
+    </>
   )
-}
 
-export default App
+  function updateProjectList(projectData, event) {
+    event.target.reset()
+    setProjectList([...projectList, projectData])
+  }
+}
