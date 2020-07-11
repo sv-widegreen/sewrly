@@ -1,54 +1,65 @@
+import { yupResolver } from '@hookform/resolvers'
 import React from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
+import * as yup from 'yup'
 import addButton from '../assets/addButton.svg'
 import Button from './Button'
 import InputField from './InputField'
 
+const projectSchema = yup.object().shape({
+  projectName: yup.string().max(25).required(),
+  pattern: yup.string().max(35),
+  size: yup.string().max(25),
+  nextStep: yup.string().max(50).required(),
+})
+
 export default function AddNewProjectForm({ updateProjectList }) {
-  const methods = useForm()
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(projectSchema),
+  })
 
   return (
-    <FormProvider {...methods}>
-      <StyledForm onSubmit={methods.handleSubmit(updateProjectList)}>
-        <InputField
-          labelText="Project Name"
-          placeholderText="type here"
-          name="projectName"
-          errorType="max"
-          errorMessage="Make it short and sweet!"
-          errorType2="required"
-          errorMessage2="Surely you can think of a name for your project!"
-        />
+    <StyledForm onSubmit={handleSubmit(updateProjectList)}>
+      <InputField
+        labelText="Project Name"
+        placeholderText="type here"
+        name="projectName"
+        registerFn={register}
+        error={errors.projectName}
+        errorMessageMax="Make it short and sweet!"
+        errorMessageRequired="Surely you can think of a name for your project!"
+      />
 
-        <InputField
-          labelText="Where did you find the pattern?"
-          placeholderText="or did you draft it yourself?"
-          name="pattern"
-          errorType="max"
-          errorMessage="The text is too long unfortunately."
-        />
+      <InputField
+        labelText="Where did you find the pattern?"
+        placeholderText="or did you draft it yourself?"
+        name="pattern"
+        registerFn={register}
+        error={errors.pattern}
+        errorMessageMax="The text is too long unfortunately."
+      />
 
-        <InputField
-          labelText="If there's a size, which one?"
-          placeholderText="type here"
-          name="size"
-          errorType="max"
-          errorMessage="Please cut the size of this text!"
-        />
+      <InputField
+        labelText="If there's a size, which one?"
+        placeholderText="type here"
+        name="size"
+        registerFn={register}
+        error={errors.size}
+        errorMessageMax="Please cut the size of this text!"
+      />
 
-        <InputField
-          labelText="What's the next step?"
-          placeholderText="e.g. buy materials, cut fabric, sew..."
-          name="nextStep"
-          errorType="max"
-          errorMessage="Please keep it short!"
-          errorType2="required"
-          errorMessage2="This is the reason why you are using this app!"
-        />
-        <Button icon={addButton} />
-      </StyledForm>
-    </FormProvider>
+      <InputField
+        labelText="What's the next step?"
+        placeholderText="e.g. buy materials, cut fabric, sew..."
+        name="nextStep"
+        registerFn={register}
+        error={errors.nextStep}
+        errorMessageMax="Please keep it short!"
+        errorMessageRequired="This is the reason why you are using this app!"
+      />
+      <Button icon={addButton} />
+    </StyledForm>
   )
 }
 

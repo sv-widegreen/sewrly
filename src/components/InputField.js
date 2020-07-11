@@ -1,27 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useFormContext } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers'
-import * as yup from 'yup'
 
 export default function InputField({
   labelText,
   placeholderText,
   name,
-  errorType,
-  errorMessage,
-  errorType2,
-  errorMessage2,
+  registerFn,
+  error,
+  errorMessageMax,
+  errorMessageRequired,
 }) {
-  const projectSchema = yup.object().shape({
-    projectName: yup.string().max(25).required(),
-    pattern: yup.string().max(35),
-    size: yup.string().max(25),
-    nextStep: yup.string().max(50).required(),
-  })
-  const { register, errors } = useFormContext({
-    resolver: yupResolver(projectSchema),
-  })
   return (
     <StyledLabel>
       {labelText}
@@ -29,15 +17,18 @@ export default function InputField({
         type="text"
         placeholder={placeholderText}
         name={name}
-        ref={register}
+        ref={registerFn}
       ></input>
-      <StyledErrors>
-        {errors.name && errors.name.type === { errorType } && { errorMessage }}
-        {errorType2 && errorMessage2
-          ? errors.name &&
-            errors.name.type === { errorType2 } && { errorMessage2 }
-          : ''}
-      </StyledErrors>
+      {error && error.type === 'max' ? (
+        <StyledError>{errorMessageMax}</StyledError>
+      ) : (
+        ''
+      )}
+      {error && error.type === 'required' ? (
+        <StyledError>{errorMessageRequired}</StyledError>
+      ) : (
+        ''
+      )}
     </StyledLabel>
   )
 }
@@ -58,7 +49,7 @@ const StyledLabel = styled.label`
   }
 `
 
-const StyledErrors = styled.div`
+const StyledError = styled.div`
   padding-top: 5px;
   font-size: 10px;
   color: var(--copper-dark);
