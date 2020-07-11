@@ -21,8 +21,7 @@ export default function ProjectListItem({ projectList }) {
 
 const StyledProject = styled.li`
   list-style: none;
-  min-width: 300px;
-  max-width: 500px;
+  width: 300px;
   height: 100%;
   border-radius: 10px;
   background: var(--copper-ultralight);
