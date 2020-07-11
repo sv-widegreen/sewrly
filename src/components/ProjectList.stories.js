@@ -3,6 +3,7 @@ import ProjectList from './ProjectList'
 import LogoHeader from './LogoHeader'
 import AddNewProjectTab from './AddNewProjectTab'
 import { withKnobs, object } from '@storybook/addon-knobs/react'
+import AddNewProjectForm from './AddNewProjectForm'
 
 export default {
   title: 'Project List',
@@ -10,7 +11,7 @@ export default {
   decorators: [withKnobs],
 }
 const projectEntry = {
-  name: 'Summer dress with sleeves',
+  projectName: 'Summer dress with sleeves',
   pattern: 'Pinterest',
   size: '36',
   nextStep: 'cut fabric and lining, buy button, zipper and tape',

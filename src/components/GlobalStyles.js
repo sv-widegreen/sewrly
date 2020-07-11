@@ -9,7 +9,7 @@ export default createGlobalStyle`
 }
 
 :root {
---copper-gradient: linear-gradient(to bottom, #fdb66f, #e16044 29%, #8b2d38);
+--copper-gradient: linear-gradient(to bottom, #fdb66f, #e16044, #8b2d38);
 
 --copper-dark: #8c2d38;
 --copper-medium: #DE5E44;
@@ -27,7 +27,7 @@ export default createGlobalStyle`
 
 body {
   font-family: var(--font-franklin);
-  width: 375px;
-  background: var(--copper-gradient);
+  width: 100vw;
+  background: var(--copper-ultralight);
   height: 100vh;
 }`

@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import InputField from './InputField'
 
 export default {
@@ -11,38 +12,54 @@ export const allInputFields = () => (
     <InputField
       labelText="Project Name"
       placeholderText="type here"
-      name="name"
-      validator="yup.string().max(35).required()"
-      errorType="max"
-      errorMessage="Make it short and sweet!"
-      errorType2="required"
-      errorMessage2="Surely you can think of a name for your project!"
+      name="projectName"
     />
+
     <InputField
       labelText="Where did you find the pattern?"
       placeholderText="or did you draft it yourself?"
       name="pattern"
-      validator="yup.string().max(35)"
-      errorType="max"
-      errorMessage="The text is too long unfortunately."
     />
+
     <InputField
       labelText="If there's a size, which one?"
       placeholderText="type here"
       name="size"
-      validator="yup.string().max(25)"
-      errorType="max"
-      errorMessage="Please cut the size of this text!"
     />
+
     <InputField
       labelText="What's the next step?"
       placeholderText="e.g. buy materials, cut fabric, sew..."
       name="nextStep"
-      validator="yup.string().max(50).required()"
-      errorType="max"
-      errorMessage="Please keep it short!"
-      errorType2="required"
-      errorMessage2="This is the reason why you are using this app!"
     />
   </>
 )
+
+export const InputFieldWith1Error = () => (
+  <>
+    <InputField
+      labelText="Project Name"
+      placeholderText="type here"
+      name="projectName"
+    />
+    <StyledError>Make it short and sweet!</StyledError>
+  </>
+)
+
+export const InputFieldWith2Errors = () => (
+  <>
+    <InputField
+      labelText="Project Name"
+      placeholderText="type here"
+      name="projectName"
+    />
+    <StyledError>Make it short and sweet!</StyledError>
+    <StyledError>Surely you can think of a name for your project!</StyledError>
+  </>
+)
+
+const StyledError = styled.div`
+  padding-top: 5px;
+  font-size: 10px;
+  color: var(--copper-dark);
+`

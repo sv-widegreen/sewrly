@@ -66,6 +66,6 @@ export default function AddNewProjectForm({ updateProjectList }) {
 const StyledForm = styled.form`
   display: flex;
   flex-flow: column wrap;
-  margin: 24px auto;
+  margin: 24px auto 40px auto;
   font-weight: 200;
 `

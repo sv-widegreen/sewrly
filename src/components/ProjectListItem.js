@@ -21,11 +21,12 @@ export default function ProjectListItem({ projectList }) {
 
 const StyledProject = styled.li`
   list-style: none;
-  width: 325px;
+  min-width: 300px;
+  max-width: 500px;
   height: 100%;
   border-radius: 10px;
   background: var(--copper-ultralight);
-  margin-top: 20px;
+  margin: 20px 20px 0 20px;
 
   p {
     font-weight: 200;

@@ -21,10 +21,9 @@ const StyledTab = styled.main`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  margin-top: -60px;
+  margin-top: -20px;
   background: var(--copper-gradient);
-  width: 375px;
-  height: 556px;
+  min-height: 556px;
   border-radius: 20px 20px 0 0;
 `
 

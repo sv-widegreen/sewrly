@@ -3,7 +3,7 @@ import AddNewProjectTab from './components/AddNewProjectTab.js'
 import LogoHeader from './components/LogoHeader.js'
 import ProjectList from './components/ProjectList'
 
-function App() {
+export default function App() {
   const [projectList, setProjectList] = useState([])
   return (
     <>
@@ -15,9 +15,6 @@ function App() {
 
   function updateProjectList(projectData, event) {
     event.target.reset()
-    console.log(projectData)
     setProjectList([...projectList, projectData])
   }
 }
-
-export default App

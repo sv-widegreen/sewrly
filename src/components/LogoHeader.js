@@ -10,6 +10,7 @@ export default function LogoHeader() {
   )
 }
 const StyledLogoHeader = styled.header`
+  background: var(--copper-gradient);
   padding-top: 30px;
   text-align: center;
 `
