@@ -87,6 +87,7 @@ flex-direction: column;
     font-size: 20px;
     color: var(--teal-medium);
     margin: auto;
+    background: var(--copper-ultralight);
     :active {
       background: var(--teal-medium);
       color: var(--copper-ultralight);
@@ -111,6 +112,7 @@ const StyledHappyBirthday = styled.main`
     border-radius: 10px;
     font-size: 20px;
     color: var(--teal-medium);
+    background: var(--copper-ultralight);
     :active {
       background: var(--teal-medium);
       color: var(--copper-ultralight);
