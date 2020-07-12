@@ -19,8 +19,8 @@ export default function HappyBirthday({ onClick }) {
           </p>
 
           <p>
-            Wahrscheinlich habt ihr euch schon gefragt was ich da mache, nun
-            wird das Geheimnis gelüftet!
+            Wahrscheinlich hast Du Dich schon gefragt was ich da mache, nun wird
+            das Geheimnis gelüftet!
           </p>
 
           <p>Ich baue Dir Deine eigene Sewing Planner App! </p>
@@ -29,7 +29,7 @@ export default function HappyBirthday({ onClick }) {
           <span> - Sewrly - </span>
           <p>
             In der Du Deine Nähprojekte speichern kannst, eine Übersicht hast wo
-            das Projekt gerade steht, und in einer Einkausliste festhalten
+            das Projekt gerade steht und in einer Einkaufsliste festhalten
             kannst, was vielleicht noch fehlt. Wenn das Projekt fertig ist,
             kannst Du ein Bild hochladen und noch weitere Details festlegen, was
             Du das nächste Mal anders machen willst o.ä.
@@ -37,7 +37,7 @@ export default function HappyBirthday({ onClick }) {
 
           <p>
             Nach einer Woche bin ich noch nicht sehr weit, aber hier kannst Du
-            Dir schonmal anschauen und ausprobieren, wie das ganze vielleicht
+            Dir schonmal anschauen und ausprobieren, wie das Ganze vielleicht
             mal aussehen wird:
           </p>
           <button onClick={onClick}>Zeig her!</button>
