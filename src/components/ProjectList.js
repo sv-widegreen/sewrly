@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Headline from './Headline'
 import ProjectListItem from './ProjectListItem'
 
-export default function ProjectList({ projectList, onDelete }) {
+export default function ProjectList({ projectList }) {
   return (
     <StyledTab>
       <Headline
@@ -15,7 +15,6 @@ export default function ProjectList({ projectList, onDelete }) {
           <ProjectListItem
             key={projectData.projectName + index}
             projectData={projectData}
-            onDelete={onDelete}
           />
         ))}
       </StyledProjectList>

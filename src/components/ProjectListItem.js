@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from './Button'
-import deleteButton from '../assets/deleteButton.svg'
 
-export default function ProjectListItem({ projectData, onDelete }) {
+export default function ProjectListItem({ projectData }) {
   const { projectName, pattern, size, nextStep } = projectData
   return (
     <StyledProject>
@@ -11,7 +9,6 @@ export default function ProjectListItem({ projectData, onDelete }) {
       {pattern ? <p name="pattern">{pattern}</p> : ''}
       {size ? <p name="size">Size: {size}</p> : ''}
       <p name="nextStep">Next step: {nextStep}</p>
-      <Button icon={deleteButton} onClick={onDelete} />
     </StyledProject>
   )
 }
