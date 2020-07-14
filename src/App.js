@@ -18,12 +18,22 @@ export default function App() {
     <>
       <LogoHeader />
       <AddNewProjectTab onSubmit={updateProjectList} />
-      {projectList.length > 0 ? <ProjectList projectList={projectList} /> : ''}
+      {projectList.length > 0 ? (
+        <ProjectList projectList={projectList} onDelete={deleteProject} />
+      ) : (
+        ''
+      )}
     </>
   )
 
   function updateProjectList(projectData, event) {
     event.target.reset()
+    event.target[0].focus()
+    console.log(projectData)
     setProjectList([...projectList, projectData])
+  }
+
+  function deleteProject(event) {
+    console.log(event.target)
   }
 }

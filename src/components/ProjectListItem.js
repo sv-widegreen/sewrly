@@ -1,25 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from './Button'
+import deleteButton from '../assets/deleteButton.svg'
 
-export default function ProjectListItem({ projectList }) {
+export default function ProjectListItem({ projectData, onDelete }) {
+  const { projectName, pattern, size, nextStep } = projectData
   return (
-    <>
-      {projectList.map((projectData, index) => {
-        const { projectName, pattern, size, nextStep } = projectData
-        return (
-          <StyledProject key={projectName + index}>
-            <p name="projectName">{projectName}</p>
-            {pattern ? <p name="pattern">{pattern}</p> : ''}
-            {size ? <p name="size">Size: {size}</p> : ''}
-            <p name="nextStep">Next step: {nextStep}</p>
-          </StyledProject>
-        )
-      })}
-    </>
+    <StyledProject>
+      <p name="projectName">{projectName}</p>
+      {pattern ? <p name="pattern">{pattern}</p> : ''}
+      {size ? <p name="size">Size: {size}</p> : ''}
+      <p name="nextStep">Next step: {nextStep}</p>
+      <Button icon={deleteButton} onClick={onDelete} />
+    </StyledProject>
   )
 }
 
 const StyledProject = styled.li`
+  position: relative;
   list-style: none;
   width: 300px;
   height: 100%;
