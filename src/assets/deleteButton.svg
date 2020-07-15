@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Delete Button</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#ECB37B" offset="0%"></stop>
+            <stop stop-color="#CF634C" offset="51.245777%"></stop>
+            <stop stop-color="#732D35" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="First-Sprint-NEW-DESIGN-cali-sunrise" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Add-new-project-#2--NEW-DESIGN" transform="translate(-305.000000, -868.000000)">
+            <g id="Group" transform="translate(305.000000, 868.000000)">
+                <circle id="teal-medium-copy-6" fill="url(#linearGradient-1)" cx="15.5" cy="15.5" r="15.5"></circle>
+                <line x1="7.34" y1="15.5" x2="23.66" y2="15.5" id="Line-Copy-4" stroke="#FFFBF6" stroke-width="2" stroke-linecap="round"></line>
+            </g>
+        </g>
+    </g>
+</svg>

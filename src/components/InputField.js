@@ -46,6 +46,11 @@ const StyledLabel = styled.label`
     padding-left: 10px;
     color: var(--teal-ultralight);
     font-size: 16px;
+
+    /* Placeholder color was displayed as black in Chrome */
+    ::-webkit-input-placeholder {
+      color: var(--teal-ultralight);
+    }
   }
 `
 

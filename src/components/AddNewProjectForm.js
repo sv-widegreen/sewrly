@@ -22,7 +22,7 @@ export default function AddNewProjectForm({ updateProjectList }) {
   return (
     <StyledForm onSubmit={handleSubmit(updateProjectList)}>
       <InputField
-        labelText="Project Name"
+        labelText="Project Name*"
         placeholderText="type here"
         name="projectName"
         registerFn={register}
@@ -50,7 +50,7 @@ export default function AddNewProjectForm({ updateProjectList }) {
       />
 
       <InputField
-        labelText="What's the next step?"
+        labelText="What's the next step?*"
         placeholderText="e.g. buy materials, cut fabric, sew..."
         name="nextStep"
         registerFn={register}

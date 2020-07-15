@@ -1,28 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function ProjectListItem({ projectList }) {
+export default function ProjectListItem({ projectData }) {
+  const { projectName, pattern, size, nextStep } = projectData
   return (
-    <>
-      {projectList.map((projectData, index) => {
-        const { projectName, pattern, size, nextStep } = projectData
-        return (
-          <StyledProject key={projectName + index}>
-            <p name="projectName">{projectName}</p>
-            {pattern ? <p name="pattern">{pattern}</p> : ''}
-            {size ? <p name="size">Size: {size}</p> : ''}
-            <p name="nextStep">Next step: {nextStep}</p>
-          </StyledProject>
-        )
-      })}
-    </>
+    <StyledProject>
+      <p name="projectName">{projectName}</p>
+      {pattern ? <p name="pattern">{pattern}</p> : ''}
+      {size ? <p name="size">Size: {size}</p> : ''}
+      <p name="nextStep">Next step: {nextStep}</p>
+    </StyledProject>
   )
 }
 
 const StyledProject = styled.li`
+  position: relative;
   list-style: none;
-  min-width: 300px;
-  max-width: 500px;
+  width: 300px;
   height: 100%;
   border-radius: 10px;
   background: var(--copper-ultralight);
