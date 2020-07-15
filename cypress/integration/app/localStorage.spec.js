@@ -2,7 +2,7 @@
 
 context('Local Storage', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
   })
 
   it('should write and clear localStorage', () => {
