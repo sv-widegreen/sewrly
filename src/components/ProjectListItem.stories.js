@@ -30,11 +30,11 @@ const noPatternAndSize = {
 
 export const projectListItem = () => (
   <>
-    <ProjectListItem projectData={[object('all entries', allEntries)]} />
-    <ProjectListItem projectData={[object('no pattern entry', noPattern)]} />
-    <ProjectListItem projectData={[object('no size entry', noSize)]} />
+    <ProjectListItem projectData={object('all entries', allEntries)} />
+    <ProjectListItem projectData={object('no pattern entry', noPattern)} />
+    <ProjectListItem projectData={object('no size entry', noSize)} />
     <ProjectListItem
-      projectData={[object('no pattern and size entry', noPatternAndSize)]}
+      projectData={object('no pattern and size entry', noPatternAndSize)}
     />
   </>
 )

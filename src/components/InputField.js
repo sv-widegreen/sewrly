@@ -47,6 +47,11 @@ const StyledLabel = styled.label`
     color: var(--teal-ultralight);
     font-size: 16px;
 
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 1pt var(--teal-ultralight);
+    }
+
     /* Placeholder color was displayed as black in Chrome */
     ::-webkit-input-placeholder {
       color: var(--teal-ultralight);

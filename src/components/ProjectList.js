@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Headline from './Headline'
 import ProjectListItem from './ProjectListItem'
 
-export default function ProjectList({ projectList }) {
+export default function ProjectList({ projectList, updateProjectData }) {
   return (
     <StyledTab>
       <Headline
@@ -11,10 +11,11 @@ export default function ProjectList({ projectList }) {
         textColor={'var(--copper-ultralight)'}
       />
       <StyledProjectList>
-        {projectList.map((projectData, index) => (
+        {projectList.map((projectData) => (
           <ProjectListItem
-            key={projectData.projectName + index}
+            key={projectData.id}
             projectData={projectData}
+            updateProjectData={updateProjectData}
           />
         ))}
       </StyledProjectList>
