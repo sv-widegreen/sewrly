@@ -28,13 +28,17 @@ const noPatternAndSize = {
   nextStep: 'find pattern',
 }
 
-export const projectListItem = () => (
-  <>
-    <ProjectListItem projectData={object('all entries', allEntries)} />
-    <ProjectListItem projectData={object('no pattern entry', noPattern)} />
-    <ProjectListItem projectData={object('no size entry', noSize)} />
-    <ProjectListItem
-      projectData={object('no pattern and size entry', noPatternAndSize)}
-    />
-  </>
+export const allData = () => (
+  <ProjectListItem projectData={object('all entries', allEntries)} />
+)
+export const noPatternEntry = () => (
+  <ProjectListItem projectData={object('no pattern entry', noPattern)} />
+)
+export const noSizeEntry = () => (
+  <ProjectListItem projectData={object('no size entry', noSize)} />
+)
+export const noPatternAndSizeEntry = () => (
+  <ProjectListItem
+    projectData={object('no pattern and size entry', noPatternAndSize)}
+  />
 )

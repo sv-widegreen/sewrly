@@ -19,28 +19,25 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
               onChange={(event) => updateProjectData(event, id)}
             ></textarea>
           </label>
-          {pattern ? (
-            <label>
-              <input
-                name="pattern"
-                value={pattern}
-                onChange={(event) => updateProjectData(event, id)}
-              ></input>
-            </label>
-          ) : (
-            ''
-          )}
-          {size ? (
-            <label>
-              <input
-                name="size"
-                value={size}
-                onChange={(event) => updateProjectData(event, id)}
-              ></input>
-            </label>
-          ) : (
-            ''
-          )}
+
+          <label>
+            <input
+              name="pattern"
+              value={pattern || ''}
+              placeholder="Did you find a pattern?"
+              onChange={(event) => updateProjectData(event, id)}
+            ></input>
+          </label>
+
+          <label>
+            <input
+              name="size"
+              value={size || ''}
+              placeholder="What's the size?"
+              onChange={(event) => updateProjectData(event, id)}
+            ></input>
+          </label>
+
           <label>
             <textarea
               name="nextStep"
