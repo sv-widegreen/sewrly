@@ -7,13 +7,13 @@ import Button from './Button'
 import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
 
-export default function AddNewProjectForm({ updateProjectList }) {
+export default function AddNewProjectForm({ addToProjectList }) {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(projectSchema),
   })
 
   return (
-    <StyledForm onSubmit={handleSubmit(updateProjectList)}>
+    <StyledForm onSubmit={handleSubmit(addToProjectList)}>
       <InputField
         labelText="Project Name*"
         placeholderText="type here"

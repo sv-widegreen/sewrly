@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import editButton from '../assets/editButton.svg'
-import saveButtonDiskTeal from '../assets/saveButtonDiskTeal.svg'
 import Button from './Button'
 import ProjectUpdateForm from './ProjectUpdateForm'
 
@@ -16,8 +15,8 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
           <ProjectUpdateForm
             projectData={projectData}
             updateProjectData={updateProjectData}
+            setEditing={setEditing}
           />
-          <Button icon={saveButtonDiskTeal} onClick={() => setEditing(false)} />
         </>
       ) : (
         <div>

@@ -18,7 +18,7 @@ export default function App() {
   return (
     <>
       <LogoHeader />
-      <AddNewProjectTab onSubmit={updateProjectList} />
+      <AddNewProjectTab onSubmit={addToProjectList} />
       {projectList.length > 0 ? (
         <ProjectList
           projectList={projectList}
@@ -30,7 +30,7 @@ export default function App() {
     </>
   )
 
-  function updateProjectList(projectData, event) {
+  function addToProjectList(projectData, event) {
     event.preventDefault()
     event.target.reset()
     event.target[0].focus()
