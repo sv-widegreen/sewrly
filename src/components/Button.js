@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Button({ icon, onClick }) {
+export default function Button({ icon, onClick, altText }) {
   return (
     <StyledButton onClick={onClick}>
-      <img src={icon} alt="" />
+      <img src={icon} alt={altText || ''} />
     </StyledButton>
   )
 }
@@ -14,4 +14,7 @@ const StyledButton = styled.button`
   height: 50px;
   width: 50px;
   margin: auto;
+  :active {
+    transform: scale(0.95, 0.95);
+  }
 `
