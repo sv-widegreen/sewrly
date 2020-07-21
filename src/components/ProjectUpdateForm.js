@@ -6,26 +6,21 @@ import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
 import saveButtonDiskTeal from '../assets/saveButtonDiskTeal.svg'
 import Button from './Button'
+import { useState } from 'react'
 
 export default function ProjectUpdateForm({
   projectData,
   updateProjectData,
   setEditing,
 }) {
-  const { id, projectName, pattern, size, nextStep } = projectData
-  const { register, errors, trigger } = useForm({
+  const [updatedData, setUpdatedData] = useState({ ...projectData })
+  const { register, errors, handleSubmit } = useForm({
     resolver: yupResolver(projectSchema),
-    mode: 'onChange',
-    defaultValues: {
-      projectName,
-      pattern,
-      size,
-      nextStep,
-    },
+    defaultValues: { ...projectData },
   })
 
   return (
-    <StyledForm>
+    <StyledForm onSubmit={handleSubmit(handleNewData)}>
       <InputField
         name="projectName"
         onChange={handleChange}
@@ -62,21 +57,17 @@ export default function ProjectUpdateForm({
         errorMessageRequired="Keep track of the next step!"
       />
 
-      <Button
-        type="button"
-        icon={saveButtonDiskTeal}
-        onClick={async () => {
-          const changeValid = await trigger()
-          if (changeValid) {
-            setEditing(false)
-          }
-        }}
-      />
+      <Button icon={saveButtonDiskTeal} />
     </StyledForm>
   )
 
   function handleChange(event) {
-    updateProjectData(event, id)
+    setUpdatedData({ ...updatedData, [event.target.name]: event.target.value })
+  }
+
+  function handleNewData() {
+    setEditing(false)
+    updateProjectData(updatedData)
   }
 }
 

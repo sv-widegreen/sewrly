@@ -38,13 +38,12 @@ export default function App() {
     setProjectList([...projectList, projectData])
   }
 
-  function updateProjectData(event, id) {
-    const projectIndex = projectList.findIndex((project) => project.id === id)
+  function updateProjectData(updatedData) {
+    const projectIndex = projectList.findIndex(
+      (project) => project.id === updatedData.id
+    )
     let updatedProjectList = [...projectList]
-    updatedProjectList[projectIndex] = {
-      ...updatedProjectList[projectIndex],
-      [event.target.name]: event.target.value,
-    }
+    updatedProjectList[projectIndex] = updatedData
     setProjectList(updatedProjectList)
   }
 }

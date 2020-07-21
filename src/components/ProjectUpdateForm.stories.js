@@ -1,6 +1,5 @@
 import React from 'react'
 import { withKnobs, object } from '@storybook/addon-knobs/react'
-import ProjectListItem from './ProjectListItem'
 import ProjectUpdateForm from './ProjectUpdateForm'
 
 export default {
