@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Button({ icon, onClick, type }) {
+export default function Button({ icon, onClick }) {
   return (
-    <StyledButton onClick={onClick} type={type}>
+    <StyledButton onClick={onClick}>
       <img src={icon} alt="" />
     </StyledButton>
   )
