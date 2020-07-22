@@ -10,7 +10,7 @@ export default function AddNewProjectTab({ onSubmit }) {
         headlineText={'Add a new project'}
         textColor={'var(--teal-medium)'}
       />
-      <AddNewProjectForm updateProjectList={onSubmit} />
+      <AddNewProjectForm addToProjectList={onSubmit} />
     </StyledTab>
   )
 }

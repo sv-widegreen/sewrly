@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
 
 describe('add new project', () => {
+  beforeEach(() => {
+    cy.visit('/')
+  })
+
   it('should create a new project', () => {
-    cy.visit('http://localhost:3000')
     cy.get('[name="projectName"]').type('Summer dress with sleeves')
     cy.get('[name="pattern"]').type('Pinterest')
     cy.get('[name="size"]').type('38')
@@ -21,7 +24,6 @@ describe('add new project', () => {
   })
 
   it('should fail with no project name input', () => {
-    cy.visit('http://localhost:3000')
     cy.get('[name="pattern"]').type('Pinterest')
     cy.get('[name="size"]').type('38')
     cy.get('[name="nextStep"]').type(
@@ -35,7 +37,6 @@ describe('add new project', () => {
   })
 
   it('should fail with no next step input', () => {
-    cy.visit('http://localhost:3000')
     cy.get('[name="projectName"]').type('Summer dress with sleeves')
     cy.get('[name="pattern"]').type('Pinterest')
     cy.get('[name="size"]').type('38')
@@ -47,7 +48,6 @@ describe('add new project', () => {
   })
 
   it('should fail because inputs are too long, failed cypress test expected', () => {
-    cy.visit('http://localhost:3000')
     cy.get('[name="projectName"]').type(
       'Summer dress with sleevesSummer dress with sleeves'
     )

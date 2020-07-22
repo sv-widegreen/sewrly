@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>saveButtonClosed</title>
+    <defs>
+        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#84C0B7" offset="0%"></stop>
+            <stop stop-color="#44A08D" offset="49.4618663%"></stop>
+            <stop stop-color="#205F59" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="UX-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-535.000000, -96.000000)">
+            <g id="Group" transform="translate(535.000000, 96.000000)">
+                <circle id="teal-medium" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                <path d="M35,18 C37.209139,18 39,19.790861 39,22 L39,37 C39,39.209139 37.209139,41 35,41 L16,41 C13.790861,41 12,39.209139 12,37 L12,22 C12,19.790861 13.790861,18 16,18 L35,18 Z M35,21 L16,21 C15.4871642,21 15.0644928,21.3860402 15.0067277,21.8833789 L15,22 L15,37 C15,37.5128358 15.3860402,37.9355072 15.8833789,37.9932723 L16,38 L35,38 C35.5128358,38 35.9355072,37.6139598 35.9932723,37.1166211 L36,37 L36,22 C36,21.4871642 35.6139598,21.0644928 35.1166211,21.0067277 L35,21 Z" id="Rectangle" fill="#FFFBF6" fill-rule="nonzero"></path>
+                <path d="M28,7 C32.418278,7 36,10.581722 36,15 L36,19 C36,21.1282927 30.847809,20.8546541 25.7863647,20.8815518 L22.0193467,20.9216779 C18.1185262,20.9421357 15,20.7498669 15,19 L15,15 C15,10.581722 18.581722,7 23,7 L28,7 Z M23,10 C20.3112453,10 18.1181819,12.1223067 18.0046195,14.7831104 L18,18.3704928 L33,18.3704928 L33,15 C33,12.3112453 30.8776933,10.1181819 28.2168896,10.0046195 L23,10 Z" id="Rectangle" fill="#FFFBF6" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

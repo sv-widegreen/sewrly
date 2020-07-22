@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>editButton</title>
+    <defs>
+        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#84C0B7" offset="0%"></stop>
+            <stop stop-color="#44A08D" offset="49.4618663%"></stop>
+            <stop stop-color="#205F59" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="UX-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-464.000000, -96.000000)">
+            <g id="Group" transform="translate(464.000000, 96.000000)">
+                <circle id="teal-medium" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                <path d="M36.4350288,11.4142136 L37.8492424,12.8284271 C38.630291,13.6094757 38.630291,14.8758057 37.8492424,15.6568542 L35.0884992,18.1804122 L31.0545204,14.2426407 L33.6066017,11.4142136 C34.3876503,10.633165 35.6539803,10.633165 36.4350288,11.4142136 Z" id="Rectangle" fill="#FFFBF6"></path>
+                <rect id="Rectangle" fill="#FFFBF6" transform="translate(24.303301, 24.960155) rotate(45.000000) translate(-24.303301, -24.960155) " x="21.3033009" y="13.4601551" width="6" height="23"></rect>
+                <path d="M17.5963212,35.6823459 L15.9706441,37.4419922 C15.7242134,37.6756896 15.4223323,37.8427877 15.093454,37.9275322 C12.1938876,38.396452 10.7024996,38.5893071 10.61929,38.5060976 C10.4708637,38.3576712 10.61929,37.2558675 10.9849458,34.5411976 C11.0388121,34.1412887 11.2500291,33.778786 11.5349662,33.4928525 L13.5401789,31.6332416 L17.5963212,35.6823459 Z" id="Rectangle" fill="#FFFBF6"></path>
+            </g>
+        </g>
+    </g>
+</svg>

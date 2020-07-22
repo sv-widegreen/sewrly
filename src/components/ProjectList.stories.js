@@ -1,9 +1,8 @@
+import { object, withKnobs } from '@storybook/addon-knobs/react'
 import React from 'react'
-import ProjectList from './ProjectList'
-import LogoHeader from './LogoHeader'
 import AddNewProjectTab from './AddNewProjectTab'
-import { withKnobs, object } from '@storybook/addon-knobs/react'
-import AddNewProjectForm from './AddNewProjectForm'
+import LogoHeader from './LogoHeader'
+import ProjectList from './ProjectList'
 
 export default {
   title: 'Project List',

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>saveButtonDiskTeal</title>
+    <defs>
+        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#84C0B7" offset="0%"></stop>
+            <stop stop-color="#44A08D" offset="49.4618663%"></stop>
+            <stop stop-color="#205F59" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="UX-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-534.000000, -154.000000)">
+            <g id="Group" transform="translate(534.000000, 154.000000)">
+                <circle id="teal-medium" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                <path d="M30.9,12 C33.109139,12 39,17.0182575 39,19.5155451 L39,34.5814561 C39,37.0787437 38.2792284,38 36.0700894,38 L15.0687266,38 C12.8595876,38 12,37.0787437 12,34.5814561 L12,15.3739412 C12,12.8766536 12.8595876,12 15.0687266,12 L30.9,12 Z M34.4571429,24 L16.5428571,24 C16.0593262,24 15.6608075,24.272499 15.6063433,24.6235616 L15.6,24.7058824 L15.6,35.2941176 C15.6,35.6561194 15.9639808,35.9544756 16.4329001,35.995251 L16.5428571,36 L34.4571429,36 C34.9406738,36 35.3391925,35.727501 35.3936567,35.3764384 L35.4,35.2941176 L35.4,24.7058824 C35.4,24.3438806 35.0360192,24.0455244 34.5670999,24.004749 L34.4571429,24 Z M31,14 L19,14 C18.4477153,14 18,14.4477153 18,15 L18,15 L18,21 C18,21.5522847 18.4477153,22 19,22 L19,22 L31,22 C31.5522847,22 32,21.5522847 32,21 L32,21 L32,15 C32,14.4477153 31.5522847,14 31,14 L31,14 Z" id="Combined-Shape" fill="#FFFBF6" fill-rule="nonzero"></path>
+                <rect id="Rectangle" fill="#FFFBF6" x="27" y="15" width="4" height="6" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

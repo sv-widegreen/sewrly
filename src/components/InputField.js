@@ -9,6 +9,7 @@ export default function InputField({
   error,
   errorMessageMax,
   errorMessageRequired,
+  onChange,
 }) {
   return (
     <StyledLabel>
@@ -18,6 +19,7 @@ export default function InputField({
         placeholder={placeholderText}
         name={name}
         ref={registerFn}
+        onChange={onChange}
       ></input>
       {error && error.type === 'max' ? (
         <StyledError>{errorMessageMax}</StyledError>
@@ -42,10 +44,14 @@ const StyledLabel = styled.label`
     width: 275px;
     height: 40px;
     border-radius: 4px;
-    background: #ffffff;
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
     color: var(--teal-ultralight);
     font-size: 16px;
+
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 1pt var(--teal-ultralight);
+    }
 
     /* Placeholder color was displayed as black in Chrome */
     ::-webkit-input-placeholder {

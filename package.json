@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "0.0.5",
+    "lodash": "^4.17.19",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.0.1",
     "react-scripts": "3.4.1",
     "styled-components": "^5.1.1",
+    "uuid": "^8.2.0",
     "yup": "^0.29.1"
   },
   "scripts": {
@@ -47,6 +49,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "mutationobserver-shim": "^0.3.7",
     "cypress": "^4.9.0"
   }
 }

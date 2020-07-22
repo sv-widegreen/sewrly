@@ -2,25 +2,18 @@ import { yupResolver } from '@hookform/resolvers'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import * as yup from 'yup'
 import addButton from '../assets/addButton.svg'
 import Button from './Button'
 import InputField from './InputField'
+import { projectSchema } from './utils/projectSchema.js'
 
-const projectSchema = yup.object().shape({
-  projectName: yup.string().max(25).required(),
-  pattern: yup.string().max(35),
-  size: yup.string().max(25),
-  nextStep: yup.string().max(50).required(),
-})
-
-export default function AddNewProjectForm({ updateProjectList }) {
+export default function AddNewProjectForm({ addToProjectList }) {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(projectSchema),
   })
 
   return (
-    <StyledForm onSubmit={handleSubmit(updateProjectList)}>
+    <StyledForm onSubmit={handleSubmit(addToProjectList)}>
       <InputField
         labelText="Project Name*"
         placeholderText="type here"
