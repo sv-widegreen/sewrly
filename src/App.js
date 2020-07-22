@@ -3,6 +3,7 @@ import AddNewProjectTab from './components/AddNewProjectTab.js'
 import LogoHeader from './components/LogoHeader.js'
 import ProjectList from './components/ProjectList'
 import { v4 as uuidv4 } from 'uuid'
+import WelcomeScreen from './components/WelcomeScreen.js'
 
 export default function App() {
   const [projectList, setProjectList] = useState([])
@@ -17,18 +18,34 @@ export default function App() {
 
   return (
     <>
-      <LogoHeader />
-      <AddNewProjectTab onSubmit={addToProjectList} />
+      <WelcomeScreen />
+
       {projectList.length > 0 ? (
-        <ProjectList
-          projectList={projectList}
-          updateProjectData={updateProjectData}
-        />
+        <>
+          <LogoHeader />
+          <ProjectList
+            projectList={projectList}
+            updateProjectData={updateProjectData}
+            renderAddNewProjectTab={renderAddNewProjectTab}
+          />
+        </>
       ) : (
-        ''
+        <>
+          <LogoHeader />
+          <AddNewProjectTab onSubmit={addToProjectList} />
+        </>
       )}
     </>
   )
+
+  function renderAddNewProjectTab() {
+    return (
+      <>
+        <LogoHeader />
+        <AddNewProjectTab onSubmit={addToProjectList} />
+      </>
+    )
+  }
 
   function addToProjectList(projectData, event) {
     event.preventDefault()

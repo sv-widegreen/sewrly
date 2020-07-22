@@ -1,9 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import addButton from '../assets/addButton.svg'
+import Button from './Button'
 import Headline from './Headline'
 import ProjectListItem from './ProjectListItem'
 
-export default function ProjectList({ projectList, updateProjectData }) {
+export default function ProjectList({
+  projectList,
+  updateProjectData,
+  renderAddNewProjectTab,
+}) {
   return (
     <StyledTab>
       <Headline
@@ -19,6 +25,7 @@ export default function ProjectList({ projectList, updateProjectData }) {
           />
         ))}
       </StyledProjectList>
+      <Button icon={addButton} onClick={renderAddNewProjectTab} />
     </StyledTab>
   )
 }

@@ -23,6 +23,8 @@ const StyledWelcome = styled.main`
   text-align: center;
   font-weight: 200;
   color: var(--copper-ultralight);
+  background: var(--copper-gradient);
+  height: 100vh;
 
   .logo {
     margin-top: 68px;
