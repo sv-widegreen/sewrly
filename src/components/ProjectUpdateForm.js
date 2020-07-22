@@ -1,12 +1,11 @@
 import { yupResolver } from '@hookform/resolvers'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import InputField from './InputField'
-import { projectSchema } from './utils/projectSchema.js'
 import saveButtonDiskTeal from '../assets/saveButtonDiskTeal.svg'
 import Button from './Button'
-import { useState } from 'react'
+import InputField from './InputField'
+import { projectSchema } from './utils/projectSchema.js'
 
 export default function ProjectUpdateForm({
   projectData,
