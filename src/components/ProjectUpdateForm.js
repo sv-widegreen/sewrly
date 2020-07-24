@@ -6,6 +6,7 @@ import saveButtonDiskTeal from '../assets/saveButtonDiskTeal.svg'
 import Button from './Button'
 import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
+import isEqual from 'lodash.isequal'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -65,8 +66,12 @@ export default function ProjectUpdateForm({
   }
 
   function handleNewData() {
-    setEditing(false)
-    updateProjectData(updatedData)
+    if (isEqual(updatedData, projectData)) {
+      setEditing(false)
+    } else {
+      updateProjectData(updatedData)
+      setEditing(false)
+    }
   }
 }
 

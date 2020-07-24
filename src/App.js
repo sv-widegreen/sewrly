@@ -4,9 +4,12 @@ import LogoHeader from './components/LogoHeader.js'
 import ProjectList from './components/ProjectList'
 import { v4 as uuidv4 } from 'uuid'
 import WelcomeScreen from './components/WelcomeScreen.js'
+import initialProjectListState from './components/utils/initialProjectListState.json'
 
 export default function App() {
-  const [projectList, setProjectList] = useState([])
+  const [projectList, setProjectList] = useState(initialProjectListState)
+  const [showProjectTab, setShowProjectTab] = useState(false)
+  const [showAddNewProjectTab, setShowAddNewProjectTab] = useState(false)
 
   useEffect(() => {
     setProjectList(JSON.parse(localStorage.getItem('projects') || '[]'))
@@ -18,33 +21,42 @@ export default function App() {
 
   return (
     <>
-      <WelcomeScreen />
+      {!showAddNewProjectTab && !showProjectTab && (
+        <WelcomeScreen startApp={() => setShowProjectTab(true)} />
+      )}
 
-      {projectList.length > 0 ? (
+      {showProjectTab && (
         <>
-          <LogoHeader />
-          <ProjectList
-            projectList={projectList}
-            updateProjectData={updateProjectData}
-            renderAddNewProjectTab={renderAddNewProjectTab}
-          />
+          {projectList.length > 0 ? (
+            <>
+              <LogoHeader />
+              <ProjectList
+                projectList={projectList}
+                updateProjectData={updateProjectData}
+                newProject={switchPageView}
+              />
+            </>
+          ) : (
+            setShowAddNewProjectTab(true)
+          )}
         </>
-      ) : (
+      )}
+
+      {showAddNewProjectTab && (
         <>
           <LogoHeader />
-          <AddNewProjectTab onSubmit={addToProjectList} />
+          <AddNewProjectTab
+            onSubmit={addToProjectList}
+            onBack={switchPageView}
+          />
         </>
       )}
     </>
   )
 
-  function renderAddNewProjectTab() {
-    return (
-      <>
-        <LogoHeader />
-        <AddNewProjectTab onSubmit={addToProjectList} />
-      </>
-    )
+  function switchPageView() {
+    setShowAddNewProjectTab(!showAddNewProjectTab)
+    setShowProjectTab(!showProjectTab)
   }
 
   function addToProjectList(projectData, event) {
@@ -53,6 +65,7 @@ export default function App() {
     event.target[0].focus()
     projectData.id = uuidv4()
     setProjectList([...projectList, projectData])
+    switchPageView()
   }
 
   function updateProjectData(updatedData) {

@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import backButton from '../assets/backButton.svg'
 import AddNewProjectForm from './AddNewProjectForm'
+import Button from './Button'
 import Headline from './Headline'
 
-export default function AddNewProjectTab({ onSubmit }) {
+export default function AddNewProjectTab({ onSubmit, onBack }) {
   return (
     <StyledTab>
       <Headline
@@ -11,6 +13,7 @@ export default function AddNewProjectTab({ onSubmit }) {
         textColor={'var(--teal-medium)'}
       />
       <AddNewProjectForm addToProjectList={onSubmit} />
+      <Button icon={backButton} onClick={onBack} />
     </StyledTab>
   )
 }

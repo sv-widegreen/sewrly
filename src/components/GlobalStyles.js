@@ -29,5 +29,5 @@ body {
   font-family: var(--font-franklin);
   width: 100vw;
   background: var(--copper-ultralight);
-  height: 100vh;
+  height: 100%;
 }`

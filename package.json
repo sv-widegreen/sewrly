@@ -5,6 +5,7 @@
   "dependencies": {
     "@hookform/resolvers": "0.0.5",
     "lodash": "^4.17.19",
+    "lodash.isequal": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.0.1",
@@ -23,7 +24,14 @@
     "cypress:open": "cypress open"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "plugins": [
+      "lodash"
+    ],
+    "extends": [
+      "react-app",
+      "plugin:lodash/canonical",
+      "plugin:react-hooks/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -49,7 +57,15 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-preset-env": "^1.7.0",
+    "cypress": "^4.9.0",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "lodash-webpack-plugin": "^0.11.5",
     "mutationobserver-shim": "^0.3.7",
-    "cypress": "^4.9.0"
+    "webpack": "^4.43.0"
   }
 }
