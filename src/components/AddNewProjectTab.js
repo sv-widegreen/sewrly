@@ -13,7 +13,9 @@ export default function AddNewProjectTab({ onSubmit, onBack }) {
         textColor={'var(--teal-medium)'}
       />
       <AddNewProjectForm addToProjectList={onSubmit} />
-      <Button icon={backButton} onClick={onBack} />
+      <StyledAddContainer>
+        <Button icon={backButton} onClick={onBack} />
+      </StyledAddContainer>
     </StyledTab>
   )
 }
@@ -25,4 +27,22 @@ const StyledTab = styled.main`
   margin-top: -20px;
   background: var(--copper-ultralight);
   border-radius: 20px 20px 0 0;
+  box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
+`
+const StyledAddContainer = styled.div`
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  background: var(--copper-ultralight);
+
+  > button {
+    position: relative;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    margin-bottom: 10px;
+  }
 `

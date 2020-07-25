@@ -28,10 +28,11 @@ const StyledWelcome = styled.main`
   font-weight: 200;
   color: var(--copper-ultralight);
   background: var(--copper-gradient);
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 
   .logo {
-    margin-top: 68px;
+    margin-top: 50px;
     width: 127px;
     height: 127px;
   }
@@ -43,7 +44,7 @@ const StyledWelcome = styled.main`
   }
 
   p {
-    margin-bottom: 34px;
+    padding: 34px 0;
   }
 
   button,
