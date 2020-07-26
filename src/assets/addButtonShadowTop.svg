@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>addButtonShadowTop</title>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>addButtonShadowStrong</title>
     <defs>
         <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
             <stop stop-color="#84C0B7" offset="0%"></stop>
@@ -14,16 +14,14 @@
             <feColorMatrix values="0 0 0 0 0.125490196   0 0 0 0 0.37254902   0 0 0 0 0.349019608  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
-    <g id="UX-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-205.000000, -293.000000)">
-            <g id="Group" transform="translate(208.000000, 297.000000)">
-                <g id="teal-medium-copy-8">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
-                </g>
-                <line x1="13.5" y1="25.5" x2="37.5" y2="25.5" id="Line-Copy-6" stroke="#FFFBF6" stroke-width="2" stroke-linecap="round"></line>
-                <line x1="25.5" y1="13.5" x2="25.5" y2="37.5" id="Line-2-Copy-5" stroke="#FFFBF6" stroke-width="2" stroke-linecap="round"></line>
+    <g id="addButtonShadowStrong" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <g id="teal-medium-copy-8">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
             </g>
+            <line x1="13.5" y1="25.5" x2="37.5" y2="25.5" id="Line-Copy-6" stroke="#FFFBF6" stroke-width="3" stroke-linecap="round"></line>
+            <line x1="25.5" y1="13.5" x2="25.5" y2="37.5" id="Line-2-Copy-5" stroke="#FFFBF6" stroke-width="3" stroke-linecap="round"></line>
         </g>
     </g>
 </svg>

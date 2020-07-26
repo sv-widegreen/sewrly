@@ -1,6 +1,5 @@
-import { object, withKnobs } from '@storybook/addon-knobs/react'
+import { array, object, withKnobs } from '@storybook/addon-knobs/react'
 import React from 'react'
-import AddNewProjectTab from './AddNewProjectTab'
 import LogoHeader from './LogoHeader'
 import ProjectList from './ProjectList'
 
@@ -9,12 +8,42 @@ export default {
   component: ProjectList,
   decorators: [withKnobs],
 }
+
 const projectEntry = {
   projectName: 'Summer dress with sleeves',
   pattern: 'Pinterest',
   size: '36',
   nextStep: 'cut fabric and lining, buy button, zipper and tape',
 }
+
+const moreProjectEntries = [
+  {
+    projectName: 'Summer dress with sleeves',
+    pattern: 'Pinterest',
+    size: '36',
+    nextStep: 'cut fabric and lining, buy button, zipper and tape',
+  },
+  {
+    projectName: 'Summer dress with sleeves',
+    pattern: 'Pinterest',
+    size: '36',
+    nextStep: 'cut fabric and lining, buy button, zipper and tape',
+  },
+  {
+    projectName: 'New Jacket',
+    size: '36',
+    nextStep: 'decide on lining color',
+  },
+  {
+    projectName: 'Jeans',
+    pattern: 'drafted myself',
+    nextStep: 'redo everything',
+  },
+  {
+    projectName: 'Sports Bag',
+    nextStep: 'find pattern',
+  },
+]
 
 export const projectListAlone = () => (
   <ProjectList projectList={[object('mock up entry', projectEntry)]} />
@@ -26,10 +55,10 @@ export const projectListAndHeader = () => (
     <ProjectList projectList={[object('mock up entry', projectEntry)]} />
   </>
 )
-export const projectListAndAddNewProjectTab = () => (
+
+export const projectListAndHeaderMoreEntries = () => (
   <>
     <LogoHeader />
-    <AddNewProjectTab />
-    <ProjectList projectList={[object('mock up entry', projectEntry)]} />
+    <ProjectList projectList={array('mock up entry', moreProjectEntries)} />
   </>
 )

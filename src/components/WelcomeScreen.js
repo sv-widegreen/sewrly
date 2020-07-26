@@ -14,6 +14,7 @@ export default function WelcomeScreen({ startApp }) {
         icon={startButtonNoInnerShadow}
         altText="start"
         onClick={startApp}
+        size="114px"
       />
       <p>- your trusty sewing planner -</p>
     </StyledWelcome>
@@ -45,11 +46,5 @@ const StyledWelcome = styled.main`
 
   p {
     padding: 34px 0;
-  }
-
-  button,
-  button > img {
-    width: 114px;
-    height: 114px;
   }
 `
