@@ -57,7 +57,7 @@ export default function ProjectUpdateForm({
         errorMessageRequired="Keep track of the next step!"
       />
 
-      <Button icon={saveButtonDiskTeal} />
+      <Button size="30px" icon={saveButtonDiskTeal} />
     </StyledForm>
   )
 
@@ -108,12 +108,9 @@ const StyledForm = styled.form`
     }
   }
 
-  button,
-  button > img {
+  button {
     position: absolute;
-    top: 8px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    top: 16px;
+    right: 16px;
   }
 `

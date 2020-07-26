@@ -65,7 +65,6 @@ export default function App() {
     event.target[0].focus()
     projectData.id = uuidv4()
     setProjectList([...projectList, projectData])
-    switchPageView()
   }
 
   function updateProjectData(updatedData) {

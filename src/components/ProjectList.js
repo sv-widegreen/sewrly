@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import addButton from '../assets/addButton.svg'
+import addButtonShadowTop from '../assets/addButtonShadowTop.svg'
 import Button from './Button'
 import Headline from './Headline'
 import ProjectListItem from './ProjectListItem'
@@ -26,7 +26,7 @@ export default function ProjectList({
         ))}
       </StyledProjectList>
       <StyledAddContainer>
-        <Button icon={addButton} onClick={newProject} />
+        <Button icon={addButtonShadowTop} onClick={newProject} />
       </StyledAddContainer>
     </StyledTab>
   )
@@ -57,12 +57,15 @@ const StyledProjectList = styled.ul`
 const StyledAddContainer = styled.div`
   border-radius: 20px 20px 0 0;
   /* border-top: solid 2px var(--teal-light); */
-  box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3); */
+  /*teal medium shadow */
+  box-shadow: 0 -2px 4px -1px rgba(32, 95, 89, 0.3);
   width: 100vw;
   position: fixed;
   bottom: 0;
   z-index: 5;
-  background: var(--copper-ultralight);
+  /* background: var(--copper-ultralight); */
+  background: linear-gradient(to bottom, var(--copper-ultralight) 50%, #e3ded8);
 
   > button {
     position: relative;
