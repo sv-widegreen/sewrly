@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import AddNewProjectTab from './components/AddNewProjectTab.js'
 import LogoHeader from './components/LogoHeader.js'
 import ProjectList from './components/ProjectList'
-import { v4 as uuidv4 } from 'uuid'
-import WelcomeScreen from './components/WelcomeScreen.js'
 import initialProjectListState from './components/utils/initialProjectListState.json'
+import WelcomeScreen from './components/WelcomeScreen.js'
 
 export default function App() {
   const [projectList, setProjectList] = useState(initialProjectListState)
-  const [showProjectTab, setShowProjectTab] = useState(false)
+  const [showProjectTab, setShowProjectTab] = useState(true)
   const [showAddNewProjectTab, setShowAddNewProjectTab] = useState(false)
 
   useEffect(() => {
