@@ -36,7 +36,9 @@ export default function ProjectList() {
             textColor={'var(--copper-ultralight)'}
           />
           {projectList.length <= 0 && (
-            <p>Click the button below to add your first project!</p>
+            <p className="noProjectsYet">
+              Click the button below to add your first project!
+            </p>
           )}
           <StyledProjectList>
             {projectList.map((projectData) => (
@@ -85,7 +87,7 @@ const StyledTab = styled.main`
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
 
-  main > p {
+  .noProjectsYet {
     color: var(--copper-ultralight);
     width: 200px;
     text-align: center;
