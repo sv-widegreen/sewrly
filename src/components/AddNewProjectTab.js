@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import backButton from '../assets/backButton.svg'
 import AddNewProjectForm from './AddNewProjectForm'
-// import Button from './Button'
 import Headline from './Headline'
 import NavigationBar from './NavigationBar'
 
