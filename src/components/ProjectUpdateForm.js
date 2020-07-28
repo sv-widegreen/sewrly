@@ -6,6 +6,7 @@ import saveButtonDiskTeal from '../assets/saveButtonDiskTeal.svg'
 import Button from './Button'
 import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
+import isEqual from 'lodash.isequal'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -56,7 +57,7 @@ export default function ProjectUpdateForm({
         errorMessageRequired="Keep track of the next step!"
       />
 
-      <Button icon={saveButtonDiskTeal} />
+      <Button size="30px" icon={saveButtonDiskTeal} />
     </StyledForm>
   )
 
@@ -65,8 +66,12 @@ export default function ProjectUpdateForm({
   }
 
   function handleNewData() {
-    setEditing(false)
-    updateProjectData(updatedData)
+    if (isEqual(updatedData, projectData)) {
+      setEditing(false)
+    } else {
+      updateProjectData(updatedData)
+      setEditing(false)
+    }
   }
 }
 
@@ -103,12 +108,9 @@ const StyledForm = styled.form`
     }
   }
 
-  button,
-  button > img {
+  button {
     position: absolute;
-    top: 8px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    top: 16px;
+    right: 16px;
   }
 `

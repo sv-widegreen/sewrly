@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import addButton from '../assets/addButton.svg'
+import addButtonStrong from '../assets/addButtonStrong.svg'
 import Button from './Button'
 import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
@@ -51,7 +51,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
         errorMessageMax="Please keep it short!"
         errorMessageRequired="This is the reason why you are using this app!"
       />
-      <Button icon={addButton} />
+      <Button icon={addButtonStrong} />
     </StyledForm>
   )
 }
@@ -59,6 +59,6 @@ export default function AddNewProjectForm({ addToProjectList }) {
 const StyledForm = styled.form`
   display: flex;
   flex-flow: column wrap;
-  margin: 24px auto 40px auto;
+  margin: 24px auto;
   font-weight: 200;
 `

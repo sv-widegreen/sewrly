@@ -8,7 +8,7 @@ export default {
 }
 
 export const allInputFields = () => (
-  <>
+  <StyledForm>
     <InputField
       labelText="Project Name"
       placeholderText="type here"
@@ -32,34 +32,30 @@ export const allInputFields = () => (
       placeholderText="e.g. buy materials, cut fabric, sew..."
       name="nextStep"
     />
-  </>
+  </StyledForm>
 )
 
 export const InputFieldWith1Error = () => (
-  <>
+  <StyledForm>
     <InputField
       labelText="Project Name"
       placeholderText="type here"
       name="projectName"
     />
     <StyledError>Make it short and sweet!</StyledError>
-  </>
+  </StyledForm>
 )
 
-export const InputFieldWith2Errors = () => (
-  <>
-    <InputField
-      labelText="Project Name"
-      placeholderText="type here"
-      name="projectName"
-    />
-    <StyledError>Make it short and sweet!</StyledError>
-    <StyledError>Surely you can think of a name for your project!</StyledError>
-  </>
-)
+const StyledForm = styled.form`
+  display: flex;
+  flex-flow: column wrap;
+  margin: 24px auto;
+  font-weight: 200;
+`
 
 const StyledError = styled.div`
-  padding-top: 5px;
+  margin-top: -13px;
+  padding-left: 50px;
   font-size: 10px;
   color: var(--copper-dark);
 `

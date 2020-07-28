@@ -24,7 +24,11 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
           {pattern ? <p name="pattern">{pattern}</p> : ''}
           {size ? <p name="size">Size: {size}</p> : ''}
           <p name="nextStep">Next step: {nextStep}</p>
-          <Button icon={editButton} onClick={() => setEditing(true)} />
+          <Button
+            size="30px"
+            icon={editButton}
+            onClick={() => setEditing(true)}
+          />
         </div>
       )}
     </StyledProject>
@@ -61,12 +65,9 @@ const StyledProject = styled.li`
     }
   }
 
-  button,
-  button > img {
+  button {
     position: absolute;
-    top: 8px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    top: 16px;
+    right: 16px;
   }
 `

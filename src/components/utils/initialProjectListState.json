@@ -1,0 +1,30 @@
+[
+  {
+    "projectName": "Summer dress with sleeves",
+    "pattern": "Pinterest",
+    "size": "36",
+    "nextStep": "cut fabric and lining, buy button, zipper and tape",
+    "id": "1"
+  },
+  {
+    "projectName": "New Jacket",
+    "pattern": "",
+    "size": "36",
+    "nextStep": "decide on lining color",
+    "id": "2"
+  },
+  {
+    "projectName": "Jeans",
+    "pattern": "drafted myself",
+    "size": "",
+    "nextStep": "redo everything",
+    "id": "3"
+  },
+  {
+    "projectName": "Sports Bag",
+    "pattern": "",
+    "size": "",
+    "nextStep": "find pattern",
+    "id": "4"
+  }
+]
