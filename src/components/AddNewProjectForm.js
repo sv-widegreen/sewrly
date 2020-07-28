@@ -6,6 +6,7 @@ import addButtonStrong from '../assets/addButtonStrong.svg'
 import Button from './Button'
 import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
+import InputTextarea from './InputTextarea'
 
 export default function AddNewProjectForm({ addToProjectList }) {
   const { register, handleSubmit, errors } = useForm({
@@ -25,6 +26,15 @@ export default function AddNewProjectForm({ addToProjectList }) {
       />
 
       <InputField
+        labelText="What's the next step?*"
+        placeholderText="e.g. buy materials, cut fabric, sew..."
+        name="nextStep"
+        registerFn={register}
+        error={errors.nextStep}
+        errorMessageMax="Please keep it short!"
+        errorMessageRequired="This is the reason why you are using this app!"
+      />
+      <InputField
         labelText="Where did you find the pattern?"
         placeholderText="or did you draft it yourself?"
         name="pattern"
@@ -42,15 +52,15 @@ export default function AddNewProjectForm({ addToProjectList }) {
         errorMessageMax="Please cut the size of this text!"
       />
 
-      <InputField
-        labelText="What's the next step?*"
-        placeholderText="e.g. buy materials, cut fabric, sew..."
-        name="nextStep"
+      <InputTextarea
+        labelText="Materials:"
+        placeholderText="Separate materials with a comma."
+        name="materials"
         registerFn={register}
-        error={errors.nextStep}
-        errorMessageMax="Please keep it short!"
-        errorMessageRequired="This is the reason why you are using this app!"
+        error={errors.materials}
+        errorMessageMax="Do you really need that much...?"
       />
+
       <Button icon={addButtonStrong} />
     </StyledForm>
   )
@@ -59,6 +69,6 @@ export default function AddNewProjectForm({ addToProjectList }) {
 const StyledForm = styled.form`
   display: flex;
   flex-flow: column wrap;
-  margin: 24px auto;
+  margin: 24px auto 74px auto;
   font-weight: 200;
 `

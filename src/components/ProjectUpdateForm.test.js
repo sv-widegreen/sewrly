@@ -8,6 +8,7 @@ const projectData = {
   size: 'size entry',
   nextStep: 'nextStep entry',
   id: '1234',
+  materials: 'materials entry',
 }
 
 describe('ProjectUpdateForm.test.js', () => {
@@ -37,6 +38,13 @@ describe('ProjectUpdateForm.test.js', () => {
     const nextStepInput = screen.getByDisplayValue('nextStep entry')
     fireEvent.change(nextStepInput, { target: { value: 'is updated' } })
     expect(nextStepInput.value).toBe('is updated')
+  })
+
+  it('can change the material value with change event', () => {
+    render(<ProjectUpdateForm projectData={projectData} />)
+    const materialsInput = screen.getByDisplayValue('materials entry')
+    fireEvent.change(materialsInput, { target: { value: 'is updated' } })
+    expect(materialsInput.value).toBe('is updated')
   })
 
   it('does not submit if project name is missing', async () => {
