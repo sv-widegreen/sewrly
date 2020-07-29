@@ -61,7 +61,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
         errorMessageMax="Do you really need that much...?"
       />
 
-      <Button icon={addButtonStrong} />
+      <Button icon={addButtonStrong} size="50px" />
     </StyledForm>
   )
 }

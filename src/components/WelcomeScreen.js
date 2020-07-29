@@ -1,21 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
 import logoCopperUltralightShadow from '../assets/logoCopperUltralightShadow.svg'
 import sewrlyTextLogoShadow from '../assets/sewrlyTextLogoShadow.svg'
-import startButtonNoInnerShadow from '../assets/startButtonNoInnerShadow.svg'
-import Button from './Button'
-import styled from 'styled-components'
+import NavigationWelcomescreen from './NavigationWelcomescreen'
 
-export default function WelcomeScreen({ startApp }) {
+export default function WelcomeScreen() {
   return (
     <StyledWelcome>
       <img className="logo" src={logoCopperUltralightShadow} alt="" />
       <img className="textlogo" src={sewrlyTextLogoShadow} alt="Sewrly" />
-      <Button
-        icon={startButtonNoInnerShadow}
-        altText="start"
-        onClick={startApp}
-        size="114px"
-      />
+      <NavigationWelcomescreen />
       <p>- your trusty sewing planner -</p>
     </StyledWelcome>
   )
