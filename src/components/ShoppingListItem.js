@@ -2,16 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function ShoppingListItem({ projectData }) {
-  const { projectName, materials } = projectData
+  const { projectName, materialNeeds } = projectData
 
   return (
     <>
-      {materials ? (
+      {materialNeeds ? (
         <StyledProject>
-          <p name="materials">
-            Materials: <br></br>
-            {materials}
-          </p>
+          <p name="materials">{materialNeeds}</p>
           <p name="projectName">for project: {projectName}</p>
         </StyledProject>
       ) : (

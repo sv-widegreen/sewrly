@@ -6,7 +6,14 @@ import ProjectUpdateForm from './ProjectUpdateForm'
 
 export default function ProjectListItem({ projectData, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
-  const { projectName, pattern, size, nextStep, materials } = projectData
+  const {
+    projectName,
+    pattern,
+    size,
+    nextStep,
+    materialNeeds,
+    materialsExisting,
+  } = projectData
 
   return (
     <StyledProject>
@@ -24,10 +31,18 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
           {pattern ? <p name="pattern">{pattern}</p> : ''}
           {size ? <p name="size">Size: {size}</p> : ''}
           <p name="nextStep">Next step: {nextStep}</p>
-          {materials ? (
+          {materialNeeds ? (
             <p name="materials">
-              Materials: <br></br>
-              {materials}
+              Materials I need: <br></br>
+              {materialNeeds}
+            </p>
+          ) : (
+            ''
+          )}
+          {materialsExisting ? (
+            <p name="materials">
+              Materials I have: <br></br>
+              {materialsExisting}
             </p>
           ) : (
             ''
