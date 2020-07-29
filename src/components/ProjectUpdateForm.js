@@ -7,6 +7,7 @@ import Button from './Button'
 import InputField from './InputField'
 import { projectSchema } from './utils/projectSchema.js'
 import isEqual from 'lodash.isequal'
+import InputTextarea from './InputTextarea'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -57,6 +58,15 @@ export default function ProjectUpdateForm({
         errorMessageRequired="Keep track of the next step!"
       />
 
+      <InputTextarea
+        name="materials"
+        placeholderText="What materials do you need? Separate materials with a comma."
+        onChange={handleChange}
+        registerFn={register}
+        error={errors.materials}
+        errorMessageMax="Do you really need that much...?"
+      />
+
       <Button size="30px" icon={saveButtonDiskTeal} />
     </StyledForm>
   )
@@ -83,7 +93,7 @@ const StyledForm = styled.form`
 
   /* error message div */
   label > div {
-    padding-left: 15px;
+    padding: 0 0 5px 15px;
   }
 
   input {
@@ -92,7 +102,6 @@ const StyledForm = styled.form`
     height: 100%;
     border-radius: 4px;
     margin: 2px 0 2px 15px;
-    font-family: var(--font-franklin);
     color: var(--teal-ultralight);
     font-size: 16px;
 
@@ -100,11 +109,28 @@ const StyledForm = styled.form`
       margin: 5px 0 2px 15px;
       padding: 7px 10px 5px 10px;
       font-size: 20px;
+      color: var(--teal-light);
     }
 
     &[name='nextStep'] {
       margin: 2px 0 5px 15px;
       padding: 8px 10px 10px 10px;
+      color: var(--teal-medium);
+    }
+  }
+
+  textarea {
+    width: 230px;
+    height: 100px;
+    border-radius: 4px;
+    margin: 0 0 10px 15px;
+    padding: 0 10px;
+    color: var(--teal-ultralight);
+    font-size: 16px;
+
+    :focus {
+      outline: none;
+      box-shadow: 0 0 0 1pt var(--teal-ultralight);
     }
   }
 

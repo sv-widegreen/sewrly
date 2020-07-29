@@ -4,13 +4,12 @@ import { v4 as uuidv4 } from 'uuid'
 import addButtonShadowTop from '../assets/addButtonShadowTop.svg'
 import AddNewProjectTab from './AddNewProjectTab.js'
 import LogoHeader from './LogoHeader.js'
-import initialProjectListState from './utils/initialProjectListState.json'
 import Headline from './Headline'
 import NavigationBar from './NavigationBar'
 import ProjectListItem from './ProjectListItem'
 
 export default function ProjectList() {
-  const [projectList, setProjectList] = useState(initialProjectListState)
+  const [projectList, setProjectList] = useState([])
   const [showAddNewProjectTab, setShowAddNewProjectTab] = useState(false)
 
   useEffect(() => {

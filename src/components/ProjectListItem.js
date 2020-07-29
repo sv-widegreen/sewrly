@@ -6,7 +6,7 @@ import ProjectUpdateForm from './ProjectUpdateForm'
 
 export default function ProjectListItem({ projectData, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
-  const { projectName, pattern, size, nextStep } = projectData
+  const { projectName, pattern, size, nextStep, materials } = projectData
 
   return (
     <StyledProject>
@@ -24,6 +24,14 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
           {pattern ? <p name="pattern">{pattern}</p> : ''}
           {size ? <p name="size">Size: {size}</p> : ''}
           <p name="nextStep">Next step: {nextStep}</p>
+          {materials ? (
+            <p name="materials">
+              Materials: <br></br>
+              {materials}
+            </p>
+          ) : (
+            ''
+          )}
           <Button
             size="30px"
             icon={editButton}
@@ -62,6 +70,10 @@ const StyledProject = styled.li`
       padding: 12px 24px 14px 24px;
       color: var(--teal-medium);
       font-size: 16px;
+    }
+
+    &[name='materials'] {
+      padding: 0 24px 14px 24px;
     }
   }
 
