@@ -2,17 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import addButtonStrong from '../assets/addButtonStrong.svg'
-import homeButton from '../assets/homeButton.svg'
 import projectsNavBar from '../assets/projectsNavBar.svg'
 import shoppingCartNavBar from '../assets/shoppingCartNavBar.svg'
 import Button from './Button'
+import fabCalcNavBar from '../assets/fabCalcNavBar.svg'
 
 export default function NavigationBar() {
   return (
     <StyledNavigationBar>
-      <NavLink exact to="/" activeClassName="selected">
-        <Button icon={homeButton} altText="back to start" />
-        <p>Home</p>
+      <NavLink to="/fabric-calculator" activeClassName="selected">
+        <Button icon={fabCalcNavBar} altText="fabric calculator" />
+        <p>Fabric Calc</p>
       </NavLink>
       <NavLink to="/shopping-list" activeClassName="selected">
         <Button icon={shoppingCartNavBar} altText="to shopping list" />
