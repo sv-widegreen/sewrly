@@ -18,7 +18,7 @@ export default function InputTextarea({
         name={name}
         ref={registerFn}
         onChange={onChange}
-      ></textarea>
+      />
       {error && error.type === 'max' ? (
         <StyledError>{errorMessageMax}</StyledError>
       ) : (

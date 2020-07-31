@@ -1,31 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 import Headline from './Headline'
-import NavigationBar from './NavigationBar'
-import ProjectListItem from './ProjectListItem'
+import NavigationBar from './NavigationBar.js'
+import ShoppingListItem from './ShoppingListItem'
 
-export default function ProjectList({ projectList, updateProjectData }) {
+export default function ShoppingList({ projectList }) {
   return (
     <>
       <StyledTab>
         <Headline
-          headlineText="Projects"
+          headlineText="Shopping list"
           textColor={'var(--copper-ultralight)'}
         />
         {projectList.length <= 0 && (
           <p className="noProjectsYet">
-            Click the button below to add your first project!
+            Create a material list in one of your projects first!
           </p>
         )}
-        <StyledProjectList>
+        <StyledShoppingList>
           {projectList.map((projectData) => (
-            <ProjectListItem
-              key={projectData.id}
-              projectData={projectData}
-              updateProjectData={updateProjectData}
-            />
+            <ShoppingListItem key={projectData.id} projectData={projectData} />
           ))}
-        </StyledProjectList>
+        </StyledShoppingList>
       </StyledTab>
       <NavigationBar />
     </>
@@ -51,7 +47,7 @@ const StyledTab = styled.main`
   }
 `
 
-const StyledProjectList = styled.ul`
+const StyledShoppingList = styled.ul`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;

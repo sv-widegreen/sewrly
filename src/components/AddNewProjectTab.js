@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import backButton from '../assets/backButton.svg'
 import AddNewProjectForm from './AddNewProjectForm'
 import Headline from './Headline'
 import NavigationBar from './NavigationBar'
 
-export default function AddNewProjectTab({ onSubmit, onBack }) {
+export default function AddNewProjectTab({ onSubmit }) {
   return (
     <StyledTab>
       <Headline
@@ -13,7 +12,7 @@ export default function AddNewProjectTab({ onSubmit, onBack }) {
         textColor={'var(--teal-medium)'}
       />
       <AddNewProjectForm addToProjectList={onSubmit} />
-      <NavigationBar icon={backButton} onClick={onBack} />
+      <NavigationBar />
     </StyledTab>
   )
 }

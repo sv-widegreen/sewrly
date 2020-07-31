@@ -15,8 +15,9 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
   return (
     <StyledForm onSubmit={handleSubmit(addToProjectList)}>
+      <p>Required info:</p>
       <InputField
-        labelText="Project Name*"
+        labelText="Project Name"
         placeholderText="type here"
         name="projectName"
         registerFn={register}
@@ -26,7 +27,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
       />
 
       <InputField
-        labelText="What's the next step?*"
+        labelText="What's the next step?"
         placeholderText="e.g. buy materials, cut fabric, sew..."
         name="nextStep"
         registerFn={register}
@@ -34,6 +35,9 @@ export default function AddNewProjectForm({ addToProjectList }) {
         errorMessageMax="Please keep it short!"
         errorMessageRequired="This is the reason why you are using this app!"
       />
+
+      <p className="optional">Optional info (you can add them later): </p>
+
       <InputField
         labelText="Where did you find the pattern?"
         placeholderText="or did you draft it yourself?"
@@ -53,15 +57,24 @@ export default function AddNewProjectForm({ addToProjectList }) {
       />
 
       <InputTextarea
-        labelText="Materials:"
+        labelText="Materials I have:"
         placeholderText="Separate materials with a comma."
-        name="materials"
+        name="materialNeeds"
         registerFn={register}
-        error={errors.materials}
+        error={errors.materialNeeds}
+        errorMessageMax="The text is too long...?"
+      />
+
+      <InputTextarea
+        labelText="Materials I need:"
+        placeholderText="Separate materials with a comma."
+        name="materialsExisting"
+        registerFn={register}
+        error={errors.materialsExisting}
         errorMessageMax="Do you really need that much...?"
       />
 
-      <Button icon={addButtonStrong} />
+      <Button icon={addButtonStrong} size="50px" />
     </StyledForm>
   )
 }
@@ -71,4 +84,14 @@ const StyledForm = styled.form`
   flex-flow: column wrap;
   margin: 24px auto 74px auto;
   font-weight: 200;
+
+  p {
+    color: var(--teal-ultralight);
+    font-size: 14px;
+    padding: 0 0 10px 50px;
+  }
+
+  .optional {
+    padding: 12px 0 10px 50px;
+  }
 `

@@ -12,7 +12,7 @@ export default function Button({ icon, size, onClick, altText }) {
 const StyledButton = styled.button`
   background: none;
   height: auto;
-  width: ${(props) => props.width || '50px'};
+  width: ${(props) => props.width || '40px'};
   margin: auto;
 
   :active {
@@ -20,6 +20,6 @@ const StyledButton = styled.button`
   }
 
   img {
-    width: ${(props) => props.width || '50px'};
+    width: ${(props) => props.width || '40px'};
   }
 `

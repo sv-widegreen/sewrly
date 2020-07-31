@@ -5,5 +5,6 @@ export const projectSchema = yup.object().shape({
   nextStep: yup.string().max(50).required(),
   pattern: yup.string().max(35),
   size: yup.string().max(25),
-  materials: yup.string().max(200),
+  materialNeeds: yup.string().max(200),
+  materialsExisting: yup.string().max(200),
 })

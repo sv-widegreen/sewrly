@@ -59,12 +59,21 @@ export default function ProjectUpdateForm({
       />
 
       <InputTextarea
-        name="materials"
+        name="materialNeeds"
         placeholderText="What materials do you need? Separate materials with a comma."
         onChange={handleChange}
         registerFn={register}
-        error={errors.materials}
+        error={errors.materialNeeds}
         errorMessageMax="Do you really need that much...?"
+      />
+
+      <InputTextarea
+        name="materialsExisting"
+        placeholderText="What materials do you already have? Separate materials with a comma."
+        onChange={handleChange}
+        registerFn={register}
+        error={errors.materialsExisting}
+        errorMessageMax="The text is too long...?"
       />
 
       <Button size="30px" icon={saveButtonDiskTeal} />

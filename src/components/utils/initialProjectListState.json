@@ -5,7 +5,8 @@
     "size": "36",
     "nextStep": "cut fabric and lining, buy button, zipper and tape",
     "id": "1",
-    "materials": "10 buttons, invisible zipper 40cm white, bias tape 2m white"
+    "materialNeeds": "10 buttons, invisible zipper 40cm white, bias tape 2m white",
+    "materialsExisting": "fabric, lining"
   },
   {
     "projectName": "New Jacket",
@@ -13,14 +14,16 @@
     "size": "36",
     "nextStep": "decide on lining color",
     "id": "2",
-    "materials": "lining color?, zipper 70cm, bias"
+    "materialNeeds": "",
+    "materialsExisting": "fabric, buttons"
   },
   {
     "projectName": "Jeans",
     "pattern": "drafted myself",
     "size": "",
     "nextStep": "redo everything",
-    "id": "3"
+    "id": "3",
+    "materialNeeds": ""
   },
   {
     "projectName": "Sports Bag",
@@ -28,6 +31,6 @@
     "size": "",
     "nextStep": "find pattern",
     "id": "4",
-    "materials": "sturdy fabric blue, zipper 40cm neon-yellow, mesh fabric 100cm"
+    "materialNeeds": "sturdy fabric blue, zipper 40cm neon-yellow, mesh fabric 100cm"
   }
 ]
