@@ -29,7 +29,6 @@ export default function InputTextarea({
 }
 
 const StyledLabel = styled.label`
-  padding: 0 0 18px 50px;
   color: var(--teal-medium);
   font-size: 18px;
 
@@ -37,11 +36,11 @@ const StyledLabel = styled.label`
     width: 275px;
     height: 100px;
     border-radius: 4px;
-    padding: 0 10px;
+    padding: 10px 10px;
     color: var(--teal-ultralight);
     font-size: 16px;
     font-family: var(--font-franklin);
-    font-weight: 200;
+    background: var(--copper-ultralight);
 
     :focus {
       outline: none;

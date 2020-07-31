@@ -36,7 +36,6 @@ export default function InputField({
 }
 
 const StyledLabel = styled.label`
-  padding: 0 0 18px 50px;
   color: var(--teal-medium);
   font-size: 18px;
 
@@ -44,9 +43,10 @@ const StyledLabel = styled.label`
     width: 275px;
     height: 40px;
     border-radius: 4px;
-    padding: 0 10px 0 10px;
+    padding: 0 10px;
     color: var(--teal-ultralight);
     font-size: 16px;
+    background: var(--copper-ultralight);
 
     :focus {
       outline: none;
