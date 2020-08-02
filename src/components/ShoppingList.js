@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Headline from './Headline'
+import LogoHeader from './LogoHeader'
 import NavigationBar from './NavigationBar.js'
 import ShoppingListItem from './ShoppingListItem'
-import LogoHeader from './LogoHeader'
 
 export default function ShoppingList({ projectList }) {
+  const materialsNeeded = projectList.filter((project) => project.materialNeeds)
+
   return (
     <>
       <LogoHeader />
@@ -14,16 +16,20 @@ export default function ShoppingList({ projectList }) {
           headlineText="Shopping list"
           textColor={'var(--copper-ultralight)'}
         />
-        {!projectList.materialNeeds && (
-          <p className="noProjectsYet">
+        {materialsNeeded.length <= 0 ? (
+          <p className="noMaterialNeedsYet">
             Create a material list in one of your projects first!
           </p>
+        ) : (
+          <StyledShoppingList>
+            {materialsNeeded.map((projectData) => (
+              <ShoppingListItem
+                key={projectData.id}
+                projectData={projectData}
+              />
+            ))}
+          </StyledShoppingList>
         )}
-        <StyledShoppingList>
-          {projectList.map((projectData) => (
-            <ShoppingListItem key={projectData.id} projectData={projectData} />
-          ))}
-        </StyledShoppingList>
       </StyledTab>
       <NavigationBar />
     </>
@@ -41,7 +47,7 @@ const StyledTab = styled.main`
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
 
-  .noProjectsYet {
+  .noMaterialNeedsYet {
     color: var(--copper-ultralight);
     width: 200px;
     text-align: center;
