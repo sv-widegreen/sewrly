@@ -1,13 +1,13 @@
 import { yupResolver } from '@hookform/resolvers'
+import isEqual from 'lodash.isequal'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import saveButtonDiskTeal from '../assets/saveButtonDiskTeal.svg'
+import saveIcon from '../assets/saveIcon.svg'
 import Button from './Button'
 import InputField from './InputField'
-import { projectSchema } from './utils/projectSchema.js'
-import isEqual from 'lodash.isequal'
 import InputTextarea from './InputTextarea'
+import { projectSchema } from './utils/projectSchema.js'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -76,7 +76,7 @@ export default function ProjectUpdateForm({
         errorMessageMax="The text is too long...?"
       />
 
-      <Button size="30px" icon={saveButtonDiskTeal} />
+      <Button size="30px" icon={saveIcon} />
     </StyledForm>
   )
 

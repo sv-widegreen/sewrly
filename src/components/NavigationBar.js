@@ -1,29 +1,28 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import addButtonStrong from '../assets/addButtonStrong.svg'
-import projectsNavBar from '../assets/projectsNavBar.svg'
-import shoppingCartNavBar from '../assets/shoppingCartNavBar.svg'
-import Button from './Button'
-import fabCalcNavBar from '../assets/fabCalcNavBar.svg'
+import addIcon from '../assets/addIcon.svg'
+import navBarIconFabricCalc from '../assets/navBarIconFabricCalc.svg'
+import navBarIconProjects from '../assets/navBarIconProjects.svg'
+import navBarIconShoppingList from '../assets/navBarIconShoppingList.svg'
 
 export default function NavigationBar() {
   return (
     <StyledNavigationBar>
       <NavLink to="/fabric-calculator" activeClassName="selected">
-        <Button icon={fabCalcNavBar} altText="fabric calculator" />
+        <img src={navBarIconFabricCalc} alt="fabric calculator" />
         <p>Fabric Calc</p>
       </NavLink>
       <NavLink to="/shopping-list" activeClassName="selected">
-        <Button icon={shoppingCartNavBar} altText="to shopping list" />
+        <img src={navBarIconShoppingList} alt="to shopping list" />
         <p>Shopping List</p>
       </NavLink>
       <NavLink to="/projects" activeClassName="selected">
-        <Button icon={projectsNavBar} altText="back to projects" />
+        <img src={navBarIconProjects} alt="back to projects" />
         <p>Projects</p>
       </NavLink>
       <NavLink to="/add-new-project" activeClassName="selected">
-        <Button icon={addButtonStrong} altText="add new project" />
+        <img src={addIcon} alt="add new project" />
         <p>New Project</p>
       </NavLink>
     </StyledNavigationBar>
@@ -53,5 +52,13 @@ const StyledNavigationBar = styled.nav`
   .selected {
     color: var(--teal-light);
     opacity: 0.7;
+  }
+
+  img {
+    width: 40px;
+
+    :active {
+      transform: scale(0.9, 0.9);
+    }
   }
 `

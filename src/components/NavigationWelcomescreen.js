@@ -1,31 +1,22 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import startButtonProjects from '../assets/startButtonProjects.svg'
-import startButtonShopping2 from '../assets/startButtonShopping2.svg'
-import startButtonFabricCalc2 from '../assets/startButtonFabricCalc2.svg'
-import Button from './Button'
+import startIconFabCalc from '../assets/startIconFabCalc.svg'
+import startIconProjects from '../assets/startIconProjects.svg'
+import startIconShoppingList from '../assets/startIconShoppingList.svg'
 
 export default function NavigationWelcomescreen() {
   return (
     <>
       <StyledHomeNavigation>
         <NavLink to="/fabric-calculator">
-          <Button
-            icon={startButtonFabricCalc2}
-            altText="projects"
-            size="100px"
-          />
+          <img src={startIconFabCalc} alt="fabric calculator" />
         </NavLink>
         <NavLink to="/projects">
-          <Button icon={startButtonProjects} altText="projects" size="100px" />
+          <img src={startIconProjects} alt="projects" />
         </NavLink>
         <NavLink to="/shopping-list">
-          <Button
-            icon={startButtonShopping2}
-            altText="shopping list"
-            size="100px"
-          />
+          <img src={startIconShoppingList} alt="shopping list" />
         </NavLink>
       </StyledHomeNavigation>
     </>
@@ -36,4 +27,12 @@ const StyledHomeNavigation = styled.nav`
   display: flex;
   gap: 15px;
   margin-top: 10px;
+
+  img {
+    width: 100px;
+
+    :active {
+      transform: scale(0.9, 0.9);
+    }
+  }
 `

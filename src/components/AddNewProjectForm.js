@@ -2,11 +2,11 @@ import { yupResolver } from '@hookform/resolvers'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import addButtonStrong from '../assets/addButtonStrong.svg'
+import addIcon from '../assets/addIcon.svg'
 import Button from './Button'
 import InputField from './InputField'
-import { projectSchema } from './utils/projectSchema.js'
 import InputTextarea from './InputTextarea'
+import { projectSchema } from './utils/projectSchema.js'
 
 export default function AddNewProjectForm({ addToProjectList }) {
   const { register, handleSubmit, errors } = useForm({
@@ -77,7 +77,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
         />
       </StyledInputGroup>
 
-      <Button icon={addButtonStrong} size="50px" />
+      <Button icon={addIcon} size="50px" />
     </StyledForm>
   )
 }

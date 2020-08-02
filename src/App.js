@@ -2,22 +2,24 @@ import React, { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import AddNewProjectTab from './components/AddNewProjectTab'
+import FabricCalculatorTab from './components/FabricCalculatorTab'
 import LogoHeader from './components/LogoHeader'
 import ProjectList from './components/ProjectList'
 import ShoppingList from './components/ShoppingList'
+import {
+  getFromLocalStorage,
+  saveToLocalStorage,
+} from './components/utils/handleLocalStorage'
 import WelcomeScreen from './components/WelcomeScreen.js'
-import FabricCalculatorTab from './components/FabricCalculatorTab'
 
 export default function App() {
-  const [projectList, setProjectList] = useState([])
+  const [projectList, setProjectList] = useState(
+    getFromLocalStorage('projects') || []
+  )
 
-  useEffect(() => {
-    setProjectList(JSON.parse(localStorage.getItem('projects') || '[]'))
-  }, [])
+  // useEffect(() => setProjectList(getFromLocalStorage('projects') || []), [])
 
-  useEffect(() => {
-    localStorage.setItem('projects', JSON.stringify(projectList))
-  }, [projectList])
+  useEffect(() => saveToLocalStorage('projects', projectList), [projectList])
 
   return (
     <Switch>

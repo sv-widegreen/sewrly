@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import editButton from '../assets/editButton.svg'
+import editIcon from '../assets/editIcon.svg'
 import Button from './Button'
 import ProjectUpdateForm from './ProjectUpdateForm'
 
@@ -49,7 +49,7 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
           )}
           <Button
             size="30px"
-            icon={editButton}
+            icon={editIcon}
             onClick={() => setEditing(true)}
           />
         </div>
