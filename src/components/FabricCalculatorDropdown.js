@@ -1,6 +1,6 @@
 import React from 'react'
-import garmentOptions from './utils/garmentOptions'
 import styled from 'styled-components'
+import garmentOptions from './utils/garmentOptions'
 
 export default function FabricCalculatorDropdown({ onChange, value }) {
   return (
@@ -17,12 +17,12 @@ export default function FabricCalculatorDropdown({ onChange, value }) {
 const StyledDropdown = styled.select`
   width: 220px;
   height: 30px;
-  border-radius: 4px;
+  margin: 30px 0 40px 0;
   padding: 0 10px 0 10px;
+  border-radius: 4px;
   color: var(--teal-medium);
   font-size: 16px;
   font-weight: 200;
-  margin: 30px 0 40px 0;
 
   option {
     padding: 8px 0;

@@ -1,12 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Headline from './Headline'
-import NavigationBar from './NavigationBar'
-import LogoHeader from './LogoHeader'
 import FabricCalculatorDropdown from './FabricCalculatorDropdown'
+import Headline from './Headline'
+import LogoHeader from './LogoHeader'
+import NavigationBar from './NavigationBar'
+import {
+  getFromSessionStorage,
+  saveToSessionStorage,
+} from './utils/handleSessionStorage'
 
-export default function FabricCalculator() {
+export default function FabricCalculatorTab() {
   const [fabricCalculation, setFabricCalculation] = useState()
+
+  useEffect(
+    () => setFabricCalculation(getFromSessionStorage('fabric calculation')),
+    []
+  )
+
+  useEffect(
+    () => saveToSessionStorage('fabric calculation', fabricCalculation),
+    [fabricCalculation]
+  )
 
   return (
     <>
@@ -49,10 +63,10 @@ const StyledTab = styled.main`
   align-items: center;
   text-align: center;
   margin-top: -20px;
+  padding: 0 30px 50px 30px;
   background: var(--copper-ultralight);
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
-  padding: 0 30px 50px 30px;
 
   p {
     color: var(--teal-medium);
@@ -64,16 +78,16 @@ const StyledTab = styled.main`
     color: var(--teal-ultralight);
   }
 
+  .fabricCalculation {
+    background: white;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
   .disclaimer {
     color: var(--teal-light);
     font-size: 14px;
     font-weight: 200;
     padding: 20px 0 0 0;
-  }
-
-  .fabricCalculation {
-    background: white;
-    border-radius: 4px;
-    padding: 10px;
   }
 `
