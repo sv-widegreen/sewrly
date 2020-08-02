@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Headline from './Headline'
+import LogoHeader from './LogoHeader'
 import NavigationBar from './NavigationBar'
 import ProjectListItem from './ProjectListItem'
 
 export default function ProjectList({ projectList, updateProjectData }) {
   return (
     <>
+      <LogoHeader />
       <StyledTab>
         <Headline
           headlineText="Projects"

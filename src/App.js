@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import AddNewProjectTab from './components/AddNewProjectTab'
 import FabricCalculatorTab from './components/FabricCalculatorTab'
-import LogoHeader from './components/LogoHeader'
 import ProjectList from './components/ProjectList'
 import ShoppingList from './components/ShoppingList'
 import {
@@ -27,18 +26,15 @@ export default function App() {
         <WelcomeScreen />
       </Route>
       <Route path="/shopping-list">
-        <LogoHeader />
         <ShoppingList projectList={projectList} />
       </Route>
       <Route path="/projects">
-        <LogoHeader />
         <ProjectList
           projectList={projectList}
           updateProjectData={updateProjectData}
         />
       </Route>
       <Route path="/add-new-project">
-        <LogoHeader />
         <AddNewProjectTab onSubmit={addToProjectList} />
       </Route>
       <Route path="/fabric-calculator">

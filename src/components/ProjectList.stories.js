@@ -1,6 +1,5 @@
 import { array, object, withKnobs } from '@storybook/addon-knobs/react'
 import React from 'react'
-import LogoHeader from './LogoHeader'
 import ProjectList from './ProjectList'
 
 export default {
@@ -49,16 +48,6 @@ export const projectListAlone = () => (
   <ProjectList projectList={[object('mock up entry', projectEntry)]} />
 )
 
-export const projectListAndHeader = () => (
-  <>
-    <LogoHeader />
-    <ProjectList projectList={[object('mock up entry', projectEntry)]} />
-  </>
-)
-
-export const projectListAndHeaderMoreEntries = () => (
-  <>
-    <LogoHeader />
-    <ProjectList projectList={array('mock up entry', moreProjectEntries)} />
-  </>
+export const projectListMoreEntries = () => (
+  <ProjectList projectList={array('mock up entry', moreProjectEntries)} />
 )

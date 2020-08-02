@@ -2,18 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import AddNewProjectForm from './AddNewProjectForm'
 import Headline from './Headline'
+import LogoHeader from './LogoHeader'
 import NavigationBar from './NavigationBar'
 
 export default function AddNewProjectTab({ onSubmit }) {
   return (
-    <StyledTab>
-      <Headline
-        headlineText={'Add a new project'}
-        textColor={'var(--teal-medium)'}
-      />
-      <AddNewProjectForm addToProjectList={onSubmit} />
+    <>
+      <LogoHeader />
+      <StyledTab>
+        <Headline
+          headlineText={'Add a new project'}
+          textColor={'var(--teal-medium)'}
+        />
+        <AddNewProjectForm addToProjectList={onSubmit} />
+      </StyledTab>
       <NavigationBar />
-    </StyledTab>
+    </>
   )
 }
 

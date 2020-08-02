@@ -3,16 +3,18 @@ import styled from 'styled-components'
 import Headline from './Headline'
 import NavigationBar from './NavigationBar.js'
 import ShoppingListItem from './ShoppingListItem'
+import LogoHeader from './LogoHeader'
 
 export default function ShoppingList({ projectList }) {
   return (
     <>
+      <LogoHeader />
       <StyledTab>
         <Headline
           headlineText="Shopping list"
           textColor={'var(--copper-ultralight)'}
         />
-        {projectList.length <= 0 && (
+        {!projectList.materialNeeds && (
           <p className="noProjectsYet">
             Create a material list in one of your projects first!
           </p>
