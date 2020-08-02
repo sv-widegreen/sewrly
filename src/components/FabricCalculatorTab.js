@@ -10,7 +10,7 @@ import {
 } from './utils/handleSessionStorage'
 
 export default function FabricCalculatorTab() {
-  const [fabricCalculation, setFabricCalculation] = useState()
+  const [fabricCalculation, setFabricCalculation] = useState('')
 
   useEffect(
     () =>

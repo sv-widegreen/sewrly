@@ -12,11 +12,9 @@ import {
 import WelcomeScreen from './components/WelcomeScreen.js'
 
 export default function App() {
-  const [projectList, setProjectList] = useState(
-    getFromLocalStorage('projects') || []
-  )
+  const [projectList, setProjectList] = useState([])
 
-  // useEffect(() => setProjectList(getFromLocalStorage('projects') || []), [])
+  useEffect(() => setProjectList(getFromLocalStorage('projects') || []), [])
 
   useEffect(() => saveToLocalStorage('projects', projectList), [projectList])
 
