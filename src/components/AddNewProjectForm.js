@@ -60,7 +60,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
         <InputTextarea
           labelText="Materials I have:"
-          placeholderText="Separate materials with a comma."
+          placeholderText="separate materials with a comma."
           name="materialNeeds"
           registerFn={register}
           error={errors.materialNeeds}
@@ -69,7 +69,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
         <InputTextarea
           labelText="Materials I need:"
-          placeholderText="Separate materials with a comma."
+          placeholderText="separate materials with a comma."
           name="materialsExisting"
           registerFn={register}
           error={errors.materialsExisting}

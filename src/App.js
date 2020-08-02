@@ -6,6 +6,7 @@ import LogoHeader from './components/LogoHeader'
 import ProjectList from './components/ProjectList'
 import ShoppingList from './components/ShoppingList'
 import WelcomeScreen from './components/WelcomeScreen.js'
+import FabricCalculatorTab from './components/FabricCalculatorTab'
 
 export default function App() {
   const [projectList, setProjectList] = useState([])
@@ -37,6 +38,9 @@ export default function App() {
       <Route path="/add-new-project">
         <LogoHeader />
         <AddNewProjectTab onSubmit={addToProjectList} />
+      </Route>
+      <Route path="/fabric-calculator">
+        <FabricCalculatorTab />
       </Route>
     </Switch>
   )
