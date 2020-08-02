@@ -13,7 +13,8 @@ export default function FabricCalculatorTab() {
   const [fabricCalculation, setFabricCalculation] = useState()
 
   useEffect(
-    () => setFabricCalculation(getFromSessionStorage('fabric calculation')),
+    () =>
+      setFabricCalculation(getFromSessionStorage('fabric calculation') || ''),
     []
   )
 
