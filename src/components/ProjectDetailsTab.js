@@ -12,7 +12,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
   const { id } = useParams()
   const projectData = projectList.find((project) => id === project.id)
-
+  console.log(projectData)
   const {
     projectName,
     pattern,
@@ -38,7 +38,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
             </>
           ) : (
             <div>
-              <p name="nextStepTitle">Next step:</p>
+              <p name="title">Next step:</p>
               <p name="nextStep">{nextStep}</p>
 
               {pattern ? <p name="pattern">{pattern}</p> : ''}
@@ -77,7 +77,6 @@ const StyledTab = styled.main`
   display: flex;
   flex-flow: column;
   align-items: center;
-  text-align: center;
   margin-top: -20px;
   padding: 0 30px 50px 30px;
   background: var(--copper-ultralight);
@@ -90,19 +89,15 @@ const StyledTab = styled.main`
     padding: 20px 0;
   }
 `
-const StyledProject = styled.li`
+const StyledProject = styled.div`
   position: relative;
-  list-style: none;
   width: 300px;
   border-radius: 10px;
   background: var(--copper-ultralight);
-  margin: 20px 20px 0 20px;
+  margin: 20px 0;
 
   p {
     font-weight: 200;
-    width: 260px;
-    overflow-wrap: break-word;
-    padding: 0 24px;
     color: var(--teal-light);
     font-size: 16px;
 
@@ -112,7 +107,7 @@ const StyledProject = styled.li`
       font-size: 20px;
     }
 
-    &[name='nextStepTitle'] {
+    &[name='title'] {
       margin-top: 10px;
       color: var(--teal-medium);
     }

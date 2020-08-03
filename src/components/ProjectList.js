@@ -5,7 +5,7 @@ import LogoHeader from './LogoHeader'
 import NavigationBar from './NavigationBar'
 import ProjectListItem from './ProjectListItem'
 
-export default function ProjectList({ projectList, updateProjectData }) {
+export default function ProjectList({ projectList }) {
   return (
     <>
       <LogoHeader />
@@ -21,11 +21,7 @@ export default function ProjectList({ projectList, updateProjectData }) {
         )}
         <StyledProjectList>
           {projectList.map((projectData) => (
-            <ProjectListItem
-              key={projectData.id}
-              projectData={projectData}
-              updateProjectData={updateProjectData}
-            />
+            <ProjectListItem key={projectData.id} projectData={projectData} />
           ))}
         </StyledProjectList>
       </StyledTab>

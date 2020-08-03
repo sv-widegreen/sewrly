@@ -15,9 +15,13 @@ import WelcomeScreen from './components/WelcomeScreen.js'
 export default function App() {
   const [projectList, setProjectList] = useState([])
 
-  useEffect(() => setProjectList(getFromLocalStorage('projects') || []), [])
+  useEffect(() => {
+    setProjectList(getFromLocalStorage('projects') || [])
+  }, [])
 
-  useEffect(() => saveToLocalStorage('projects', projectList), [projectList])
+  useEffect(() => {
+    saveToLocalStorage('projects', projectList)
+  }, [projectList])
 
   return (
     <Switch>
@@ -28,10 +32,7 @@ export default function App() {
         <ShoppingList projectList={projectList} />
       </Route>
       <Route exact path="/projects">
-        <ProjectList
-          projectList={projectList}
-          updateProjectData={updateProjectData}
-        />
+        <ProjectList projectList={projectList} />
       </Route>
       <Route path="/projects/:projectName/:id">
         <ProjectDetailsTab
