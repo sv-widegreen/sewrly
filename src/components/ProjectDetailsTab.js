@@ -7,20 +7,34 @@ import NavigationBar from './NavigationBar'
 
 export default function ProjectDetailsTab({ projectList }) {
   const { id } = useParams()
-  const projectData = () => projectList.find((project) => id === project.id)
-  console.log(projectData)
-  // console.log(projectData.projectName)
+  const {
+    projectName,
+    pattern,
+    size,
+    nextStep,
+    materialNeeds,
+    materialsExisting,
+  } = projectList.find((project) => id === project.id)
+  console.log(projectName)
+  // const {
+  //   projectName,
+  //   pattern,
+  //   size,
+  //   nextStep,
+  //   materialNeeds,
+  //   materialsExisting,
+  // } = projectData
 
   return (
     <>
       <LogoHeader />
       <StyledTab>
-        <Headline
-          headlineText={'Project details'}
-          textColor={'var(--teal-medium)'}
-        />
-        <p>nüscht</p>
-        {/* <p>{projectData.projectName}</p> */}
+        <Headline headlineText={projectName} textColor={'var(--teal-medium)'} />
+        <p>{pattern}</p>
+        <p>{size}</p>
+        <p>{nextStep}</p>
+        <p>{materialNeeds}</p>
+        <p>{materialsExisting}</p>
       </StyledTab>
       <NavigationBar />
     </>

@@ -6,7 +6,6 @@ import Button from './Button'
 import ProjectUpdateForm from './ProjectUpdateForm'
 
 export default function ProjectListItem({ projectData, updateProjectData }) {
-  // const { url } = useRouteMatch()
   const [isEditing, setEditing] = useState(false)
   const {
     id,
@@ -19,11 +18,7 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
   } = projectData
 
   return (
-<<<<<<< HEAD
-    <Link to={`projects/${projectName}/${id}`}>
-=======
-    <Link to={`/projects/${projectName}`}>
->>>>>>> d99f8e67c76ec9c73f04d88e7cbd606c04ff95ce
+    <StyledLink to={`projects/${projectName}/${id}`}>
       <StyledProject>
         {isEditing ? (
           <>
@@ -63,7 +58,7 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
           </div>
         )}
       </StyledProject>
-    </Link>
+    </StyledLink>
   )
 }
 
@@ -71,7 +66,6 @@ const StyledProject = styled.li`
   position: relative;
   list-style: none;
   width: 300px;
-  height: 100%;
   border-radius: 10px;
   background: var(--copper-ultralight);
   margin: 20px 20px 0 20px;
@@ -106,4 +100,7 @@ const StyledProject = styled.li`
     top: 16px;
     right: 16px;
   }
+`
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `
