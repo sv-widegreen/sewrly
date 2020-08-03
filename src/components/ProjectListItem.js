@@ -6,6 +6,7 @@ import Button from './Button'
 import ProjectUpdateForm from './ProjectUpdateForm'
 
 export default function ProjectListItem({ projectData, updateProjectData }) {
+  // const { url } = useRouteMatch()
   const [isEditing, setEditing] = useState(false)
   const {
     id,
@@ -18,7 +19,11 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
   } = projectData
 
   return (
+<<<<<<< HEAD
     <Link to={`projects/${projectName}/${id}`}>
+=======
+    <Link to={`/projects/${projectName}`}>
+>>>>>>> d99f8e67c76ec9c73f04d88e7cbd606c04ff95ce
       <StyledProject>
         {isEditing ? (
           <>
