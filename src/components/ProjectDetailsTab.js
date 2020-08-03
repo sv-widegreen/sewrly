@@ -6,11 +6,11 @@ import LogoHeader from './LogoHeader'
 import NavigationBar from './NavigationBar'
 
 export default function ProjectDetailsTab({ projectList }) {
-  const { projectDetailPath } = useParams()
-  console.log(projectDetailPath)
-  const projectData = projectList.filter(
-    (project) => projectDetailPath === project.projectName
-  )
+  const { id } = useParams()
+  const projectData = () => projectList.find((project) => id === project.id)
+  console.log(projectData)
+  // console.log(projectData.projectName)
+
   return (
     <>
       <LogoHeader />
@@ -19,7 +19,8 @@ export default function ProjectDetailsTab({ projectList }) {
           headlineText={'Project details'}
           textColor={'var(--teal-medium)'}
         />
-        <p className="question">{projectData.projectName}</p>
+        <p>nüscht</p>
+        {/* <p>{projectData.projectName}</p> */}
       </StyledTab>
       <NavigationBar />
     </>

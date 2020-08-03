@@ -33,7 +33,7 @@ export default function App() {
           updateProjectData={updateProjectData}
         />
       </Route>
-      <Route path="/projects/:projectName">
+      <Route path="/projects/:projectName/:id">
         <ProjectDetailsTab projectList={projectList} />
       </Route>
       <Route path="/add-new-project">

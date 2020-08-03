@@ -6,9 +6,9 @@ import Button from './Button'
 import ProjectUpdateForm from './ProjectUpdateForm'
 
 export default function ProjectListItem({ projectData, updateProjectData }) {
-  // const { url } = useRouteMatch()
   const [isEditing, setEditing] = useState(false)
   const {
+    id,
     projectName,
     pattern,
     size,
@@ -18,7 +18,7 @@ export default function ProjectListItem({ projectData, updateProjectData }) {
   } = projectData
 
   return (
-    <Link to={`/projects/${projectName}`}>
+    <Link to={`projects/${projectName}/${id}`}>
       <StyledProject>
         {isEditing ? (
           <>
