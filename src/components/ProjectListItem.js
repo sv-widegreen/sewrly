@@ -1,62 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import editIcon from '../assets/editIcon.svg'
-import Button from './Button'
-import ProjectUpdateForm from './ProjectUpdateForm'
 
-export default function ProjectListItem({ projectData, updateProjectData }) {
-  const [isEditing, setEditing] = useState(false)
-  const {
-    id,
-    projectName,
-    pattern,
-    size,
-    nextStep,
-    materialNeeds,
-    materialsExisting,
-  } = projectData
+export default function ProjectListItem({ projectData }) {
+  const { id, projectName, nextStep } = projectData
 
   return (
-    <StyledLink to={`projects/${projectName}/${id}`}>
+    <StyledLink to={`/projects/${projectName}/${id}`}>
       <StyledProject>
-        {isEditing ? (
-          <>
-            <ProjectUpdateForm
-              projectData={projectData}
-              updateProjectData={updateProjectData}
-              setEditing={setEditing}
-            />
-          </>
-        ) : (
-          <div>
-            <p name="projectName">{projectName}</p>
-            {pattern ? <p name="pattern">{pattern}</p> : ''}
-            {size ? <p name="size">Size: {size}</p> : ''}
-            <p name="nextStep">Next step: {nextStep}</p>
-            {materialNeeds ? (
-              <p name="materials">
-                Materials I need: <br></br>
-                {materialNeeds}
-              </p>
-            ) : (
-              ''
-            )}
-            {materialsExisting ? (
-              <p name="materials">
-                Materials I have: <br></br>
-                {materialsExisting}
-              </p>
-            ) : (
-              ''
-            )}
-            <Button
-              size="30px"
-              icon={editIcon}
-              onClick={() => setEditing(true)}
-            />
-          </div>
-        )}
+        <p name="projectName">{projectName}</p>
+        <p name="nextStepTitle">Next step:</p>
+        <p name="nextStep">{nextStep}</p>
       </StyledProject>
     </StyledLink>
   )
@@ -69,36 +23,25 @@ const StyledProject = styled.li`
   border-radius: 10px;
   background: var(--copper-ultralight);
   margin: 20px 20px 0 20px;
+  padding: 16px 20px;
 
   p {
     font-weight: 200;
-    width: 260px;
-    overflow-wrap: break-word;
-    padding: 0 24px;
-    color: var(--teal-light);
     font-size: 16px;
 
     &[name='projectName'] {
-      padding: 12px 24px 10px 24px;
       color: var(--teal-dark);
       font-size: 20px;
     }
 
-    &[name='nextStep'] {
-      padding: 12px 24px 14px 24px;
+    &[name='nextStepTitle'] {
+      margin-top: 10px;
       color: var(--teal-medium);
-      font-size: 16px;
     }
 
-    &[name='materials'] {
-      padding: 0 24px 14px 24px;
+    &[name='nextStep'] {
+      color: var(--teal-light);
     }
-  }
-
-  button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
   }
 `
 const StyledLink = styled(Link)`

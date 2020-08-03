@@ -34,7 +34,10 @@ export default function App() {
         />
       </Route>
       <Route path="/projects/:projectName/:id">
-        <ProjectDetailsTab projectList={projectList} />
+        <ProjectDetailsTab
+          projectList={projectList}
+          updateProjectData={updateProjectData}
+        />
       </Route>
       <Route path="/add-new-project">
         <AddNewProjectTab onSubmit={addToProjectList} />
