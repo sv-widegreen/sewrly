@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import styled from 'styled-components'
+import arrowRight from '../assets/arrowRight.svg'
 
 export default function ProjectListItem({ projectData }) {
   const { url } = useRouteMatch()
@@ -12,6 +13,7 @@ export default function ProjectListItem({ projectData }) {
         <p name="projectName">{projectName}</p>
         <p name="nextStepTitle">Next step:</p>
         <p name="nextStep">{nextStep}</p>
+        <img src={arrowRight} alt="" />
       </StyledProject>
     </StyledLink>
   )
@@ -43,6 +45,15 @@ const StyledProject = styled.li`
     &[name='nextStep'] {
       color: var(--teal-light);
     }
+  }
+
+  img {
+    position: absolute;
+    width: 11px;
+    margin-top: -12px;
+    top: 50%;
+    right: 10px;
+    opacity: 0.7;
   }
 `
 const StyledLink = styled(Link)`

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import editIcon from '../assets/editIcon.svg'
+import arrowLeft from '../assets/arrowLeft.svg'
 import Button from './Button'
 import Headline from './Headline'
 import LogoHeader from './LogoHeader'
@@ -11,6 +12,7 @@ import ProjectUpdateForm from './ProjectUpdateForm'
 export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
   const { id } = useParams()
+  const history = useHistory()
   const projectData = projectList.find((project) => id === project.id)
   const {
     projectName,
@@ -26,6 +28,12 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
       <LogoHeader />
       <StyledTab>
         <Headline headlineText={projectName} textColor={'var(--teal-medium)'} />
+        <Button
+          className="back-button"
+          size="11px"
+          icon={arrowLeft}
+          onClick={() => history.push('/projects')}
+        />
         <StyledProject>
           {isEditing ? (
             <>
@@ -36,41 +44,42 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
               />
             </>
           ) : (
-            <div>
+            <>
               <Button
+                className="edit-button"
                 text="Edit"
                 size="30px"
                 icon={editIcon}
                 onClick={() => setEditing(true)}
               />
-              <p name="title">Next step:</p>
-              <p name="nextStep">{nextStep}</p>
+              <p className="title">Next step:</p>
+              <p className="entry">{nextStep}</p>
 
               {pattern && (
                 <>
-                  <p name="title">Pattern:</p>
-                  <p name="pattern">{pattern}</p>
+                  <p className="title">Pattern:</p>
+                  <p className="entry">{pattern}</p>
                 </>
               )}
               {size && (
                 <>
-                  <p name="title">Size:</p>
-                  <p name="size">{size}</p>
+                  <p className="title">Size:</p>
+                  <p className="entry">{size}</p>
                 </>
               )}
               {materialNeeds && (
                 <>
-                  <p name="title">Materials I need:</p>
-                  <p name="materials">{materialNeeds}</p>
+                  <p className="title">Materials I need:</p>
+                  <p className="entry">{materialNeeds}</p>
                 </>
               )}
               {materialsExisting && (
                 <>
-                  <p name="title">Materials I have:</p>
-                  <p name="materials">{materialsExisting}</p>
+                  <p className="title">Materials I have:</p>
+                  <p className="entry">{materialsExisting}</p>
                 </>
               )}
-            </div>
+            </>
           )}
         </StyledProject>
       </StyledTab>
@@ -80,6 +89,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
 }
 
 const StyledTab = styled.main`
+  position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -89,9 +99,10 @@ const StyledTab = styled.main`
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
 
-  p {
-    color: var(--teal-medium);
-    font-size: 16px;
+  > button {
+    position: absolute;
+    top: 22px;
+    left: 20px;
   }
 `
 const StyledProject = styled.div`
@@ -103,32 +114,22 @@ const StyledProject = styled.div`
 
   button {
     position: absolute;
-    top: -16px;
+    top: -6px;
     right: -16px;
   }
 
   p {
     font-weight: 200;
+    font-size: 16px;
+  }
+  .title {
+    margin: 20px 0 6px 6px;
+    color: var(--teal-dark);
+    font-size: 18px;
+  }
+  .entry {
+    margin: 0 24px 0 24px;
     color: var(--teal-light);
     font-size: 16px;
-
-    &[name='projectName'] {
-      padding: 12px 24px 10px 24px;
-      color: var(--teal-dark);
-      font-size: 20px;
-    }
-
-    &[name='title'] {
-      margin-top: 10px;
-      color: var(--teal-medium);
-    }
-
-    &[name='nextStep'] {
-      color: var(--teal-light);
-    }
-
-    &[name='materials'] {
-      padding: 0 24px 14px 24px;
-    }
   }
 `

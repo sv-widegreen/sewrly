@@ -12,9 +12,11 @@ export default function Button({
   return (
     <StyledButton width={size} onClick={onClick}>
       <img width={size} src={icon} alt={altText || ''} />
-      <p className="buttonText" fontSize={fontsize}>
-        {text}
-      </p>
+      {text && (
+        <p className="buttonText" fontSize={fontsize}>
+          {text}
+        </p>
+      )}
     </StyledButton>
   )
 }
