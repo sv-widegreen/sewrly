@@ -1,12 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function ProjectListItem({ projectData }) {
+  const { url } = useRouteMatch()
   const { id, projectName, nextStep } = projectData
 
   return (
-    <StyledLink to={`/projects/${projectName}/${id}`}>
+    <StyledLink to={`${url}/${projectName}/${id}`}>
       <StyledProject>
         <p name="projectName">{projectName}</p>
         <p name="nextStepTitle">Next step:</p>

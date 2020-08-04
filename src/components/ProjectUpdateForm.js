@@ -76,7 +76,7 @@ export default function ProjectUpdateForm({
         errorMessageMax="The text is too long...?"
       />
 
-      <Button size="30px" icon={saveIcon} />
+      <Button text="Save" size="30px" icon={saveIcon} />
     </StyledForm>
   )
 

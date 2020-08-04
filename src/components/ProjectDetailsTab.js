@@ -12,7 +12,6 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
   const { id } = useParams()
   const projectData = projectList.find((project) => id === project.id)
-  console.log(projectData)
   const {
     projectName,
     pattern,
@@ -38,32 +37,39 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
             </>
           ) : (
             <div>
-              <p name="title">Next step:</p>
-              <p name="nextStep">{nextStep}</p>
-
-              {pattern ? <p name="pattern">{pattern}</p> : ''}
-              {size ? <p name="size">Size: {size}</p> : ''}
-              {materialNeeds ? (
-                <p name="materials">
-                  Materials I need: <br></br>
-                  {materialNeeds}
-                </p>
-              ) : (
-                ''
-              )}
-              {materialsExisting ? (
-                <p name="materials">
-                  Materials I have: <br></br>
-                  {materialsExisting}
-                </p>
-              ) : (
-                ''
-              )}
               <Button
+                text="Edit"
                 size="30px"
                 icon={editIcon}
                 onClick={() => setEditing(true)}
               />
+              <p name="title">Next step:</p>
+              <p name="nextStep">{nextStep}</p>
+
+              {pattern && (
+                <>
+                  <p name="title">Pattern:</p>
+                  <p name="pattern">{pattern}</p>
+                </>
+              )}
+              {size && (
+                <>
+                  <p name="title">Size:</p>
+                  <p name="size">{size}</p>
+                </>
+              )}
+              {materialNeeds && (
+                <>
+                  <p name="title">Materials I need:</p>
+                  <p name="materials">{materialNeeds}</p>
+                </>
+              )}
+              {materialsExisting && (
+                <>
+                  <p name="title">Materials I have:</p>
+                  <p name="materials">{materialsExisting}</p>
+                </>
+              )}
             </div>
           )}
         </StyledProject>
@@ -86,7 +92,6 @@ const StyledTab = styled.main`
   p {
     color: var(--teal-medium);
     font-size: 16px;
-    padding: 20px 0;
   }
 `
 const StyledProject = styled.div`
@@ -95,6 +100,12 @@ const StyledProject = styled.div`
   border-radius: 10px;
   background: var(--copper-ultralight);
   margin: 20px 0;
+
+  button {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+  }
 
   p {
     font-weight: 200;
@@ -119,11 +130,5 @@ const StyledProject = styled.div`
     &[name='materials'] {
       padding: 0 24px 14px 24px;
     }
-  }
-
-  button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
   }
 `

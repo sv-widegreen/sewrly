@@ -3,5 +3,9 @@ export function saveToLocalStorage(key, data) {
 }
 
 export function getFromLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key))
+  try {
+    return JSON.parse(localStorage.getItem(key))
+  } catch (error) {
+    console.log(error)
+  }
 }
