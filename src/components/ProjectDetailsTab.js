@@ -114,8 +114,8 @@ const StyledProject = styled.div`
 
   button {
     position: absolute;
-    top: -6px;
-    right: -16px;
+    top: -52px;
+    right: -20px;
   }
 
   p {

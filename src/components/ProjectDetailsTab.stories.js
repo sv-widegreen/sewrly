@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectDetailsTab from './ProjectDetailsTab'
-import { array, object, withKnobs } from '@storybook/addon-knobs/react'
+import { object, withKnobs } from '@storybook/addon-knobs/react'
 
 export default {
   title: 'Project Details Tab',
@@ -9,7 +9,7 @@ export default {
 }
 
 const projectEntry = {
-  projectName: 'Summer dress with sleeves',
+  projectName: 'Summer dress',
   pattern: 'Pinterest',
   size: '36',
   nextStep: 'cut fabric and lining, buy button, zipper and tape',
