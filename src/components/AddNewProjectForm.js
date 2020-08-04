@@ -86,8 +86,9 @@ const StyledForm = styled.form`
   display: flex;
   flex-flow: column;
   gap: 10px;
-  margin: 24px auto 74px auto;
-  font-weight: 200;
+  height: 446px;
+  overflow: scroll;
+  margin: 24px auto 50px auto;
 
   p {
     color: var(--teal-ultralight);
@@ -98,6 +99,10 @@ const StyledForm = styled.form`
 
   .optional {
     margin: 10px 0 -8px 10px;
+  }
+
+  button {
+    padding-bottom: 14px;
   }
 `
 const StyledInputGroup = styled.div`

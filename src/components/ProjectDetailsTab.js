@@ -13,7 +13,6 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
   const { id } = useParams()
   const history = useHistory()
-  console.log(history)
   const projectData = projectList.find((project) => id === project.id)
   const {
     projectName,
@@ -29,12 +28,6 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
       <LogoHeader />
       <StyledTab>
         <Headline headlineText={projectName} textColor={'var(--teal-medium)'} />
-        <Button
-          className="back-button"
-          size="11px"
-          icon={arrowLeft}
-          onClick={() => history.goBack()}
-        />
         <StyledProject>
           {isEditing ? (
             <>
@@ -47,7 +40,12 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
           ) : (
             <>
               <Button
-                className="edit-button"
+                size="11px"
+                icon={arrowLeft}
+                onClick={() => history.goBack()}
+                disabled={isEditing}
+              />
+              <Button
                 text="Edit"
                 size="30px"
                 icon={editIcon}
@@ -79,7 +77,6 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
 }
 
 const StyledTab = styled.main`
-  position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -88,12 +85,6 @@ const StyledTab = styled.main`
   background: var(--copper-ultralight);
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
-
-  > button {
-    position: absolute;
-    top: 22px;
-    left: 20px;
-  }
 `
 const StyledProject = styled.div`
   position: relative;
@@ -104,8 +95,14 @@ const StyledProject = styled.div`
 
   button {
     position: absolute;
+    margin: 0;
     top: -52px;
     right: -20px;
+  }
+
+  button:first-child {
+    top: -46px;
+    left: -10px;
   }
 
   p {

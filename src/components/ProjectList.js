@@ -14,16 +14,18 @@ export default function ProjectList({ projectList }) {
           headlineText="Projects"
           textColor={'var(--copper-ultralight)'}
         />
-        {projectList.length <= 0 && (
-          <p className="noProjectsYet">
-            Click the button below to add your first project!
-          </p>
-        )}
-        <StyledProjectList>
-          {projectList.map((projectData) => (
-            <ProjectListItem key={projectData.id} projectData={projectData} />
-          ))}
-        </StyledProjectList>
+        <div>
+          {projectList.length <= 0 && (
+            <p className="noProjectsYet">
+              Click the button below to add your first project!
+            </p>
+          )}
+          <StyledProjectList>
+            {projectList.map((projectData) => (
+              <ProjectListItem key={projectData.id} projectData={projectData} />
+            ))}
+          </StyledProjectList>
+        </div>
       </StyledTab>
       <NavigationBar />
     </>
@@ -47,6 +49,11 @@ const StyledTab = styled.main`
     text-align: center;
     padding-top: 200px;
   }
+
+  > div {
+    height: 480px;
+    overflow: scroll;
+  }
 `
 
 const StyledProjectList = styled.ul`
@@ -55,6 +62,6 @@ const StyledProjectList = styled.ul`
   align-items: center;
 
   a:first-child {
-    margin-bottom: 80px;
+    margin-bottom: 35px;
   }
 `

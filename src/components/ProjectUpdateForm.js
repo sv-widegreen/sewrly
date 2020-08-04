@@ -101,10 +101,12 @@ export default function ProjectUpdateForm({
 }
 
 const StyledForm = styled.form`
+  height: 438px;
+  overflow: scroll;
+
   label {
     display: block;
     padding: 0;
-    font-weight: 200;
     margin: 20px 0 0 6px;
   }
 
