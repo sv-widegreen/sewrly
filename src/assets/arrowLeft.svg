@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="47px" viewBox="0 0 22 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrowLeft</title>
+    <g id="UX-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Artboard" transform="translate(-393.000000, -320.000000)" stroke="#3C9181" stroke-width="4">
+            <g id="Group" transform="translate(395.000000, 322.000000)">
+                <g id="Group" transform="translate(9.000000, 21.500000) scale(-1, 1) translate(-9.000000, -21.500000) ">
+                    <line x1="18" y1="22" x2="1" y2="43" id="Line-3"></line>
+                    <line x1="18" y1="22" x2="0" y2="0" id="Line-3"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

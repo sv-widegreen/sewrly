@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import AddNewProjectTab from './components/AddNewProjectTab'
 import FabricCalculatorTab from './components/FabricCalculatorTab'
+import { useLocalStorageState } from './components/hooks/useLocalStorageState'
+import ProjectDetailsTab from './components/ProjectDetailsTab'
 import ProjectList from './components/ProjectList'
 import ShoppingList from './components/ShoppingList'
-import {
-  getFromLocalStorage,
-  saveToLocalStorage,
-} from './components/utils/handleLocalStorage'
 import WelcomeScreen from './components/WelcomeScreen.js'
 
 export default function App() {
-  const [projectList, setProjectList] = useState([])
-
-  useEffect(() => setProjectList(getFromLocalStorage('projects') || []), [])
-
-  useEffect(() => saveToLocalStorage('projects', projectList), [projectList])
+  const [projectList, setProjectList] = useLocalStorageState('projects')
 
   return (
     <Switch>
@@ -26,8 +20,11 @@ export default function App() {
       <Route path="/shopping-list">
         <ShoppingList projectList={projectList} />
       </Route>
-      <Route path="/projects">
-        <ProjectList
+      <Route exact path="/projects">
+        <ProjectList projectList={projectList} />
+      </Route>
+      <Route path="/projects/:projectName/:id">
+        <ProjectDetailsTab
           projectList={projectList}
           updateProjectData={updateProjectData}
         />

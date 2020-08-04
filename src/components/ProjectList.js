@@ -5,7 +5,7 @@ import LogoHeader from './LogoHeader'
 import NavigationBar from './NavigationBar'
 import ProjectListItem from './ProjectListItem'
 
-export default function ProjectList({ projectList, updateProjectData }) {
+export default function ProjectList({ projectList }) {
   return (
     <>
       <LogoHeader />
@@ -14,20 +14,18 @@ export default function ProjectList({ projectList, updateProjectData }) {
           headlineText="Projects"
           textColor={'var(--copper-ultralight)'}
         />
-        {projectList.length <= 0 && (
-          <p className="noProjectsYet">
-            Click the button below to add your first project!
-          </p>
-        )}
-        <StyledProjectList>
-          {projectList.map((projectData) => (
-            <ProjectListItem
-              key={projectData.id}
-              projectData={projectData}
-              updateProjectData={updateProjectData}
-            />
-          ))}
-        </StyledProjectList>
+        <div>
+          {projectList.length <= 0 && (
+            <p className="noProjectsYet">
+              Click the button below to add your first project!
+            </p>
+          )}
+          <StyledProjectList>
+            {projectList.map((projectData) => (
+              <ProjectListItem key={projectData.id} projectData={projectData} />
+            ))}
+          </StyledProjectList>
+        </div>
       </StyledTab>
       <NavigationBar />
     </>
@@ -51,6 +49,11 @@ const StyledTab = styled.main`
     text-align: center;
     padding-top: 200px;
   }
+
+  > div {
+    height: 480px;
+    overflow: scroll;
+  }
 `
 
 const StyledProjectList = styled.ul`
@@ -58,7 +61,7 @@ const StyledProjectList = styled.ul`
   flex-direction: column-reverse;
   align-items: center;
 
-  li:first-child {
-    margin-bottom: 80px;
+  a:first-child {
+    margin-bottom: 35px;
   }
 `
