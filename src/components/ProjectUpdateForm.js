@@ -22,7 +22,18 @@ export default function ProjectUpdateForm({
 
   return (
     <StyledForm onSubmit={handleSubmit(handleNewData)}>
+      <InputTextarea
+        labelText="Next step:"
+        name="nextStep"
+        onChange={handleChange}
+        registerFn={register}
+        error={errors.nextStep}
+        errorMessageMax="Don't make it too long"
+        errorMessageRequired="Keep track of the next step!"
+      />
+
       <InputField
+        labelText="Project Name:"
         name="projectName"
         onChange={handleChange}
         registerFn={register}
@@ -32,6 +43,7 @@ export default function ProjectUpdateForm({
       />
 
       <InputField
+        labelText="Pattern:"
         name="pattern"
         placeholderText="Did you find a pattern?"
         onChange={handleChange}
@@ -41,6 +53,7 @@ export default function ProjectUpdateForm({
       />
 
       <InputField
+        labelText="Size:"
         name="size"
         placeholderText="What's the size?"
         onChange={handleChange}
@@ -49,16 +62,8 @@ export default function ProjectUpdateForm({
         errorMessageMax="The text is too long..."
       />
 
-      <InputField
-        name="nextStep"
-        onChange={handleChange}
-        registerFn={register}
-        error={errors.nextStep}
-        errorMessageMax="Don't make it too long"
-        errorMessageRequired="Keep track of the next step!"
-      />
-
       <InputTextarea
+        labelText="Materials I need:"
         name="materialNeeds"
         placeholderText="What materials do you need? Separate materials with a comma."
         onChange={handleChange}
@@ -68,6 +73,7 @@ export default function ProjectUpdateForm({
       />
 
       <InputTextarea
+        labelText="Materials I have:"
         name="materialsExisting"
         placeholderText="What materials do you already have? Separate materials with a comma."
         onChange={handleChange}
@@ -95,57 +101,19 @@ export default function ProjectUpdateForm({
 }
 
 const StyledForm = styled.form`
+  height: 438px;
+  overflow: scroll;
+
   label {
     display: block;
     padding: 0;
+    margin: 20px 0 0 6px;
   }
 
-  /* error message div */
-  label > div {
-    padding: 0 0 5px 15px;
-  }
-
-  input {
-    font-weight: 200;
-    width: 230px;
-    height: 100%;
-    border-radius: 4px;
-    margin: 2px 0 2px 15px;
-    color: var(--teal-ultralight);
-    font-size: 16px;
-
-    &[name='projectName'] {
-      margin: 5px 0 2px 15px;
-      padding: 7px 10px 5px 10px;
-      font-size: 20px;
-      color: var(--teal-light);
-    }
-
-    &[name='nextStep'] {
-      margin: 2px 0 5px 15px;
-      padding: 8px 10px 10px 10px;
-      color: var(--teal-medium);
-    }
-  }
-
+  input,
   textarea {
-    width: 230px;
-    height: 100px;
-    border-radius: 4px;
-    margin: 0 0 10px 15px;
-    padding: 0 10px;
-    color: var(--teal-ultralight);
-    font-size: 16px;
-
-    :focus {
-      outline: none;
-      box-shadow: 0 0 0 1pt var(--teal-ultralight);
-    }
-  }
-
-  button {
-    position: absolute;
-    top: 16px;
-    right: 16px;
+    font-weight: 200;
+    color: var(--teal-light);
+    background-color: white;
   }
 `

@@ -16,20 +16,22 @@ export default function ShoppingList({ projectList }) {
           headlineText="Shopping list"
           textColor={'var(--copper-ultralight)'}
         />
-        {materialsNeeded.length <= 0 ? (
-          <p className="noMaterialNeedsYet">
-            Create a material list in one of your projects first!
-          </p>
-        ) : (
-          <StyledShoppingList>
-            {materialsNeeded.map((projectData) => (
-              <ShoppingListItem
-                key={projectData.id}
-                projectData={projectData}
-              />
-            ))}
-          </StyledShoppingList>
-        )}
+        <div>
+          {materialsNeeded.length <= 0 ? (
+            <p className="noMaterialNeedsYet">
+              Create a material list in one of your projects first!
+            </p>
+          ) : (
+            <StyledShoppingList>
+              {materialsNeeded.map((projectData) => (
+                <ShoppingListItem
+                  key={projectData.id}
+                  projectData={projectData}
+                />
+              ))}
+            </StyledShoppingList>
+          )}
+        </div>
       </StyledTab>
       <NavigationBar />
     </>
@@ -53,6 +55,11 @@ const StyledTab = styled.main`
     text-align: center;
     padding-top: 200px;
   }
+
+  > div {
+    height: 480px;
+    overflow: scroll;
+  }
 `
 
 const StyledShoppingList = styled.ul`
@@ -60,7 +67,7 @@ const StyledShoppingList = styled.ul`
   flex-direction: column-reverse;
   align-items: center;
 
-  li:first-child {
-    margin-bottom: 80px;
+  a:first-child {
+    margin-bottom: 35px;
   }
 `

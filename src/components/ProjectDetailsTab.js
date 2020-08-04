@@ -28,12 +28,6 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
       <LogoHeader />
       <StyledTab>
         <Headline headlineText={projectName} textColor={'var(--teal-medium)'} />
-        <Button
-          className="back-button"
-          size="11px"
-          icon={arrowLeft}
-          onClick={() => history.push('/projects')}
-        />
         <StyledProject>
           {isEditing ? (
             <>
@@ -46,7 +40,12 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
           ) : (
             <>
               <Button
-                className="edit-button"
+                size="11px"
+                icon={arrowLeft}
+                onClick={() => history.goBack()}
+                disabled={isEditing}
+              />
+              <Button
                 text="Edit"
                 size="30px"
                 icon={editIcon}
@@ -55,29 +54,18 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
               <p className="title">Next step:</p>
               <p className="entry">{nextStep}</p>
 
-              {pattern && (
-                <>
-                  <p className="title">Pattern:</p>
-                  <p className="entry">{pattern}</p>
-                </>
-              )}
-              {size && (
-                <>
-                  <p className="title">Size:</p>
-                  <p className="entry">{size}</p>
-                </>
-              )}
-              {materialNeeds && (
-                <>
-                  <p className="title">Materials I need:</p>
-                  <p className="entry">{materialNeeds}</p>
-                </>
-              )}
+              <p className="title">Pattern:</p>
+              {pattern && <p className="entry">{pattern}</p>}
+
+              <p className="title">Size:</p>
+              {size && <p className="entry">{size}</p>}
+
+              <p className="title">Materials I need:</p>
+              {materialNeeds && <p className="entry">{materialNeeds}</p>}
+
+              <p className="title">Materials I have:</p>
               {materialsExisting && (
-                <>
-                  <p className="title">Materials I have:</p>
-                  <p className="entry">{materialsExisting}</p>
-                </>
+                <p className="entry">{materialsExisting}</p>
               )}
             </>
           )}
@@ -89,7 +77,6 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
 }
 
 const StyledTab = styled.main`
-  position: relative;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -98,12 +85,6 @@ const StyledTab = styled.main`
   background: var(--copper-ultralight);
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
-
-  > button {
-    position: absolute;
-    top: 22px;
-    left: 20px;
-  }
 `
 const StyledProject = styled.div`
   position: relative;
@@ -114,8 +95,14 @@ const StyledProject = styled.div`
 
   button {
     position: absolute;
+    margin: 0;
     top: -52px;
     right: -20px;
+  }
+
+  button:first-child {
+    top: -46px;
+    left: -10px;
   }
 
   p {
@@ -131,5 +118,11 @@ const StyledProject = styled.div`
     margin: 0 24px 0 24px;
     color: var(--teal-light);
     font-size: 16px;
+  }
+
+  .noEntryDisclaimer {
+    margin: 50px 0 50px 6px;
+    font-size: 10px;
+    color: var(--teal-ultralight);
   }
 `
