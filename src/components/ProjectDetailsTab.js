@@ -13,6 +13,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)
   const { id } = useParams()
   const history = useHistory()
+  console.log(history)
   const projectData = projectList.find((project) => id === project.id)
   const {
     projectName,
@@ -32,7 +33,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
           className="back-button"
           size="11px"
           icon={arrowLeft}
-          onClick={() => history.push('/projects')}
+          onClick={() => history.goBack()}
         />
         <StyledProject>
           {isEditing ? (

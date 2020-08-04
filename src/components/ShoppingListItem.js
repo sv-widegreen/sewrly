@@ -1,16 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import arrowRight from '../assets/arrowRight.svg'
 
 export default function ShoppingListItem({ projectData }) {
-  const { projectName, materialNeeds } = projectData
+  const { id, projectName, materialNeeds } = projectData
 
   return (
     <>
       {materialNeeds ? (
-        <StyledProject>
-          <p name="materials">{materialNeeds}</p>
-          <p name="projectName">for project: {projectName}</p>
-        </StyledProject>
+        <StyledLink to={`/projects/${projectName}/${id}`}>
+          <StyledProject>
+            <p name="materials">{materialNeeds}</p>
+            <p name="projectName">for project: {projectName}</p>
+            <img src={arrowRight} alt="" />
+          </StyledProject>
+        </StyledLink>
       ) : (
         ''
       )}
@@ -22,7 +27,6 @@ const StyledProject = styled.li`
   position: relative;
   list-style: none;
   width: 300px;
-  height: 100%;
   border-radius: 10px;
   background: var(--copper-ultralight);
   margin: 20px 20px 0 20px;
@@ -45,4 +49,15 @@ const StyledProject = styled.li`
       padding: 0 24px 14px 24px;
     }
   }
+
+  img {
+    position: absolute;
+    width: 9px;
+    bottom: 13px;
+    right: 10px;
+    opacity: 0.7;
+  }
+`
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `

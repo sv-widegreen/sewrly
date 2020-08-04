@@ -60,7 +60,7 @@ const StyledShoppingList = styled.ul`
   flex-direction: column-reverse;
   align-items: center;
 
-  li:first-child {
+  a:first-child {
     margin-bottom: 80px;
   }
 `
