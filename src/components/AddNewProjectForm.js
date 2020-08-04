@@ -29,7 +29,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
         <InputField
           labelText="What's the next step?"
-          placeholderText="e.g. buy materials, cut fabric, sew..."
+          placeholderText="e.g. buy materials, cut fabric, sew ..."
           name="nextStep"
           registerFn={register}
           error={errors.nextStep}
@@ -60,20 +60,20 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
         <InputTextarea
           labelText="Materials I have:"
-          placeholderText="separate materials with a comma."
+          placeholderText="separate materials with a comma"
           name="materialNeeds"
           registerFn={register}
           error={errors.materialNeeds}
-          errorMessageMax="The text is too long...?"
+          errorMessageMax="The text is too long ...?"
         />
 
         <InputTextarea
           labelText="Materials I need:"
-          placeholderText="separate materials with a comma."
+          placeholderText="separate materials with a comma"
           name="materialsExisting"
           registerFn={register}
           error={errors.materialsExisting}
-          errorMessageMax="Do you really need that much...?"
+          errorMessageMax="Do you really need that much ...?"
         />
       </StyledInputGroup>
 

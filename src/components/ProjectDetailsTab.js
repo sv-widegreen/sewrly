@@ -55,29 +55,18 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
               <p className="title">Next step:</p>
               <p className="entry">{nextStep}</p>
 
-              {pattern && (
-                <>
-                  <p className="title">Pattern:</p>
-                  <p className="entry">{pattern}</p>
-                </>
-              )}
-              {size && (
-                <>
-                  <p className="title">Size:</p>
-                  <p className="entry">{size}</p>
-                </>
-              )}
-              {materialNeeds && (
-                <>
-                  <p className="title">Materials I need:</p>
-                  <p className="entry">{materialNeeds}</p>
-                </>
-              )}
+              <p className="title">Pattern:</p>
+              {pattern && <p className="entry">{pattern}</p>}
+
+              <p className="title">Size:</p>
+              {size && <p className="entry">{size}</p>}
+
+              <p className="title">Materials I need:</p>
+              {materialNeeds && <p className="entry">{materialNeeds}</p>}
+
+              <p className="title">Materials I have:</p>
               {materialsExisting && (
-                <>
-                  <p className="title">Materials I have:</p>
-                  <p className="entry">{materialsExisting}</p>
-                </>
+                <p className="entry">{materialsExisting}</p>
               )}
             </>
           )}
@@ -131,5 +120,11 @@ const StyledProject = styled.div`
     margin: 0 24px 0 24px;
     color: var(--teal-light);
     font-size: 16px;
+  }
+
+  .noEntryDisclaimer {
+    margin: 50px 0 50px 6px;
+    font-size: 10px;
+    color: var(--teal-ultralight);
   }
 `
