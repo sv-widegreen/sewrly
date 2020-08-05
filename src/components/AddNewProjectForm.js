@@ -85,7 +85,6 @@ export default function AddNewProjectForm({ addToProjectList }) {
 const StyledForm = styled.form`
   display: flex;
   flex-flow: column;
-  gap: 10px;
   height: 446px;
   overflow: scroll;
   padding: 0 0 20px 0;
@@ -98,21 +97,20 @@ const StyledForm = styled.form`
   }
 
   .optional {
-    margin: 30px 0 0 6px;
+    margin: 40px 0 0 6px;
   }
 
   button {
     margin: 0 auto;
 
     img {
-      margin-bottom: 10px;
+      margin: 10px 0;
     }
   }
 `
 const StyledInputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   border-radius: 10px;
   background-color: white;
   padding: 15px 10px;
