@@ -32,6 +32,7 @@ const StyledLabel = styled.label`
   color: var(--teal-medium);
   font-size: 18px;
   font-weight: 200;
+  margin-top: 10px;
 
   textarea {
     width: 275px;

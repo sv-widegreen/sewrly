@@ -22,7 +22,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
       <p>Required info:</p>
       <StyledInputGroup>
         <InputField
-          labelText="Project Name"
+          labelText="Project name"
           placeholderText="type here"
           name="projectName"
           registerFn={register}
@@ -44,20 +44,20 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
       <p className="optional">Optional info (you can add them later): </p>
       <StyledInputGroup>
-        <InputField
-          labelText="Upload an image:"
-          placeholder="upload an image"
-          type="file"
-          name="image"
-          registerFn={register}
-          onChange={uploadImage}
-        />
+        <StyledImageUpload>
+          <p>Upload an image:</p>
+          <InputField
+            labelText="Choose a file"
+            placeholder="upload an image"
+            type="file"
+            name="image"
+            registerFn={register}
+            onChange={uploadImage}
+          />
+        </StyledImageUpload>
 
-        {loading ? (
-          <p className="loading">loading ...</p>
-        ) : (
-          <StyledThumbnail src={image} />
-        )}
+        {loading && <p className="loading">loading ...</p>}
+        {image && <StyledThumbnail src={image} />}
 
         <InputField
           labelText="Where did you find the pattern?"
@@ -129,24 +129,22 @@ export default function AddNewProjectForm({ addToProjectList }) {
 const StyledForm = styled.form`
   display: flex;
   flex-flow: column;
-  height: 446px;
-  overflow: scroll;
-  padding: 0 0 20px 0;
+  padding: 0 0 60px 0;
 
   p {
     color: var(--teal-ultralight);
     font-size: 14px;
     font-weight: 300;
-    margin: 0 0 0 6px;
+    margin: 10px 0 0 6px;
   }
 
   .optional {
-    margin: 40px 0 0 6px;
+    margin: 30px 0 0 6px;
   }
 
   .loading {
     align-self: center;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   button {
@@ -162,7 +160,7 @@ const StyledInputGroup = styled.div`
   flex-direction: column;
   border-radius: 10px;
   background-color: white;
-  padding: 15px 10px;
+  padding: 5px 10px 15px 10px;
   width: 300px;
   align-self: center;
 `
@@ -175,4 +173,32 @@ const StyledThumbnail = styled.img`
   border-style: none;
   align-self: center;
   object-fit: cover;
+  margin: 10px 0;
+`
+
+const StyledImageUpload = styled.div`
+  p {
+    color: var(--teal-medium);
+    font-size: 18px;
+    font-weight: 200;
+    margin: 10px 0 0 0;
+  }
+
+  label {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--copper-ultralight);
+    font-size: 14px;
+    color: var(--teal-light);
+    box-shadow: 0 0 0 1pt var(--teal-ultralight);
+
+    > [name='image'] {
+      position: absolute;
+      z-index: -1;
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+    }
+  }
 `
