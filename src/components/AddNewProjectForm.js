@@ -96,7 +96,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
         />
       </StyledInputGroup>
 
-      <Button icon={addIcon} size="50px" />
+      <Button icon={addIcon} size="30px" text="Add" />
     </StyledForm>
   )
 
@@ -127,6 +127,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
 }
 
 const StyledForm = styled.form`
+  position: relative;
   display: flex;
   flex-flow: column;
   padding: 0 0 60px 0;
@@ -148,10 +149,13 @@ const StyledForm = styled.form`
   }
 
   button {
-    margin: 0 auto;
+    position: absolute;
+    margin: 0;
+    top: -52px;
+    right: -20px;
 
-    img {
-      margin: 10px 0;
+    p {
+      margin: 0;
     }
   }
 `
