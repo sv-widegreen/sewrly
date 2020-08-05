@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
 import AddNewProjectTab from './components/AddNewProjectTab'
 import FabricCalculatorTab from './components/FabricCalculatorTab'
 import { useLocalStorageState } from './components/hooks/useLocalStorageState'
@@ -38,12 +37,18 @@ export default function App() {
     </Switch>
   )
 
-  function addToProjectList(projectData, event) {
-    event.preventDefault()
-    event.target.reset()
-    event.target[0].focus()
-    projectData.id = uuidv4()
-    setProjectList([...projectList, projectData])
+  // function addToProjectList(projectData, event) {
+  //   console.log(projectData)
+  //   event.preventDefault()
+  //   event.target.reset()
+  //   event.target[0].focus()
+  //   projectData.id = uuidv4()
+  //   setProjectList([...projectList, projectData])
+  // }
+
+  function addToProjectList(project) {
+    console.log(project)
+    setProjectList([...projectList, project])
   }
 
   function updateProjectData(updatedData) {

@@ -5,6 +5,7 @@ export default function InputField({
   labelText,
   placeholderText,
   name,
+  type,
   registerFn,
   error,
   errorMessageMax,
@@ -15,7 +16,7 @@ export default function InputField({
     <StyledLabel>
       {labelText}
       <input
-        type="text"
+        type={type}
         placeholder={placeholderText}
         name={name}
         ref={registerFn}

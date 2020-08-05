@@ -19,6 +19,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
     pattern,
     size,
     nextStep,
+    image,
     materialNeeds,
     materialsExisting,
   } = projectData
@@ -51,6 +52,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
                 icon={editIcon}
                 onClick={() => setEditing(true)}
               />
+              {image && <img className="uploadedImage" src={image} alt="" />}
               <p className="title">Next step:</p>
               <p className="entry">{nextStep}</p>
 
@@ -103,6 +105,15 @@ const StyledProject = styled.div`
   button:first-child {
     top: -46px;
     left: -10px;
+  }
+
+  .uploadedImage {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 100px;
+    border-radius: 10px;
+    border-style: none;
+    object-fit: cover;
   }
 
   p {

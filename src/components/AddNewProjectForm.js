@@ -1,7 +1,8 @@
 import { yupResolver } from '@hookform/resolvers'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
 import addIcon from '../assets/addIcon.svg'
 import Button from './Button'
 import InputField from './InputField'
@@ -13,8 +14,11 @@ export default function AddNewProjectForm({ addToProjectList }) {
     resolver: yupResolver(projectSchema),
   })
 
+  const [loading, setLoading] = useState(false)
+  const [image, setImage] = useState('')
+
   return (
-    <StyledForm onSubmit={handleSubmit(addToProjectList)}>
+    <StyledForm onSubmit={handleSubmit(handleInputs)}>
       <p>Required info:</p>
       <StyledInputGroup>
         <InputField
@@ -40,6 +44,21 @@ export default function AddNewProjectForm({ addToProjectList }) {
 
       <p className="optional">Optional info (you can add them later): </p>
       <StyledInputGroup>
+        <InputField
+          labelText="Upload an image:"
+          placeholder="upload an image"
+          type="file"
+          name="image"
+          registerFn={register}
+          onChange={uploadImage}
+        />
+
+        {loading ? (
+          <p className="loading">loading ...</p>
+        ) : (
+          <StyledThumbnail src={image} />
+        )}
+
         <InputField
           labelText="Where did you find the pattern?"
           placeholderText="or did you draft it yourself?"
@@ -80,6 +99,31 @@ export default function AddNewProjectForm({ addToProjectList }) {
       <Button icon={addIcon} size="50px" />
     </StyledForm>
   )
+
+  async function uploadImage(event) {
+    const files = event.target.files
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'sewrly_upload')
+    setLoading(true)
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dun33qbbm/image/upload',
+      { method: 'POST', body: data }
+    )
+    const image = await res.json()
+    setImage(image.secure_url)
+    setLoading(false)
+  }
+
+  function handleInputs(projectData, event) {
+    event.preventDefault()
+    projectData.id = uuidv4()
+    projectData.image = image
+    addToProjectList(projectData)
+    event.target.reset()
+    setImage('')
+    event.target[0].focus()
+  }
 }
 
 const StyledForm = styled.form`
@@ -100,6 +144,11 @@ const StyledForm = styled.form`
     margin: 40px 0 0 6px;
   }
 
+  .loading {
+    align-self: center;
+    margin: 20px 0;
+  }
+
   button {
     margin: 0 auto;
 
@@ -116,4 +165,14 @@ const StyledInputGroup = styled.div`
   padding: 15px 10px;
   width: 300px;
   align-self: center;
+`
+
+const StyledThumbnail = styled.img`
+  width: auto;
+  max-width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  border-style: none;
+  align-self: center;
+  object-fit: cover;
 `

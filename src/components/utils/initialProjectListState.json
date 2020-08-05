@@ -6,7 +6,10 @@
     "nextStep": "cut fabric and lining, buy button, zipper and tape",
     "id": "1",
     "materialNeeds": "10 buttons, invisible zipper 40cm white, bias tape 2m white",
-    "materialsExisting": "fabric, lining"
+    "materialsExisting": "fabric, lining",
+    "file": {
+      "secure_url": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596633901/sewrly/seno2tldl3jdv3iqhw3z.png"
+    }
   },
   {
     "projectName": "New Jacket",
