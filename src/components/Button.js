@@ -23,9 +23,7 @@ export default function Button({
 
 const StyledButton = styled.button`
   background: none;
-  height: auto;
   width: ${(props) => props.width || '40px'};
-  margin: auto;
   text-align: center;
 
   :active {
@@ -38,5 +36,6 @@ const StyledButton = styled.button`
 
   .buttonText {
     font-size: ${(props) => props.fontSize || '10px'};
+    color: var(--teal-medium);
   }
 `

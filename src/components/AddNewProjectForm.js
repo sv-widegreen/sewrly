@@ -88,21 +88,25 @@ const StyledForm = styled.form`
   gap: 10px;
   height: 446px;
   overflow: scroll;
-  margin: 24px auto 50px auto;
+  padding: 0 0 20px 0;
 
   p {
     color: var(--teal-ultralight);
     font-size: 14px;
-    margin: 0 0 -8px 10px;
     font-weight: 300;
+    margin: 0 0 0 6px;
   }
 
   .optional {
-    margin: 10px 0 -8px 10px;
+    margin: 30px 0 0 6px;
   }
 
   button {
-    padding-bottom: 14px;
+    margin: 0 auto;
+
+    img {
+      margin-bottom: 10px;
+    }
   }
 `
 const StyledInputGroup = styled.div`
