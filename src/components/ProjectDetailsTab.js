@@ -22,6 +22,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
     image,
     materialNeeds,
     materialsExisting,
+    status,
   } = projectData
 
   return (
@@ -50,7 +51,16 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
                 icon={editIcon}
                 onClick={() => setEditing(true)}
               />
-              {image && <img className="uploadedImage" src={image} alt="" />}
+              {status ? (
+                <p className="status">finished</p>
+              ) : (
+                <p className="status">in progress</p>
+              )}
+              {image ? (
+                <img className="uploadedImage" src={image} alt="" />
+              ) : (
+                <p className="title">Picture:</p>
+              )}
               <p className="title">Next step:</p>
               <p className="entry">{nextStep}</p>
 
@@ -91,17 +101,17 @@ const StyledProject = styled.div`
   width: 300px;
   border-radius: 10px;
   background: var(--copper-ultralight);
-  margin: 20px 0;
+  margin: 10px 0 20px 0;
 
   button {
     position: absolute;
     margin: 0;
-    top: -52px;
+    top: -42px;
     right: -20px;
   }
 
   button:first-child {
-    top: -46px;
+    top: -36px;
     left: -10px;
   }
 
@@ -131,8 +141,8 @@ const StyledProject = styled.div`
     font-size: 16px;
   }
 
-  .noEntryDisclaimer {
-    margin: 50px 0 50px 6px;
+  .status {
+    margin: 0 auto 8px;
     font-size: 10px;
     color: var(--teal-ultralight);
   }

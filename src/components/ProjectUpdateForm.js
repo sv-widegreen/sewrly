@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import saveIcon from '../assets/saveIcon.svg'
+import checkedCheckbox from '../assets/checkedCheckbox.svg'
+import clearCheckbox from '../assets/clearCheckbox.svg'
 import Button from './Button'
 import InputField from './InputField'
 import InputTextarea from './InputTextarea'
@@ -24,6 +26,7 @@ export default function ProjectUpdateForm({
     image,
     materialNeeds,
     materialsExisting,
+    status,
   } = projectData
 
   const { register, errors, handleSubmit } = useForm({
@@ -35,11 +38,13 @@ export default function ProjectUpdateForm({
       nextStep,
       materialNeeds,
       materialsExisting,
+      status,
     },
   })
 
   const [loading, setLoading] = useState(false)
   const [newImage, setNewImage] = useState('')
+  const [check, setCheck] = useState(status)
 
   return (
     <StyledForm onSubmit={handleSubmit(handleNewData)}>
@@ -119,13 +124,34 @@ export default function ProjectUpdateForm({
         error={errors.materialsExisting}
         errorMessageMax="The text is too long...?"
       />
-
+      <StyledCheckbox>
+        <InputField
+          labelText="Mark as done: "
+          type="checkbox"
+          name="status"
+          registerFn={register}
+          onChange={handleCheckbox}
+        />
+        {check ? (
+          <img src={checkedCheckbox} alt="" />
+        ) : (
+          <img src={clearCheckbox} alt="" />
+        )}
+      </StyledCheckbox>
       <Button text="Save" size="30px" icon={saveIcon} />
     </StyledForm>
   )
 
   function handleChange(event) {
     setUpdatedData({ ...updatedData, [event.target.name]: event.target.value })
+  }
+
+  function handleCheckbox(event) {
+    setCheck(!check)
+    setUpdatedData({
+      ...updatedData,
+      [event.target.name]: event.target.checked,
+    })
   }
 
   async function uploadImage(event) {
@@ -210,5 +236,29 @@ const StyledThumbnail = styled.img`
   border-style: none;
   align-self: center;
   object-fit: cover;
-  margin: 10px 0;
+  margin: 10px 0 10px 6px;
+`
+
+const StyledCheckbox = styled.div`
+  position: relative;
+  label {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+
+    > [name='status'] {
+      position: absolute;
+      z-index: -1;
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 22px;
+    right: 150px;
+    width: 20px;
+  }
 `

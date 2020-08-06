@@ -118,6 +118,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
   function handleInputs(projectData, event) {
     event.preventDefault()
     projectData.id = uuidv4()
+    projectData.status = ''
     projectData.image = image
     addToProjectList(projectData)
     event.target.reset()

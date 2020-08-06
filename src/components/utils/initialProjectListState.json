@@ -1,39 +1,52 @@
 [
   {
+    "projectName": "Insa's Sofa Cushions",
+    "pattern": "",
+    "size": "40x40cm",
+    "nextStep": "cut fabric",
+    "id": "4",
+    "materialNeeds": "zipper for yellow cushions",
+    "materialsExisting": "leftover fabric from curtains",
+    "image": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596717172/sewrly/kihxi8j2wullwzjixmrd.jpg"
+  },
+  {
+    "projectName": "Repair blue pullover",
+    "pattern": "",
+    "size": "",
+    "nextStep": "find matching thread",
+    "id": "5",
+    "materialNeeds": "",
+    "materialsExisting": "",
+    "image": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596717237/sewrly/jvthhxeesvlu0hqcou5i.jpg"
+  },
+  {
     "projectName": "Summer Dress Liberty",
     "pattern": "Pinterest",
     "size": "36",
-    "nextStep": "cut fabric and lining, buy button, zipper and tape",
+    "nextStep": "cut fabric",
     "id": "1",
-    "materialNeeds": "10 buttons, invisible zipper 40cm white, bias tape 2m white",
-    "materialsExisting": "fabric, lining",
-    "file": {
-      "secure_url": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596633901/sewrly/seno2tldl3jdv3iqhw3z.png"
-    }
+    "materialNeeds": "invisible zipper 40cm white, bias tape 2m white",
+    "materialsExisting": "fabric",
+    "image": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596717215/sewrly/hbkm9ndyvpxcquh5cyca.jpg"
   },
   {
-    "projectName": "New Jacket",
-    "pattern": "",
+    "projectName": "Draped Chino",
+    "pattern": "Burda 7/19 M. 114",
     "size": "36",
-    "nextStep": "decide on lining color",
+    "nextStep": "find fabric",
+    "id": "3",
+    "materialNeeds": "fabric, zipper 22cm",
+    "materialsExisting": "vlieseline g 785",
+    "image": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596717294/sewrly/yufxbarvykfrweeirin7.jpg"
+  },
+  {
+    "projectName": "Lemon Face Mask",
+    "pattern": "Mum",
+    "size": "S",
+    "nextStep": "sew",
     "id": "2",
     "materialNeeds": "",
-    "materialsExisting": "fabric, buttons"
-  },
-  {
-    "projectName": "Jeans",
-    "pattern": "drafted myself",
-    "size": "",
-    "nextStep": "redo everything",
-    "id": "3",
-    "materialNeeds": ""
-  },
-  {
-    "projectName": "Sports Bag",
-    "pattern": "",
-    "size": "",
-    "nextStep": "find pattern",
-    "id": "4",
-    "materialNeeds": "sturdy fabric blue, zipper 40cm neon-yellow, mesh fabric 100cm"
+    "materialsExisting": "fabric, elastics",
+    "image": "https://res.cloudinary.com/dun33qbbm/image/upload/v1596717195/sewrly/ylbswiokmgziptnrc2pv.jpg"
   }
 ]
