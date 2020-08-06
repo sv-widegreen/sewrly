@@ -37,15 +37,6 @@ export default function App() {
     </Switch>
   )
 
-  // function addToProjectList(projectData, event) {
-  //   console.log(projectData)
-  //   event.preventDefault()
-  //   event.target.reset()
-  //   event.target[0].focus()
-  //   projectData.id = uuidv4()
-  //   setProjectList([...projectList, projectData])
-  // }
-
   function addToProjectList(project) {
     console.log(project)
     setProjectList([...projectList, project])
