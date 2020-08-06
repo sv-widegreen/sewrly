@@ -15,9 +15,9 @@ export default function ProjectListItem({ projectData }) {
           <p className="noImage">no image uploaded yet</p>
         )}
         <section>
-          <p name="projectName">{projectName}</p>
-          <p name="nextStepTitle">Next step:</p>
-          <p name="nextStep">{nextStep}</p>
+          <p className="projectName">{projectName}</p>
+          <p className="nextStepTitle">Next step:</p>
+          <p className="nextStep">{nextStep}</p>
         </section>
         <img className="arrow" src={arrowRight} alt="" />
       </StyledProject>
@@ -39,7 +39,7 @@ const StyledProject = styled.li`
   img {
     width: 80px;
     height: 80px;
-    margin: 0 10px 0 0;
+    margin: 0 15px 0 0;
     border-radius: 10px;
     border-style: none;
     object-fit: cover;
@@ -59,20 +59,20 @@ const StyledProject = styled.li`
     p {
       font-weight: 200;
       font-size: 16px;
+    }
 
-      &[name='projectName'] {
-        color: var(--teal-dark);
-        font-size: 18px;
-      }
+    .projectName {
+      color: var(--teal-dark);
+      font-size: 18px;
+    }
 
-      &[name='nextStepTitle'] {
-        margin-top: 10px;
-        color: var(--teal-medium);
-      }
+    .nextStepTitle {
+      margin-top: 10px;
+      color: var(--teal-medium);
+    }
 
-      &[name='nextStep'] {
-        color: var(--teal-light);
-      }
+    .nextStep {
+      color: var(--teal-light);
     }
   }
 
