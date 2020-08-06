@@ -18,7 +18,7 @@ export default function ArchiveList({ projectList }) {
         <div>
           {finishedProjectsList.length <= 0 && (
             <p className="noProjectsYet">
-              Finish a project and mark it as done
+              Finish a project and mark it as done!
             </p>
           )}
           <StyledProjectList>
@@ -60,10 +60,10 @@ const StyledTab = styled.main`
 
 const StyledProjectList = styled.ul`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
 
-  a:first-child {
+  a:last-child {
     margin-bottom: 35px;
   }
 `

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import arrowRight from '../assets/arrowRight.svg'
 
 export default function ProjectListItem({ projectData }) {
-  const { id, projectName, nextStep, image } = projectData
+  const { id, projectName, nextStep, image, status } = projectData
   return (
     <StyledLink to={`/projects/${projectName}/${id}`}>
       <StyledProject>
@@ -15,8 +15,12 @@ export default function ProjectListItem({ projectData }) {
         )}
         <section>
           <p className="projectName">{projectName}</p>
-          <p className="nextStepTitle">Next step:</p>
-          <p className="nextStep">{nextStep}</p>
+          {!status && (
+            <>
+              <p className="nextStepTitle">Next step:</p>
+              <p className="nextStep">{nextStep}</p>
+            </>
+          )}
         </section>
         <img className="arrow" src={arrowRight} alt="" />
       </StyledProject>

@@ -31,10 +31,10 @@ export default function NavigationWelcomescreen() {
 
 const StyledHomeNavigation = styled.nav`
   display: flex;
-  gap: 15px;
   margin-top: 10px;
 
   img {
+    margin: 0 10px;
     width: 100px;
 
     :active {

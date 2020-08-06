@@ -23,6 +23,7 @@ export default function ProjectUpdateForm({
     pattern,
     size,
     nextStep,
+    notes,
     image,
     materialNeeds,
     materialsExisting,
@@ -36,6 +37,7 @@ export default function ProjectUpdateForm({
       pattern,
       size,
       nextStep,
+      notes,
       materialNeeds,
       materialsExisting,
       status,
@@ -70,13 +72,21 @@ export default function ProjectUpdateForm({
         name="nextStep"
         onChange={handleChange}
         registerFn={register}
-        error={errors.nextStep}
+        error={errors.nextStepUpdate}
         errorMessageMax="Don't make it too long"
-        errorMessageRequired="Keep track of the next step!"
+      />
+
+      <InputTextarea
+        labelText="Notes:"
+        name="notes"
+        onChange={handleChange}
+        registerFn={register}
+        error={errors.notes}
+        errorMessageMax="The text is too long unfortunately."
       />
 
       <InputField
-        labelText="Project Name:"
+        labelText="Project name:"
         name="projectName"
         onChange={handleChange}
         registerFn={register}
@@ -108,7 +118,7 @@ export default function ProjectUpdateForm({
       <InputTextarea
         labelText="Materials I need:"
         name="materialNeeds"
-        placeholderText="What materials do you need? Separate materials with a comma."
+        placeholderText="separate materials with a comma."
         onChange={handleChange}
         registerFn={register}
         error={errors.materialNeeds}
@@ -118,7 +128,7 @@ export default function ProjectUpdateForm({
       <InputTextarea
         labelText="Materials I have:"
         name="materialsExisting"
-        placeholderText="What materials do you already have? Separate materials with a comma."
+        placeholderText="separate materials with a comma."
         onChange={handleChange}
         registerFn={register}
         error={errors.materialsExisting}
@@ -200,7 +210,8 @@ const StyledForm = styled.form`
 
   .loading {
     align-self: center;
-    margin: 10px 0;
+    margin: 10px 0 10px 6px;
+    color: var(--teal-light);
   }
 `
 const StyledImageUpload = styled.div`
@@ -249,7 +260,7 @@ const StyledCheckbox = styled.div`
     position: relative;
     z-index: 1;
     width: 200px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 
     > [name='status'] {
       position: absolute;

@@ -22,6 +22,7 @@ export default function ProjectList({ projectList }) {
         <div>
           <Link to="/add-new-project" className="addNewLink">
             <img src={addIcon} alt="add new project" />
+            <p>Add</p>
           </Link>
           {inProgressProjectsList.length <= 0 && (
             <p className="noProjectsYet">
@@ -60,9 +61,9 @@ const StyledTab = styled.main`
 
   > div {
     position: relative;
-    height: 480px;
+    height: 450px;
     overflow: scroll;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .addNewLink {
@@ -70,9 +71,17 @@ const StyledTab = styled.main`
     margin: 0;
     top: 104px;
     right: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 10px;
+    color: var(--teal-dark);
 
     img {
       width: 30px;
+
+      :active {
+        transform: scale(0.9, 0.9);
+      }
     }
   }
 `
