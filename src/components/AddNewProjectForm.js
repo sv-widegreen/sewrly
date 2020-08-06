@@ -127,7 +127,8 @@ export default function AddNewProjectForm({ addToProjectList }) {
 }
 
 const StyledForm = styled.form`
-  position: relative;
+  height: 444px;
+  overflow: scroll;
   display: flex;
   flex-flow: column;
   padding: 0 0 60px 0;
@@ -151,8 +152,8 @@ const StyledForm = styled.form`
   button {
     position: absolute;
     margin: 0;
-    top: -52px;
-    right: -20px;
+    top: 16px;
+    right: 18px;
 
     p {
       margin: 0;

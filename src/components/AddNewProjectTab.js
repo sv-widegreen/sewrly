@@ -22,6 +22,7 @@ export default function AddNewProjectTab({ onSubmit }) {
 }
 
 const StyledTab = styled.main`
+  position: relative;
   display: flex;
   flex-flow: column wrap;
   gap: 20px;
