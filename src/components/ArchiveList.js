@@ -18,7 +18,7 @@ export default function ArchiveList({ projectList }) {
         <div>
           {finishedProjectsList.length <= 0 && (
             <p className="noProjectsYet">
-              Finish a project and mark it as done!
+              Finish a project and mark it as done
             </p>
           )}
           <StyledProjectList>

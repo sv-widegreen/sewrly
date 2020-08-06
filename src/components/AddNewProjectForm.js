@@ -128,12 +128,13 @@ export default function AddNewProjectForm({ addToProjectList }) {
 }
 
 const StyledForm = styled.form`
-  height: 444px;
+  height: 454px;
   overflow: scroll;
   display: flex;
   flex-flow: column;
   padding: 0 0 60px 0;
   font-weight: 200;
+  margin: 10px 0 0 0;
 
   p {
     color: var(--teal-ultralight);
