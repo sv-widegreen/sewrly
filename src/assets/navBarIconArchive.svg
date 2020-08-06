@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>navBarIconArchive</title>
+    <defs>
+        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#84C0B7" offset="0%"></stop>
+            <stop stop-color="#44A08D" offset="49.4618663%"></stop>
+            <stop stop-color="#205F59" offset="100%"></stop>
+        </linearGradient>
+        <filter id="filter-2">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 0.984314 0 0 0 0 0.964706 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="UX-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-374.000000, -56.000000)">
+            <g id="Group" transform="translate(374.000000, 56.000000)">
+                <circle id="teal-medium" fill="url(#linearGradient-1)" cx="25" cy="25" r="25"></circle>
+                <g filter="url(#filter-2)" id="folder">
+                    <g transform="translate(11.000000, 12.000000)">
+                        <path d="M25.6208333,25.35 L2.32916667,25.35 C1.04280344,25.35 0,24.3182199 0,23.0454545 L0,23.0454545 L0,21.8931818 L0,21.8931818 L0,2.30454545 C0,1.03178014 1.04280344,0 2.32916667,0 L11.6458333,0 C12.9321966,0 13.975,1.03178014 13.975,2.30454545 L25.6208333,2.30454545 C26.9071966,2.30454545 27.95,3.3363256 27.95,4.60909091 L27.95,23.0454545 C27.95,24.3182199 26.9071966,25.35 25.6208333,25.35 Z M25.6208333,4.60909091 L11.6458333,4.60909091 L11.6458333,2.30454545 L2.32916667,2.30454545 L2.32916667,6.91363636 L25.6208333,6.91363636 L25.6208333,4.60909091 Z M25.6208333,9.21818182 L2.32916667,9.21818182 L2.32916667,21.8931818 L2.32916667,21.8931818 L2.32916667,23.0454545 L25.6208333,23.0454545 L25.6208333,21.8931818 L25.6208333,21.8931818 L25.6208333,9.21818182 Z" fill="#000000" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

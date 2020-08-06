@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import addIcon from '../assets/addIcon.svg'
+import navBarIconArchive from '../assets/navBarIconArchive.svg'
 import navBarIconFabricCalc from '../assets/navBarIconFabricCalc.svg'
 import navBarIconProjects from '../assets/navBarIconProjects.svg'
 import navBarIconShoppingList from '../assets/navBarIconShoppingList.svg'
@@ -9,21 +9,21 @@ import navBarIconShoppingList from '../assets/navBarIconShoppingList.svg'
 export default function NavigationBar() {
   return (
     <StyledNavigationBar>
-      <NavLink to="/fabric-calculator" activeClassName="selected">
-        <img src={navBarIconFabricCalc} alt="fabric calculator" />
-        <p>Fabric Calc</p>
-      </NavLink>
-      <NavLink to="/shopping-list" activeClassName="selected">
-        <img src={navBarIconShoppingList} alt="to shopping list" />
-        <p>Shopping List</p>
+      <NavLink to="/archive" activeClassName="selected">
+        <img src={navBarIconArchive} alt="archive" />
+        <p>Archive</p>
       </NavLink>
       <NavLink to="/projects" activeClassName="selected">
         <img src={navBarIconProjects} alt="back to projects" />
         <p>Projects</p>
       </NavLink>
-      <NavLink to="/add-new-project" activeClassName="selected">
-        <img src={addIcon} alt="add new project" />
-        <p>New Project</p>
+      <NavLink to="/shopping-list" activeClassName="selected">
+        <img src={navBarIconShoppingList} alt="to shopping list" />
+        <p>Shopping List</p>
+      </NavLink>
+      <NavLink to="/fabric-calculator" activeClassName="selected">
+        <img src={navBarIconFabricCalc} alt="fabric calculator" />
+        <p>Fabric Calc</p>
       </NavLink>
     </StyledNavigationBar>
   )
@@ -47,6 +47,7 @@ const StyledNavigationBar = styled.nav`
     font-size: 10px;
     color: var(--teal-dark);
     text-decoration: none;
+    width: 64px;
   }
 
   .selected {

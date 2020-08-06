@@ -104,15 +104,17 @@ const StyledProject = styled.div`
   margin: 10px 0 20px 0;
 
   button {
-    position: absolute;
+    position: fixed;
     margin: 0;
-    top: -42px;
-    right: -20px;
+    top: 104px;
+    right: 20px;
   }
 
   button:first-child {
-    top: -36px;
-    left: -10px;
+    position: fixed;
+    margin: 0;
+    top: 110px;
+    left: 20px;
   }
 
   .uploadedImage {

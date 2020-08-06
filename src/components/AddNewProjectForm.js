@@ -133,6 +133,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-flow: column;
   padding: 0 0 60px 0;
+  font-weight: 200;
 
   p {
     color: var(--teal-ultralight);
@@ -151,10 +152,10 @@ const StyledForm = styled.form`
   }
 
   button {
-    position: absolute;
+    position: fixed;
     margin: 0;
-    top: 16px;
-    right: 18px;
+    top: 104px;
+    right: 20px;
 
     p {
       margin: 0;

@@ -5,6 +5,7 @@ import FabricCalculatorTab from './components/FabricCalculatorTab'
 import { useLocalStorageState } from './components/hooks/useLocalStorageState'
 import ProjectDetailsTab from './components/ProjectDetailsTab'
 import ProjectList from './components/ProjectList'
+import ArchiveList from './components/ArchiveList'
 import ShoppingList from './components/ShoppingList'
 import WelcomeScreen from './components/WelcomeScreen.js'
 
@@ -16,8 +17,8 @@ export default function App() {
       <Route exact path="/">
         <WelcomeScreen />
       </Route>
-      <Route path="/shopping-list">
-        <ShoppingList projectList={projectList} />
+      <Route path="/archive">
+        <ArchiveList projectList={projectList} />
       </Route>
       <Route exact path="/projects">
         <ProjectList projectList={projectList} />
@@ -33,6 +34,9 @@ export default function App() {
       </Route>
       <Route path="/fabric-calculator">
         <FabricCalculatorTab />
+      </Route>
+      <Route path="/shopping-list">
+        <ShoppingList projectList={projectList} />
       </Route>
     </Switch>
   )

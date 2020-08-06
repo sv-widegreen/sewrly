@@ -1,13 +1,12 @@
 import React from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import arrowRight from '../assets/arrowRight.svg'
 
 export default function ProjectListItem({ projectData }) {
-  const { url } = useRouteMatch()
   const { id, projectName, nextStep, image } = projectData
   return (
-    <StyledLink to={`${url}/${projectName}/${id}`}>
+    <StyledLink to={`/projects/${projectName}/${id}`}>
       <StyledProject>
         {image ? (
           <img src={image} alt="" />

@@ -181,10 +181,11 @@ export default function ProjectUpdateForm({
 }
 
 const StyledForm = styled.form`
-  height: 438px;
+  height: 458px;
   overflow: scroll;
 
   label {
+    font-weight: 200;
     display: block;
     padding: 0;
     margin: 20px 0 0 6px;
@@ -241,22 +242,29 @@ const StyledThumbnail = styled.img`
 
 const StyledCheckbox = styled.div`
   position: relative;
+  padding-bottom: 10px;
+
   label {
     display: inline-block;
     position: relative;
+    z-index: 1;
     width: 200px;
+    padding-bottom: 10px;
 
     > [name='status'] {
       position: absolute;
       z-index: -1;
-      width: 0.1px;
-      height: 0.1px;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 22px;
       opacity: 0;
     }
   }
 
   img {
     position: absolute;
+    z-index: 0;
     top: 22px;
     right: 150px;
     width: 20px;
