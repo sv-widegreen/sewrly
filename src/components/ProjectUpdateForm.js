@@ -28,7 +28,6 @@ export default function ProjectUpdateForm({
 
   const { register, errors, handleSubmit } = useForm({
     resolver: yupResolver(projectSchema),
-    // defaultValues: { ...projectData },
     defaultValues: {
       projectName,
       pattern,
@@ -38,13 +37,15 @@ export default function ProjectUpdateForm({
       materialsExisting,
     },
   })
+
   const [loading, setLoading] = useState(false)
   const [newImage, setNewImage] = useState('')
 
   return (
     <StyledForm onSubmit={handleSubmit(handleNewData)}>
       <StyledImageUpload>
-        <p>Change the image:</p>
+        {image && <p>Change the image:</p>}
+        {!image && <p>Upload an image:</p>}
         <InputField
           labelText="Choose a file"
           placeholder="upload an image"
@@ -56,11 +57,8 @@ export default function ProjectUpdateForm({
       </StyledImageUpload>
 
       {loading && <p className="loading">loading ...</p>}
-      {newImage ? (
-        <StyledThumbnail src={newImage} />
-      ) : (
-        <StyledThumbnail src={image} />
-      )}
+      {image && !newImage && <StyledThumbnail src={image} />}
+      {newImage && <StyledThumbnail src={newImage} />}
 
       <InputTextarea
         labelText="Next step:"
@@ -172,13 +170,18 @@ const StyledForm = styled.form`
     color: var(--teal-light);
     background-color: white;
   }
+
+  .loading {
+    align-self: center;
+    margin: 10px 0;
+  }
 `
 const StyledImageUpload = styled.div`
   p {
     color: var(--teal-medium);
     font-size: 18px;
     font-weight: 200;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0 6px;
   }
 
   label {
@@ -202,7 +205,7 @@ const StyledImageUpload = styled.div`
 const StyledThumbnail = styled.img`
   width: auto;
   max-width: 300px;
-  height: 100px;
+  height: 80px;
   border-radius: 10px;
   border-style: none;
   align-self: center;

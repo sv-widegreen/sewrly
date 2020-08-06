@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
-import addIcon from '../assets/addIcon.svg'
+import saveIcon from '../assets/saveIcon.svg'
 import Button from './Button'
 import InputField from './InputField'
 import InputTextarea from './InputTextarea'
@@ -96,7 +96,7 @@ export default function AddNewProjectForm({ addToProjectList }) {
         />
       </StyledInputGroup>
 
-      <Button icon={addIcon} size="30px" text="Add" />
+      <Button text="Save" size="30px" icon={saveIcon} />
     </StyledForm>
   )
 
