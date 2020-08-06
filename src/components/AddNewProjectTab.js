@@ -26,7 +26,7 @@ const StyledTab = styled.main`
   flex-flow: column wrap;
   gap: 20px;
   align-items: center;
-  margin-top: -20px;
+  margin: -20px 0 0 0;
   background: var(--copper-ultralight);
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);

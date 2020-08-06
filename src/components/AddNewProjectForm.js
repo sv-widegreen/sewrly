@@ -167,6 +167,7 @@ const StyledInputGroup = styled.div`
   flex-direction: column;
   border-radius: 10px;
   background-color: white;
+  margin: 0;
   padding: 5px 10px 15px 10px;
   width: 300px;
   align-self: center;
