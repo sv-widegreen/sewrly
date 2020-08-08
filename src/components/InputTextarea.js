@@ -57,7 +57,7 @@ const StyledLabel = styled.label`
 `
 
 const StyledError = styled.div`
-  padding-top: 5px;
+  padding: 0 0 10px 0;
   font-size: 10px;
   color: var(--copper-dark);
 `

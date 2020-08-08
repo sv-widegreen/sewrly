@@ -27,7 +27,8 @@ const StyledButton = styled.button`
   text-align: center;
 
   :active {
-    transform: scale(0.95, 0.95);
+    transform: scale(0.75, 0.75);
+    opacity: 0.7;
   }
 
   img {

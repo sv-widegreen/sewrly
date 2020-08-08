@@ -9,7 +9,7 @@ import clearCheckbox from '../assets/clearCheckbox.svg'
 import Button from './Button'
 import InputField from './InputField'
 import InputTextarea from './InputTextarea'
-import { projectSchema } from './utils/projectSchema.js'
+import { projectUpdateSchema } from './utils/projectUpdateSchema'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -31,7 +31,7 @@ export default function ProjectUpdateForm({
   } = projectData
 
   const { register, errors, handleSubmit } = useForm({
-    resolver: yupResolver(projectSchema),
+    resolver: yupResolver(projectUpdateSchema),
     defaultValues: {
       projectName,
       pattern,
@@ -72,7 +72,7 @@ export default function ProjectUpdateForm({
         name="nextStep"
         onChange={handleChange}
         registerFn={register}
-        error={errors.nextStepUpdate}
+        error={errors.nextStep}
         errorMessageMax="Don't make it too long"
       />
 

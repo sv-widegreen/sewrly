@@ -75,6 +75,7 @@ const StyledProject = styled.li`
     }
 
     .nextStep {
+      word-break: break-all;
       color: var(--teal-light);
     }
   }

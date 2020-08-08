@@ -60,10 +60,10 @@ const StyledTab = styled.main`
 
 const StyledProjectList = styled.ul`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 
-  a:last-child {
+  a:first-child {
     margin-bottom: 35px;
   }
 `

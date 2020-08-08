@@ -35,18 +35,17 @@ const StyledProject = styled.li`
     font-weight: 200;
     width: 260px;
     overflow-wrap: break-word;
-    padding: 0 24px;
     color: var(--teal-light);
     font-size: 16px;
 
     &[name='materials'] {
-      padding: 12px 15px 10px 24px;
+      padding: 12px 15px 10px 18px;
       color: var(--teal-dark);
       font-size: 18px;
     }
 
     &[name='projectName'] {
-      padding: 0 7px 14px 24px;
+      padding: 0 7px 14px 18px;
     }
   }
 

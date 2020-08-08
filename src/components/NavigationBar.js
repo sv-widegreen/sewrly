@@ -53,13 +53,12 @@ const StyledNavigationBar = styled.nav`
   .selected {
     color: var(--teal-light);
     opacity: 0.7;
+    > img {
+      transform: scale(0.9, 0.9);
+    }
   }
 
   img {
     width: 40px;
-
-    :active {
-      transform: scale(0.9, 0.9);
-    }
   }
 `

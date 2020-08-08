@@ -9,7 +9,10 @@ import InputField from './InputField'
 import InputTextarea from './InputTextarea'
 import { projectSchema } from './utils/projectSchema.js'
 
-export default function AddNewProjectForm({ addToProjectList }) {
+export default function AddNewProjectForm({
+  addToProjectList,
+  setModalVisible,
+}) {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(projectSchema),
   })
@@ -127,7 +130,8 @@ export default function AddNewProjectForm({ addToProjectList }) {
     addToProjectList(projectData)
     event.target.reset()
     setImage('')
-    event.target[0].focus()
+    // event.target[0].focus()
+    setModalVisible(true)
   }
 }
 

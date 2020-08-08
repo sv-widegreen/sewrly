@@ -42,7 +42,6 @@ export default function App() {
   )
 
   function addToProjectList(project) {
-    console.log(project)
     setProjectList([...projectList, project])
   }
 
