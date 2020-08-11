@@ -35,7 +35,6 @@ export default function AddNewProjectForm({
         />
 
         <InputField
-          // labelText="What's the next step?"
           labelText="Next step:"
           placeholderText="e.g. buy materials, cut fabric, sew ..."
           name="nextStep"
@@ -64,8 +63,6 @@ export default function AddNewProjectForm({
         {image && <StyledThumbnail src={image} />}
 
         <InputField
-          // labelText="Where did you find the pattern?"
-          // placeholderText="or did you draft it yourself?"
           labelText="Pattern:"
           placeholderText="type here"
           name="pattern"
@@ -75,7 +72,6 @@ export default function AddNewProjectForm({
         />
 
         <InputField
-          // labelText="If there's a size, which one?"
           labelText="Size:"
           placeholderText="type here"
           name="size"
