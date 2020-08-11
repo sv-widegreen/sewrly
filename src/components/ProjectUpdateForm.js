@@ -51,8 +51,7 @@ export default function ProjectUpdateForm({
   return (
     <StyledForm onSubmit={handleSubmit(handleNewData)}>
       <StyledImageUpload>
-        {image && <p>Change the image:</p>}
-        {!image && <p>Upload an image:</p>}
+        {image ? <p>Change the image:</p> : <p>Upload an image:</p>}
         <InputField
           labelText="Choose a file"
           placeholder="upload an image"
