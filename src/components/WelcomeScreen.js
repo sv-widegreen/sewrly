@@ -39,6 +39,6 @@ const StyledWelcome = styled.main`
   }
 
   p {
-    padding: 50px 0;
+    padding: 20px 0;
   }
 `

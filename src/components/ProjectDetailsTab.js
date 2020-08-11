@@ -19,9 +19,11 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
     pattern,
     size,
     nextStep,
+    notes,
     image,
     materialNeeds,
     materialsExisting,
+    status,
   } = projectData
 
   return (
@@ -50,22 +52,50 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
                 icon={editIcon}
                 onClick={() => setEditing(true)}
               />
-              {image && <img className="uploadedImage" src={image} alt="" />}
-              <p className="title">Next step:</p>
-              <p className="entry">{nextStep}</p>
+              {status ? (
+                <>
+                  <p className="status">finished</p>
+                  {image ? (
+                    <img className="uploadedImage" src={image} alt="" />
+                  ) : (
+                    <p className="title">Picture:</p>
+                  )}
+                  <p className="title">Notes:</p>
+                  <p className="entry">{notes}</p>
+                  <p className="title">Pattern:</p>
+                  {pattern && <p className="entry">{pattern}</p>}
 
-              <p className="title">Pattern:</p>
-              {pattern && <p className="entry">{pattern}</p>}
+                  <p className="title">Size:</p>
+                  {size && <p className="entry">{size}</p>}
+                </>
+              ) : (
+                <>
+                  <p className="status">in progress</p>
+                  {image ? (
+                    <img className="uploadedImage" src={image} alt="" />
+                  ) : (
+                    <p className="title">Picture:</p>
+                  )}
+                  <p className="title">Next step:</p>
+                  <p className="entry">{nextStep}</p>
 
-              <p className="title">Size:</p>
-              {size && <p className="entry">{size}</p>}
+                  <p className="title">Notes:</p>
+                  <p className="entry">{notes}</p>
 
-              <p className="title">Materials I need:</p>
-              {materialNeeds && <p className="entry">{materialNeeds}</p>}
+                  <p className="title">Pattern:</p>
+                  {pattern && <p className="entry">{pattern}</p>}
 
-              <p className="title">Materials I have:</p>
-              {materialsExisting && (
-                <p className="entry">{materialsExisting}</p>
+                  <p className="title">Size:</p>
+                  {size && <p className="entry">{size}</p>}
+
+                  <p className="title">Materials I need:</p>
+                  {materialNeeds && <p className="entry">{materialNeeds}</p>}
+
+                  <p className="title">Materials I have:</p>
+                  {materialsExisting && (
+                    <p className="entry">{materialsExisting}</p>
+                  )}
+                </>
               )}
             </StyledDetailsContainer>
           )}
@@ -91,18 +121,20 @@ const StyledProject = styled.div`
   width: 300px;
   border-radius: 10px;
   background: var(--copper-ultralight);
-  margin: 20px 0;
+  margin: 10px 0 20px 0;
 
   button {
-    position: absolute;
+    position: fixed;
     margin: 0;
-    top: -52px;
-    right: -20px;
+    top: 104px;
+    right: 20px;
   }
 
   button:first-child {
-    top: -46px;
-    left: -10px;
+    position: fixed;
+    margin: 0;
+    top: 110px;
+    left: 20px;
   }
 
   .uploadedImage {
@@ -131,14 +163,17 @@ const StyledProject = styled.div`
     font-size: 16px;
   }
 
-  .noEntryDisclaimer {
-    margin: 50px 0 50px 6px;
-    font-size: 10px;
-    color: var(--teal-ultralight);
+  .status {
+    margin: 0 auto 8px;
+    font-size: 14px;
+    color: var(--teal-light);
   }
 `
 
 const StyledDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: 458px;
+  overflow: scroll;
+  padding-bottom: 30px;
 `

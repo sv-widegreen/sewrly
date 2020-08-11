@@ -4,10 +4,12 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import saveIcon from '../assets/saveIcon.svg'
+import checkedCheckbox from '../assets/checkedCheckbox.svg'
+import clearCheckbox from '../assets/clearCheckbox.svg'
 import Button from './Button'
 import InputField from './InputField'
 import InputTextarea from './InputTextarea'
-import { projectSchema } from './utils/projectSchema.js'
+import { projectUpdateSchema } from './utils/projectUpdateSchema'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -21,31 +23,35 @@ export default function ProjectUpdateForm({
     pattern,
     size,
     nextStep,
+    notes,
     image,
     materialNeeds,
     materialsExisting,
+    status,
   } = projectData
 
   const { register, errors, handleSubmit } = useForm({
-    resolver: yupResolver(projectSchema),
+    resolver: yupResolver(projectUpdateSchema),
     defaultValues: {
       projectName,
       pattern,
       size,
       nextStep,
+      notes,
       materialNeeds,
       materialsExisting,
+      status,
     },
   })
 
   const [loading, setLoading] = useState(false)
   const [newImage, setNewImage] = useState('')
+  const [check, setCheck] = useState(status)
 
   return (
     <StyledForm onSubmit={handleSubmit(handleNewData)}>
       <StyledImageUpload>
-        {image && <p>Change the image:</p>}
-        {!image && <p>Upload an image:</p>}
+        {image ? <p>Change the image:</p> : <p>Upload an image:</p>}
         <InputField
           labelText="Choose a file"
           placeholder="upload an image"
@@ -67,11 +73,19 @@ export default function ProjectUpdateForm({
         registerFn={register}
         error={errors.nextStep}
         errorMessageMax="Don't make it too long"
-        errorMessageRequired="Keep track of the next step!"
+      />
+
+      <InputTextarea
+        labelText="Notes:"
+        name="notes"
+        onChange={handleChange}
+        registerFn={register}
+        error={errors.notes}
+        errorMessageMax="The text is too long unfortunately."
       />
 
       <InputField
-        labelText="Project Name:"
+        labelText="Project name:"
         name="projectName"
         onChange={handleChange}
         registerFn={register}
@@ -103,7 +117,7 @@ export default function ProjectUpdateForm({
       <InputTextarea
         labelText="Materials I need:"
         name="materialNeeds"
-        placeholderText="What materials do you need? Separate materials with a comma."
+        placeholderText="separate materials with a comma."
         onChange={handleChange}
         registerFn={register}
         error={errors.materialNeeds}
@@ -113,19 +127,40 @@ export default function ProjectUpdateForm({
       <InputTextarea
         labelText="Materials I have:"
         name="materialsExisting"
-        placeholderText="What materials do you already have? Separate materials with a comma."
+        placeholderText="separate materials with a comma."
         onChange={handleChange}
         registerFn={register}
         error={errors.materialsExisting}
         errorMessageMax="The text is too long...?"
       />
-
+      <StyledCheckbox>
+        <InputField
+          labelText="Mark as done: "
+          type="checkbox"
+          name="status"
+          registerFn={register}
+          onChange={handleCheckbox}
+        />
+        {check ? (
+          <img src={checkedCheckbox} alt="" />
+        ) : (
+          <img src={clearCheckbox} alt="" />
+        )}
+      </StyledCheckbox>
       <Button text="Save" size="30px" icon={saveIcon} />
     </StyledForm>
   )
 
   function handleChange(event) {
     setUpdatedData({ ...updatedData, [event.target.name]: event.target.value })
+  }
+
+  function handleCheckbox(event) {
+    setCheck(!check)
+    setUpdatedData({
+      ...updatedData,
+      [event.target.name]: event.target.checked,
+    })
   }
 
   async function uploadImage(event) {
@@ -155,10 +190,11 @@ export default function ProjectUpdateForm({
 }
 
 const StyledForm = styled.form`
-  height: 438px;
+  height: 458px;
   overflow: scroll;
 
   label {
+    font-weight: 200;
     display: block;
     padding: 0;
     margin: 20px 0 0 6px;
@@ -173,7 +209,8 @@ const StyledForm = styled.form`
 
   .loading {
     align-self: center;
-    margin: 10px 0;
+    margin: 10px 0 10px 6px;
+    color: var(--teal-light);
   }
 `
 const StyledImageUpload = styled.div`
@@ -210,5 +247,36 @@ const StyledThumbnail = styled.img`
   border-style: none;
   align-self: center;
   object-fit: cover;
-  margin: 10px 0;
+  margin: 10px 0 10px 6px;
+`
+
+const StyledCheckbox = styled.div`
+  position: relative;
+  padding-bottom: 10px;
+
+  label {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    padding-bottom: 30px;
+
+    > [name='status'] {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 22px;
+      opacity: 0;
+    }
+  }
+
+  img {
+    position: absolute;
+    z-index: 0;
+    top: 22px;
+    right: 150px;
+    width: 20px;
+  }
 `
