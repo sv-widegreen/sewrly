@@ -1,36 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import addIcon from '../assets/addIcon.svg'
-import Headline from './Headline'
-import LogoHeader from './LogoHeader'
-import NavigationBar from './NavigationBar'
-import ProjectListItem from './ProjectListItem'
+import Headline from '../components/Headline/Headline'
+import LogoHeader from '../components/LogoHeader/LogoHeader'
+import NavigationBar from '../components/Navigation/NavigationBar'
+import ProjectListItem from '../components/ProjectListItem/ProjectListItem'
 
-export default function ProjectList({ projectList }) {
-  const inProgressProjectsList = projectList.filter(
-    (project) => !project.status
-  )
+export default function ArchiveList({ projectList }) {
+  const finishedProjectsList = projectList.filter((project) => project.status)
   return (
     <>
       <LogoHeader />
       <StyledTab>
         <Headline
-          headlineText="Projects"
+          headlineText="Archive"
           textColor={'var(--copper-ultralight)'}
         />
         <div>
-          <Link to="/add-new-project" className="addNewLink">
-            <img src={addIcon} alt="add new project" />
-            <p>Add</p>
-          </Link>
-          {inProgressProjectsList.length <= 0 && (
+          {finishedProjectsList.length <= 0 && (
             <p className="noProjectsYet">
-              Click the top right button to add a new project!
+              Finish a project and mark it as done!
             </p>
           )}
           <StyledProjectList>
-            {inProgressProjectsList.map((projectData) => (
+            {finishedProjectsList.map((projectData) => (
               <ProjectListItem key={projectData.id} projectData={projectData} />
             ))}
           </StyledProjectList>
@@ -60,29 +52,9 @@ const StyledTab = styled.main`
   }
 
   > div {
-    position: relative;
-    height: 450px;
+    height: 480px;
     overflow: scroll;
-    margin-top: 20px;
-  }
-
-  .addNewLink {
-    position: fixed;
-    margin: 0;
-    top: 104px;
-    right: 20px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 10px;
-    color: var(--teal-dark);
-
-    img {
-      width: 30px;
-
-      :active {
-        transform: scale(0.9, 0.9);
-      }
-    }
+    margin-top: 10px;
   }
 `
 

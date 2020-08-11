@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import sewrlyTextLogoShadow from '../assets/sewrlyTextLogoShadow.svg'
+import sewrlyTextLogoShadow from '../../assets/sewrlyTextLogoShadow.svg'
 
 export default function LogoHeader() {
   return (

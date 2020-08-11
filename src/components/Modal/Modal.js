@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link, useRouteMatch } from 'react-router-dom'
+import styled from 'styled-components'
 
 export default function Modal({
   header,

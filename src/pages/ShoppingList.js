@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Headline from './Headline'
-import LogoHeader from './LogoHeader'
-import NavigationBar from './NavigationBar.js'
-import ShoppingListItem from './ShoppingListItem'
+import Headline from '../components/Headline/Headline'
+import LogoHeader from '../components/LogoHeader/LogoHeader'
+import NavigationBar from '../components/Navigation/NavigationBar.js'
+import ShoppingListItem from '../components/ShoppingListItem/ShoppingListItem'
 
 export default function ShoppingList({ projectList }) {
   const materialsNeeded = projectList.filter((project) => project.materialNeeds)

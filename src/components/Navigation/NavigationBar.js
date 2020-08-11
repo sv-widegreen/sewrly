@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import navBarIconArchive from '../assets/navBarIconArchive.svg'
-import navBarIconFabricCalc from '../assets/navBarIconFabricCalc.svg'
-import navBarIconProjects from '../assets/navBarIconProjects.svg'
-import navBarIconShoppingList from '../assets/navBarIconShoppingList.svg'
+import navBarIconArchive from '../../assets/navBarIconArchive.svg'
+import navBarIconFabricCalc from '../../assets/navBarIconFabricCalc.svg'
+import navBarIconProjects from '../../assets/navBarIconProjects.svg'
+import navBarIconShoppingList from '../../assets/navBarIconShoppingList.svg'
 
 export default function NavigationBar() {
   return (

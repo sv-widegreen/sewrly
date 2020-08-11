@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import garmentOptions from './utils/garmentOptions'
+import garmentOptions from './garmentOptions'
 
 export default function FabricCalculatorDropdown({ onChange, value }) {
   return (

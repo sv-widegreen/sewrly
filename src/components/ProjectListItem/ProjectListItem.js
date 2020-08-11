@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import arrowRight from '../assets/arrowRight.svg'
+import arrowRight from '../../assets/arrowRight.svg'
 
 export default function ProjectListItem({ projectData }) {
   const { id, projectName, nextStep, image, status } = projectData

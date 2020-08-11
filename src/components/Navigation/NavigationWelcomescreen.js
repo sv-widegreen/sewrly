@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import startIconFabCalc from '../assets/startIconFabCalc.svg'
-import startIconArchive from '../assets/startIconArchive.svg'
-import startIconProjects from '../assets/startIconProjects.svg'
-import startIconShoppingList from '../assets/startIconShoppingList.svg'
+import startIconArchive from '../../assets/startIconArchive.svg'
+import startIconFabCalc from '../../assets/startIconFabCalc.svg'
+import startIconProjects from '../../assets/startIconProjects.svg'
+import startIconShoppingList from '../../assets/startIconShoppingList.svg'
 
 export default function NavigationWelcomescreen() {
   return (
