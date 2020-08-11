@@ -1,36 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
-import Headline from './Headline'
-import LogoHeader from './LogoHeader'
-import NavigationBar from './NavigationBar.js'
-import ShoppingListItem from './ShoppingListItem'
+import Headline from '../../components/Headline/Headline'
+import LogoHeader from '../../components/LogoHeader/LogoHeader'
+import NavigationBar from '../../components/Navigation/NavigationBar'
+import ProjectListItem from '../../components/ProjectListItem/ProjectListItem'
 
-export default function ShoppingList({ projectList }) {
-  const materialsNeeded = projectList.filter((project) => project.materialNeeds)
-
+export default function ArchiveList({ projectList }) {
+  const finishedProjectsList = projectList.filter((project) => project.status)
   return (
     <>
       <LogoHeader />
       <StyledTab>
         <Headline
-          headlineText="Shopping list"
+          headlineText="Archive"
           textColor={'var(--copper-ultralight)'}
         />
         <div>
-          {materialsNeeded.length <= 0 ? (
-            <p className="noMaterialNeedsYet">
-              Create a material list in one of your projects first!
+          {finishedProjectsList.length <= 0 && (
+            <p className="noProjectsYet">
+              Finish a project and mark it as done!
             </p>
-          ) : (
-            <StyledShoppingList>
-              {materialsNeeded.map((projectData) => (
-                <ShoppingListItem
-                  key={projectData.id}
-                  projectData={projectData}
-                />
-              ))}
-            </StyledShoppingList>
           )}
+          <StyledProjectList>
+            {finishedProjectsList.map((projectData) => (
+              <ProjectListItem key={projectData.id} projectData={projectData} />
+            ))}
+          </StyledProjectList>
         </div>
       </StyledTab>
       <NavigationBar />
@@ -49,7 +44,7 @@ const StyledTab = styled.main`
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -1px 3px -1px rgba(0, 0, 0, 0.3);
 
-  .noMaterialNeedsYet {
+  .noProjectsYet {
     color: var(--copper-ultralight);
     width: 200px;
     text-align: center;
@@ -59,10 +54,11 @@ const StyledTab = styled.main`
   > div {
     height: 480px;
     overflow: scroll;
+    margin-top: 10px;
   }
 `
 
-const StyledShoppingList = styled.ul`
+const StyledProjectList = styled.ul`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;

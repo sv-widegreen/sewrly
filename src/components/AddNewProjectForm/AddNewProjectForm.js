@@ -3,18 +3,18 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
-import saveIcon from '../assets/saveIcon.svg'
-import Button from './Button'
-import InputField from './InputField'
-import InputTextarea from './InputTextarea'
-import { projectSchema } from './utils/projectSchema.js'
+import saveIcon from '../../assets/saveIcon.svg'
+import Button from '../Button/Button'
+import InputField from '../Input/InputField'
+import InputTextarea from '../Input/InputTextarea'
+import { validationSchemaNewProject } from './validationSchema.js'
 
 export default function AddNewProjectForm({
   addToProjectList,
   setModalVisible,
 }) {
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(projectSchema),
+    resolver: yupResolver(validationSchemaNewProject),
   })
 
   const [loading, setLoading] = useState(false)

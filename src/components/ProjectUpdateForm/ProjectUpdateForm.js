@@ -3,13 +3,13 @@ import isEqual from 'lodash.isequal'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
-import saveIcon from '../assets/saveIcon.svg'
-import checkedCheckbox from '../assets/checkedCheckbox.svg'
-import clearCheckbox from '../assets/clearCheckbox.svg'
-import Button from './Button'
-import InputField from './InputField'
-import InputTextarea from './InputTextarea'
-import { projectUpdateSchema } from './utils/projectUpdateSchema'
+import checkedCheckbox from '../../assets/checkedCheckbox.svg'
+import clearCheckbox from '../../assets/clearCheckbox.svg'
+import saveIcon from '../../assets/saveIcon.svg'
+import Button from '../Button/Button'
+import InputField from '../Input/InputField'
+import InputTextarea from '../Input/InputTextarea'
+import { validationSchemaUpdate } from './validationSchema'
 
 export default function ProjectUpdateForm({
   projectData,
@@ -31,7 +31,7 @@ export default function ProjectUpdateForm({
   } = projectData
 
   const { register, errors, handleSubmit } = useForm({
-    resolver: yupResolver(projectUpdateSchema),
+    resolver: yupResolver(validationSchemaUpdate),
     defaultValues: {
       projectName,
       pattern,

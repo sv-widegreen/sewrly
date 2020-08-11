@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-export const projectUpdateSchema = yup.object().shape({
+export const validationSchemaUpdate = yup.object().shape({
   projectName: yup.string().max(20).required(),
   nextStep: yup.string().max(50),
   notes: yup.string().max(500),

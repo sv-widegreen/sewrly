@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import AddNewProjectTab from './components/AddNewProjectTab'
-import FabricCalculatorTab from './components/FabricCalculatorTab'
-import { useLocalStorageState } from './components/hooks/useLocalStorageState'
-import ProjectDetailsTab from './components/ProjectDetailsTab'
-import ProjectList from './components/ProjectList'
-import ArchiveList from './components/ArchiveList'
-import ShoppingList from './components/ShoppingList'
-import WelcomeScreen from './components/WelcomeScreen.js'
+import AddNewProjectTab from './pages/AddNewProject/AddNewProjectTab'
+import ArchiveList from './pages/Archive/ArchiveList'
+import FabricCalculatorTab from './pages/FabricCalculator/FabricCalculatorTab'
+import ProjectDetailsTab from './pages/ProjectDetails/ProjectDetailsTab'
+import ProjectList from './pages/ProjectList/ProjectList'
+import ShoppingList from './pages/ShoppingList/ShoppingList'
+import WelcomeScreen from './pages/WelcomeScreen/WelcomeScreen.js'
+import { useLocalStorageState } from './services/useLocalStorageState'
 
 export default function App() {
   const [projectList, setProjectList] = useLocalStorageState('projects')

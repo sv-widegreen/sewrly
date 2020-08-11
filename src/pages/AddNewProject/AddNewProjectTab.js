@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import AddNewProjectForm from './AddNewProjectForm'
-import Headline from './Headline'
-import LogoHeader from './LogoHeader'
-import NavigationBar from './NavigationBar'
-import Modal from './Modal'
-import navBarIconProjects from '../assets/navBarIconProjects.svg'
-import addIcon from '../assets/addIcon.svg'
+import addIcon from '../../assets/addIcon.svg'
+import navBarIconProjects from '../../assets/navBarIconProjects.svg'
+import AddNewProjectForm from '../../components/AddNewProjectForm/AddNewProjectForm'
+import Headline from '../../components/Headline/Headline'
+import LogoHeader from '../../components/LogoHeader/LogoHeader'
+import Modal from '../../components/Modal/Modal'
+import NavigationBar from '../../components/Navigation/NavigationBar'
 
 export default function AddNewProjectTab({ onSubmit }) {
   const [modalVisible, setModalVisible] = useState(false)

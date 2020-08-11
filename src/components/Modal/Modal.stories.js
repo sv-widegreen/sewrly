@@ -1,8 +1,8 @@
-import React from 'react'
 import { withKnobs } from '@storybook/addon-knobs'
+import React from 'react'
+import addIcon from '../../assets/addIcon.svg'
+import navBarIconProjects from '../../assets/navBarIconProjects.svg'
 import Modal from './Modal'
-import navBarIconProjects from '../assets/navBarIconProjects.svg'
-import addIcon from '../assets/addIcon.svg'
 
 export default {
   title: 'Modal',
