@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import AddNewProjectTab from './pages/AddNewProjectTab'
+import AddNewProjectTab from './pages/AddNewProject/AddNewProjectTab'
 import ArchiveList from './pages/ArchiveList'
-import FabricCalculatorTab from './pages/FabricCalculatorTab'
-import ProjectDetailsTab from './pages/ProjectDetailsTab'
-import ProjectList from './pages/ProjectList'
-import ShoppingList from './pages/ShoppingList'
-import WelcomeScreen from './pages/WelcomeScreen.js'
+import FabricCalculatorTab from './pages/FabricCalculator/FabricCalculatorTab'
+import ProjectDetailsTab from './pages/ProjectDetails/ProjectDetailsTab'
+import ProjectList from './pages/ProjectList/ProjectList'
+import ShoppingList from './pages/ShoppingList/ShoppingList'
+import WelcomeScreen from './pages/WelcomeScreen/WelcomeScreen.js'
 import { useLocalStorageState } from './services/useLocalStorageState'
 
 export default function App() {

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import styled from 'styled-components'
+import Button from '../../components/Button/Button'
+import Headline from '../../components/Headline/Headline'
+import LogoHeader from '../../components/LogoHeader/LogoHeader'
+import NavigationBar from '../../components/Navigation/NavigationBar'
+import ProjectUpdateForm from '../../components/ProjectUpdateForm/ProjectUpdateForm'
 import arrowLeft from '../assets/arrowLeft.svg'
 import editIcon from '../assets/editIcon.svg'
-import Button from '../components/Button/Button'
-import Headline from '../components/Headline/Headline'
-import LogoHeader from '../components/LogoHeader/LogoHeader'
-import NavigationBar from '../components/Navigation/NavigationBar'
-import ProjectUpdateForm from '../components/ProjectUpdateForm/ProjectUpdateForm'
 
 export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)

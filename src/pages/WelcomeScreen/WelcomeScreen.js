@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import NavigationWelcomescreen from '../../components/Navigation/NavigationWelcomescreen'
 import logoCopperUltralightShadow from '../assets/logoCopperUltralightShadow.svg'
 import sewrlyTextLogoShadow from '../assets/sewrlyTextLogoShadow.svg'
-import NavigationWelcomescreen from '../components/Navigation/NavigationWelcomescreen'
 
 export default function WelcomeScreen() {
   return (

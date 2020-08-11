@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import FabricCalculatorDropdown from '../components/FabricCalculatorDropdown/FabricCalculatorDropdown'
-import Headline from '../components/Headline/Headline'
-import LogoHeader from '../components/LogoHeader/LogoHeader'
-import NavigationBar from '../components/Navigation/NavigationBar'
+import FabricCalculatorDropdown from '../../components/FabricCalculatorDropdown/FabricCalculatorDropdown'
+import Headline from '../../components/Headline/Headline'
+import LogoHeader from '../../components/LogoHeader/LogoHeader'
+import NavigationBar from '../../components/Navigation/NavigationBar'
 import {
   getFromSessionStorage,
   saveToSessionStorage,
-} from '../services/handleSessionStorage'
+} from '../../services/handleSessionStorage'
 
 export default function FabricCalculatorTab() {
   const [fabricCalculation, setFabricCalculation] = useState('')
