@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import AddNewProjectTab from './pages/AddNewProject/AddNewProjectTab'
-import ArchiveList from './pages/ArchiveList'
+import ArchiveList from './pages/Archive/ArchiveList'
 import FabricCalculatorTab from './pages/FabricCalculator/FabricCalculatorTab'
 import ProjectDetailsTab from './pages/ProjectDetails/ProjectDetailsTab'
 import ProjectList from './pages/ProjectList/ProjectList'

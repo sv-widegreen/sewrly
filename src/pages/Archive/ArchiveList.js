@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Headline from '../components/Headline/Headline'
-import LogoHeader from '../components/LogoHeader/LogoHeader'
-import NavigationBar from '../components/Navigation/NavigationBar'
-import ProjectListItem from '../components/ProjectListItem/ProjectListItem'
+import Headline from '../../components/Headline/Headline'
+import LogoHeader from '../../components/LogoHeader/LogoHeader'
+import NavigationBar from '../../components/Navigation/NavigationBar'
+import ProjectListItem from '../../components/ProjectListItem/ProjectListItem'
 
 export default function ArchiveList({ projectList }) {
   const finishedProjectsList = projectList.filter((project) => project.status)

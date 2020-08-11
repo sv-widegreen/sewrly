@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import addIcon from '../../assets/addIcon.svg'
 import Headline from '../../components/Headline/Headline'
 import LogoHeader from '../../components/LogoHeader/LogoHeader'
 import NavigationBar from '../../components/Navigation/NavigationBar'
 import ProjectListItem from '../../components/ProjectListItem/ProjectListItem'
-import addIcon from '../assets/addIcon.svg'
 
 export default function ProjectList({ projectList }) {
   const inProgressProjectsList = projectList.filter(
