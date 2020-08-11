@@ -19,6 +19,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
     pattern,
     size,
     nextStep,
+    image,
     materialNeeds,
     materialsExisting,
   } = projectData
@@ -30,15 +31,13 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
         <Headline headlineText={projectName} textColor={'var(--teal-medium)'} />
         <StyledProject>
           {isEditing ? (
-            <>
-              <ProjectUpdateForm
-                projectData={projectData}
-                updateProjectData={updateProjectData}
-                setEditing={setEditing}
-              />
-            </>
+            <ProjectUpdateForm
+              projectData={projectData}
+              updateProjectData={updateProjectData}
+              setEditing={setEditing}
+            />
           ) : (
-            <>
+            <StyledDetailsContainer>
               <Button
                 size="11px"
                 icon={arrowLeft}
@@ -51,6 +50,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
                 icon={editIcon}
                 onClick={() => setEditing(true)}
               />
+              {image && <img className="uploadedImage" src={image} alt="" />}
               <p className="title">Next step:</p>
               <p className="entry">{nextStep}</p>
 
@@ -67,7 +67,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
               {materialsExisting && (
                 <p className="entry">{materialsExisting}</p>
               )}
-            </>
+            </StyledDetailsContainer>
           )}
         </StyledProject>
       </StyledTab>
@@ -105,15 +105,26 @@ const StyledProject = styled.div`
     left: -10px;
   }
 
+  .uploadedImage {
+    width: auto;
+    max-width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border-style: none;
+    object-fit: cover;
+  }
+
   p {
     font-weight: 200;
-    font-size: 16px;
   }
+
   .title {
     margin: 20px 0 6px 6px;
     color: var(--teal-dark);
     font-size: 18px;
   }
+
   .entry {
     margin: 0 24px 0 24px;
     color: var(--teal-light);
@@ -125,4 +136,9 @@ const StyledProject = styled.div`
     font-size: 10px;
     color: var(--teal-ultralight);
   }
+`
+
+const StyledDetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `

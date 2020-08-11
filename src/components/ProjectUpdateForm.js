@@ -15,13 +15,51 @@ export default function ProjectUpdateForm({
   setEditing,
 }) {
   const [updatedData, setUpdatedData] = useState({ ...projectData })
+
+  const {
+    projectName,
+    pattern,
+    size,
+    nextStep,
+    image,
+    materialNeeds,
+    materialsExisting,
+  } = projectData
+
   const { register, errors, handleSubmit } = useForm({
     resolver: yupResolver(projectSchema),
-    defaultValues: { ...projectData },
+    defaultValues: {
+      projectName,
+      pattern,
+      size,
+      nextStep,
+      materialNeeds,
+      materialsExisting,
+    },
   })
+
+  const [loading, setLoading] = useState(false)
+  const [newImage, setNewImage] = useState('')
 
   return (
     <StyledForm onSubmit={handleSubmit(handleNewData)}>
+      <StyledImageUpload>
+        {image && <p>Change the image:</p>}
+        {!image && <p>Upload an image:</p>}
+        <InputField
+          labelText="Choose a file"
+          placeholder="upload an image"
+          type="file"
+          name="image"
+          registerFn={register}
+          onChange={uploadImage}
+        />
+      </StyledImageUpload>
+
+      {loading && <p className="loading">loading ...</p>}
+      {image && !newImage && <StyledThumbnail src={image} />}
+      {newImage && <StyledThumbnail src={newImage} />}
+
       <InputTextarea
         labelText="Next step:"
         name="nextStep"
@@ -90,6 +128,22 @@ export default function ProjectUpdateForm({
     setUpdatedData({ ...updatedData, [event.target.name]: event.target.value })
   }
 
+  async function uploadImage(event) {
+    const files = event.target.files
+    const data = new FormData()
+    data.append('file', files[0])
+    data.append('upload_preset', 'sewrly_upload')
+    setLoading(true)
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dun33qbbm/image/upload',
+      { method: 'POST', body: data }
+    )
+    const newImage = await res.json()
+    setNewImage(newImage.secure_url)
+    setUpdatedData({ ...updatedData, image: newImage.secure_url })
+    setLoading(false)
+  }
+
   function handleNewData() {
     if (isEqual(updatedData, projectData)) {
       setEditing(false)
@@ -116,4 +170,45 @@ const StyledForm = styled.form`
     color: var(--teal-light);
     background-color: white;
   }
+
+  .loading {
+    align-self: center;
+    margin: 10px 0;
+  }
+`
+const StyledImageUpload = styled.div`
+  p {
+    color: var(--teal-medium);
+    font-size: 18px;
+    font-weight: 200;
+    margin: 10px 0 0 6px;
+  }
+
+  label {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: var(--copper-ultralight);
+    font-size: 14px;
+    color: var(--teal-light);
+    box-shadow: 0 0 0 1pt var(--teal-ultralight);
+
+    > [name='image'] {
+      position: absolute;
+      z-index: -1;
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+    }
+  }
+`
+const StyledThumbnail = styled.img`
+  width: auto;
+  max-width: 300px;
+  height: 80px;
+  border-radius: 10px;
+  border-style: none;
+  align-self: center;
+  object-fit: cover;
+  margin: 10px 0;
 `
