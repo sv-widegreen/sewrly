@@ -6,6 +6,7 @@
     "@hookform/resolvers": "0.0.5",
     "lodash": "^4.17.19",
     "lodash.isequal": "^4.5.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.0.1",
