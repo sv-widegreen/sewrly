@@ -1,4 +1,4 @@
-import { array, object, withKnobs } from '@storybook/addon-knobs/react'
+import { array, object, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import ProjectList from './ProjectList'
 

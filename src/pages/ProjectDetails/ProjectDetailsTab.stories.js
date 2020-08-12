@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectDetailsTab from './ProjectDetailsTab'
-import { object, withKnobs } from '@storybook/addon-knobs/react'
+import { object, withKnobs } from '@storybook/addon-knobs'
 
 export default {
   title: 'Project Details Tab',
