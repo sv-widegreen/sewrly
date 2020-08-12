@@ -62,6 +62,7 @@ export default function ProjectDetailsTab({ projectList, updateProjectData }) {
                   )}
                   <p className="title">Notes:</p>
                   <p className="entry">{notes}</p>
+
                   <p className="title">Pattern:</p>
                   {pattern && <p className="entry">{pattern}</p>}
 

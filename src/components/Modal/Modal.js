@@ -21,19 +21,11 @@ export default function Modal({
         <h4>{header}</h4>
         <p>{text}</p>
         <StyledNavigation>
-          <Link
-            to={`${buttonLeftPath}` || `${url}`}
-            activeClassName="selected"
-            onClick={onClick}
-          >
+          <Link to={`${buttonLeftPath}` || `${url}`} onClick={onClick}>
             <img src={buttonLeftIcon} alt="" />
             <p>{buttonLeftText}</p>
           </Link>
-          <Link
-            to={`${buttonRightPath}` || `${url}`}
-            activeClassName="selected"
-            onClick={onClick}
-          >
+          <Link to={`${buttonRightPath}` || `${url}`} onClick={onClick}>
             <img src={buttonRightIcon} alt="" />
             <p>{buttonRightText}</p>
           </Link>
