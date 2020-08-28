@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
@@ -8,6 +9,11 @@ import Button from '../Button/Button'
 import InputField from '../Input/InputField'
 import InputTextarea from '../Input/InputTextarea'
 import { validationSchemaNewProject } from './validationSchema.js'
+
+AddNewProjectForm.propTypes = {
+  addToProjectList: PropTypes.func,
+  setModalVisible: PropTypes.func,
+}
 
 export default function AddNewProjectForm({
   addToProjectList,

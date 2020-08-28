@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import addIcon from '../../assets/addIcon.svg'
@@ -7,6 +8,10 @@ import Headline from '../../components/Headline/Headline'
 import LogoHeader from '../../components/LogoHeader/LogoHeader'
 import Modal from '../../components/Modal/Modal'
 import NavigationBar from '../../components/Navigation/NavigationBar'
+
+AddNewProjectTab.propTypes = {
+  onSubmit: PropTypes.func,
+}
 
 export default function AddNewProjectTab({ onSubmit }) {
   const [modalVisible, setModalVisible] = useState(false)

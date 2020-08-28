@@ -1,5 +1,15 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+
+Button.propTypes = {
+  icon: PropTypes.string,
+  size: PropTypes.string,
+  onClick: PropTypes.func,
+  altText: PropTypes.string,
+  text: PropTypes.string,
+  fontsize: PropTypes.string,
+}
 
 export default function Button({
   icon,

@@ -1,5 +1,11 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+
+Headline.propTypes = {
+  headlineText: PropTypes.string,
+  textColor: PropTypes.string,
+}
 
 export default function Headline({ headlineText, textColor }) {
   return <StyledHeadline color={textColor}>{headlineText}</StyledHeadline>
