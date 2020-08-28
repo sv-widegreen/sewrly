@@ -1,5 +1,6 @@
 import { yupResolver } from '@hookform/resolvers'
 import isEqual from 'lodash.isequal'
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
@@ -10,6 +11,12 @@ import Button from '../Button/Button'
 import InputField from '../Input/InputField'
 import InputTextarea from '../Input/InputTextarea'
 import { validationSchemaUpdate } from './validationSchema'
+
+ProjectUpdateForm.propTypes = {
+  projectData: PropTypes.object,
+  updateProjectData: PropTypes.func,
+  setEditing: PropTypes.func,
+}
 
 export default function ProjectUpdateForm({
   projectData,

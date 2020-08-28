@@ -1,5 +1,16 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+
+InputTextarea.propTypes = {
+  labelText: PropTypes.string,
+  placeholderText: PropTypes.string,
+  name: PropTypes.string,
+  registerFn: PropTypes.func,
+  error: PropTypes.object,
+  errorMessageMax: PropTypes.string,
+  onChange: PropTypes.func,
+}
 
 export default function InputTextarea({
   labelText,

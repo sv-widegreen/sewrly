@@ -1,6 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import garmentOptions from './garmentOptions'
+
+FabricCalculatorDropdown.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+}
 
 export default function FabricCalculatorDropdown({ onChange, value }) {
   return (

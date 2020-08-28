@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import styled from 'styled-components'
@@ -8,6 +9,11 @@ import Headline from '../../components/Headline/Headline'
 import LogoHeader from '../../components/LogoHeader/LogoHeader'
 import NavigationBar from '../../components/Navigation/NavigationBar'
 import ProjectUpdateForm from '../../components/ProjectUpdateForm/ProjectUpdateForm'
+
+ProjectDetailsTab.propTypes = {
+  projectList: PropTypes.array,
+  updateProjectData: PropTypes.func,
+}
 
 export default function ProjectDetailsTab({ projectList, updateProjectData }) {
   const [isEditing, setEditing] = useState(false)

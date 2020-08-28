@@ -1,7 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import arrowRight from '../../assets/arrowRight.svg'
+
+ProjectListItem.propTypes = {
+  projectData: PropTypes.object,
+}
 
 export default function ProjectListItem({ projectData }) {
   const { id, projectName, nextStep, image, status } = projectData

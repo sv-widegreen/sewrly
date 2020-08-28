@@ -1,5 +1,18 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+
+InputField.propTypes = {
+  labelText: PropTypes.string,
+  placeholderText: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  registerFn: PropTypes.func,
+  error: PropTypes.object,
+  errorMessageMax: PropTypes.string,
+  errorMessageRequired: PropTypes.string,
+  onChange: PropTypes.func,
+}
 
 export default function InputField({
   labelText,

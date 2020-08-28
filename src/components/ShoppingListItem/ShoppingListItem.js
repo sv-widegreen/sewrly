@@ -1,7 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import arrowRight from '../../assets/arrowRight.svg'
+
+ShoppingListItem.propTypes = {
+  projectData: PropTypes.object,
+}
 
 export default function ShoppingListItem({ projectData }) {
   const { id, projectName, materialNeeds } = projectData

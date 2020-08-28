@@ -1,6 +1,19 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import styled from 'styled-components'
+
+Modal.propTypes = {
+  header: PropTypes.string,
+  text: PropTypes.string,
+  buttonLeftIcon: PropTypes.string,
+  buttonLeftText: PropTypes.string,
+  buttonLeftPath: PropTypes.string,
+  buttonRightIcon: PropTypes.string,
+  buttonRightText: PropTypes.string,
+  buttonRightPath: PropTypes.string,
+  setModalVisible: PropTypes.func,
+}
 
 export default function Modal({
   header,

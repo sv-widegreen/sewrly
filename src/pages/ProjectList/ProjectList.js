@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -6,6 +7,10 @@ import Headline from '../../components/Headline/Headline'
 import LogoHeader from '../../components/LogoHeader/LogoHeader'
 import NavigationBar from '../../components/Navigation/NavigationBar'
 import ProjectListItem from '../../components/ProjectListItem/ProjectListItem'
+
+ProjectList.propTypes = {
+  projectList: PropTypes.array,
+}
 
 export default function ProjectList({ projectList }) {
   const inProgressProjectsList = projectList.filter(
