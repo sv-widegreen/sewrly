@@ -1,5 +1,6 @@
 {
   "name": "capstone-app",
+  "author": "Svenja Widegreen",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

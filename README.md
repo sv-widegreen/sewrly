@@ -15,3 +15,51 @@ Use the project detail pages to keep notes. Scroll through the archive to remind
 Follow this space and don't miss new features.
 
 # Happy Sewing!
+
+![demo](/demo_welcome.png)
+
+### Tech Stack
+
+- React
+- React Hooks
+- React-Router
+- React-Hook-Form
+- Yup validation
+- StyledComponents
+- Cloudinary
+- Storybook
+- Cypress
+- React Testing Library
+- Vercel
+
+### Direct Link
+
+https://people-ive-met.vercel.app/
+
+Or:
+Download repository and run
+`npm install`
+
+### Available Scripts
+
+In the project directory, you can then run:
+
+#### `npm start`
+
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+#### `npm test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+#### `npm run build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
