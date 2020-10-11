@@ -2,26 +2,18 @@
 
 context('Local Storage', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/add-new-project')
   })
 
-  it('should write and clear localStorage', () => {
-    cy.get('[name="projectName"]').type('Summer dress with sleeves')
-    cy.get('[name="pattern"]').type('Pinterest')
-    cy.get('[name="size"]').type('38')
-    cy.get('[name="nextStep"]').type(
-      'cut fabric and lining, buy button, zipper and tape'
-    )
+  it('should write in localStorage', () => {
+    cy.get('[name="projectName"]').type('Summer dress')
+    cy.get('[name="nextStep"]').type('cut fabric')
     cy.get('button')
       .click()
       .should(() => {
-        expect(localStorage.getItem('projects')).to.eq(
-          '[{"projectName":"Summer dress with sleeves","pattern":"Pinterest","size":"38","nextStep":"cut fabric and lining, buy button, zipper and tape"}]'
+        expect(localStorage.getItem('projects')).to.contain(
+          '[{"projectName":"Summer dress","nextStep":"cut fabric"}]'
         )
       })
-
-    cy.clearLocalStorage().should((localStorage) => {
-      expect(localStorage.getItem('projects')).to.be.null
-    })
   })
 })

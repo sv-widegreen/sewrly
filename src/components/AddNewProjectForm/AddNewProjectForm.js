@@ -132,7 +132,6 @@ export default function AddNewProjectForm({
     addToProjectList(projectData)
     event.target.reset()
     setImage('')
-    // event.target[0].focus()
     setModalVisible(true)
   }
 }
