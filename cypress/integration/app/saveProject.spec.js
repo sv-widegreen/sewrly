@@ -11,8 +11,9 @@ context('Local Storage', () => {
     cy.get('button')
       .click()
       .should(() => {
+        //expect(localStorage.getItem('projects')).to.contain(
         expect(localStorage.getItem('projects')).to.contain(
-          '[{"projectName":"Summer dress","nextStep":"cut fabric"}]'
+          '"projectName":"Summer dress","nextStep":"cut fabric"'
         )
       })
   })

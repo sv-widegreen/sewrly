@@ -34,7 +34,7 @@ Follow this space and don't miss new features.
 
 ### Direct Link
 
-https://people-ive-met.vercel.app/
+https://capstone-project-fawn.vercel.app/ (view in mobile mode)
 
 Or:
 Download repository and run
