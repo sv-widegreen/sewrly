@@ -12,7 +12,7 @@ Use the project detail pages to keep notes. Scroll through the archive to remind
 
 ### Lot's more to come! This is just the beginning.
 
-Follow this space and don't miss new features.
+Follow this space and don't miss new features, for example a checkbox material list to keep better track of what you have and what you still need for a project.
 
 # Happy Sewing!
 
